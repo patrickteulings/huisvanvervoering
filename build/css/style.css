@@ -1,0 +1,670 @@
+/* mixins / functions / config etc */
+body, html {
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 300; }
+
+/* ----------------------------------------
+  Config
+---------------------------------------- */
+div {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* ----------------------------------------
+  Our global breakpoints
+---------------------------------------- */
+/* ----------------------------------------
+  Our primary colors for this project
+---------------------------------------- */
+/* ----------------------------------------
+  Combinations for loop for theming
+  Beware, name must also be declared in $themes
+
+  Usage: color: colorcombi(warning, background)
+
+  If you need to include both colors in a field, use
+  the mixin @themecombi('warning');
+---------------------------------------- */
+/* ----------------------------------------
+  Adds a predefined set of (color)
+  charactaristics to yourn element.
+  The sets are defined in _config.scss
+
+  Usage: @include themecombi(name)
+---------------------------------------- */
+/* ----------------------------------------
+  Add a prediefined set of font values
+  combined with other properties
+  to your class. You can find the map
+  in _config.scss
+
+  Usage: @include fontcombi(combiname)
+---------------------------------------- */
+/* ----------------------------------------
+  Adds fontsmoothing to your project
+
+  Usage: @include fontsmoothing()
+---------------------------------------- */
+/* ----------------------------------------
+  Change all header styles from $start to
+  $end at one go
+
+  Usage:
+
+  @include heading(1,6) {
+    // Insert styles here
+  }
+---------------------------------------- */
+/* ----------------------------------------
+  Add a prediefined font size
+  to your class. You can find the map
+  in _config.scss
+
+  Usage: @include font(type)
+---------------------------------------- */
+/* ----------------------------------------
+  Font size, recalculates your font-pixel
+  sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Line height, recalculates your font-pixel
+  sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Adds an ellipis to overflowing (single
+  line) text.
+---------------------------------------- */
+/* ----------------------------------------
+  Adds an ellipis to overflowing (single
+  line) text.
+---------------------------------------- */
+/* ----------------------------------------
+  Adds a padding to your element. You have
+  free choice of units. In my personal
+  experience, px or % are recommended
+
+  Usage: @include innerspace(10px) or
+  Usage: @include innerspace(10rem, 5rem)
+---------------------------------------- */
+/* ----------------------------------------
+  Defines the outer margins of an element
+  You can either use it with two or four
+  parameters
+---------------------------------------- */
+/* ----------------------------------------
+  Simply defines width and/or height
+  When ony one parameter is given
+  width and height are equal;
+
+  Usage: @include size(20px);
+---------------------------------------- */
+/* ----------------------------------------
+  Simplifies an standardizes positioning of elements
+
+  Usage: @include position('relative', 0px, px);
+
+---------------------------------------- */
+/* ----------------------------------------
+  Prerenders sections based on global
+  color combinations
+---------------------------------------- */
+.base {
+  background-color: #90BFBA;
+  color: #ffffff; }
+
+.primary {
+  background-color: #90BFBA;
+  color: #ffffff; }
+
+.secondary {
+  background-color: #9A00B4;
+  color: #ffffff; }
+
+.warning {
+  background-color: yellow;
+  color: #ffffff; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  margin-top: 0em;
+  margin-bottom: 0.5em; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6 {
+    margin-top: 1em; }
+    article h1:first-of-type,
+    article h2:first-of-type,
+    article h3:first-of-type,
+    article h4:first-of-type,
+    article h5:first-of-type,
+    article h6:first-of-type {
+      margin-top: 0em; }
+
+h1 {
+  font-size: calc(56px * 0.75) / 18pxem;
+  font-size: calc(56px * 0.75);
+  font-size: 3.11111em;
+  font-size: 56px; }
+
+h2 {
+  font-size: 2.66667em;
+  font-size: 48px; }
+
+h3 {
+  font-size: 2em;
+  font-size: 36px; }
+
+h4 {
+  font-size: 1.33333em;
+  font-size: 24px; }
+
+h5 {
+  font-size: 1em;
+  font-size: 18px; }
+
+h6 {
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+p {
+  margin: 0 0 1em 0;
+  line-height: 1.4em;
+  font-family: "Josefin Sans", sans-serif; }
+
+/* ----------------------------------------
+  Used for pre-defining often used font
+  styling such as captions, quotes etc
+
+  See _mixins.scss for usage
+  Usage: @include fontcombi(name);
+---------------------------------------- */
+/* ----------------------------------------
+  Used for pre-defining often-used font sizes.
+  Warning; do not add anything but fontsize.
+
+  For other purposes use 'fontcombi'
+
+  See _mixins.scss for usage
+  Usage: @include textfont(name);
+---------------------------------------- */
+/**
+*
+* Basic anchor link styling
+*
+*/
+a {
+  color: inherit; }
+
+a[class*='__link'] {
+  text-decoration: none; }
+
+/* ----------------------------------------
+  Helpers / Extendible classes
+---------------------------------------- */
+/**
+*
+* Image helper classes
+*
+*/
+/* ----------------------------------------
+  Mixins
+---------------------------------------- */
+/* ----------------------------------------
+  Usage mobile first
+
+  @include mq('tablet','min')
+
+  Usage Mobile last
+
+  @include mq('tablet','max')
+
+  Usage to-from
+
+  @include mq('tablet', 'to', 'desktop')
+---------------------------------------- */
+/*
+
+  Defines the first levels of the material design card shadows
+
+*/
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+.super-section {
+  overflow-x: hidden; }
+
+/* ----------------------------------------
+  Our main section container will auto
+  center all elements
+---------------------------------------- */
+section.section {
+  display: flex;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+  margin-top: 60px;
+  opacity: 0; }
+  section.section.inview {
+    margin-top: 0;
+    opacity: 1; }
+
+/* ----------------------------------------
+  Every first element within a section
+  with - in it's - classname __inner
+  will be our container
+---------------------------------------- */
+section > [class*='__inner'] {
+  padding: 4rem 2rem;
+  width: 100%;
+  max-width: 1140px; }
+
+/* ----------------------------------------
+  UI / User Interface
+---------------------------------------- */
+/* ----------------------------------------
+  Default button properties
+---------------------------------------- */
+/* ----- Variables ----- */
+/* ----- Button base ----- */
+.btn {
+  border-radius: 2px;
+  border: 0px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1em 1em;
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black; }
+
+/* ----------------------------------------
+  Adjustment for outlined buttons to
+  achieve same height as a regular button
+---------------------------------------- */
+/* ----------------------------------------
+  Different button sizes,
+  complement at will...
+---------------------------------------- */
+.btn--small {
+  font-size: 0.66667em;
+  font-size: 12px; }
+
+.btn--medium {
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+.btn--large {
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+.btn--full {
+  width: 100%; }
+
+/* stylelint-enable */
+/* ----------------------------------------
+  Button group - multiple buttons aside
+---------------------------------------- */
+/* ----------------------------------------
+  Material Design Preloader without
+  progress
+---------------------------------------- */
+.spinner {
+  animation: rotator 1.4s linear infinite;
+  width: 40px;
+  height: 40px; }
+  .spinner .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    stroke-width: 4;
+    transform-origin: center;
+    animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite; }
+  .spinner.hidden {
+    display: none; }
+
+/* ----------------------------------------
+  Keyframe animations for Material
+  spinner
+---------------------------------------- */
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(270deg); } }
+
+@keyframes colors {
+  0% {
+    stroke: #90BFBA; }
+  14.285714286% {
+    stroke: #90BFBA; }
+  28.571428572% {
+    stroke: #90BFBA; }
+  42.857142858% {
+    stroke: #90BFBA; }
+  57.142857144% {
+    stroke: #90BFBA; }
+  71.42857143% {
+    stroke: #90BFBA; }
+  100% {
+    stroke: #90BFBA; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187; }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg); }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg); } }
+
+/* ----------------------------------------
+  Bouncing ball loader
+---------------------------------------- */
+.loader--bounce {
+  transform: translateY(35px); }
+
+.ball {
+  position: relative;
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%; }
+  .ball:not(:last-child) {
+    margin-right: 0rem; }
+  .ball:nth-child(1) {
+    animation: jump .5s ease 0s infinite alternate; }
+  .ball:nth-child(2) {
+    animation: jump .5s ease 0.15s infinite alternate; }
+  .ball:nth-child(3) {
+    animation: jump .5s ease 0.25s infinite alternate; }
+
+@keyframes jump {
+  0% {
+    transform: scaleY(0.9); }
+  90% {
+    transform: translateY(-70px); }
+  100% {
+    transform: translateY(-70px); } }
+
+/* ----------------------------------------
+  FORMS BASE
+---------------------------------------- */
+form {
+  margin: 0; }
+
+/* ----------------------------------------
+  INPUT TEXT
+---------------------------------------- */
+.inputtext label {
+  display: inline-block;
+  margin-bottom: 0.5rem; }
+
+input[type="text"] {
+  border: 1px solid #90BFBA;
+  border-radius: 2px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.88889em;
+  font-size: 16px;
+  padding-right: 40px; }
+  input[type="text"]:focus {
+    outline-color: white; }
+
+/* ----------------------------------------
+  RADIO BUTTONS
+---------------------------------------- */
+.radio {
+  display: block;
+  position: relative; }
+
+input[type="radio"] {
+  opacity: 0; }
+  input[type="radio"] + label {
+    margin-left: 0.5rem; }
+    input[type="radio"] + label:before {
+      content: "";
+      display: inline-block;
+      width: calc(1rem - 2px);
+      height: calc(1rem - 2px);
+      border-radius: 1rem;
+      border: 1px solid #90BFBA;
+      position: absolute;
+      left: 0;
+      top: 0; }
+    input[type="radio"] + label:after {
+      content: "";
+      display: inline-block;
+      width: calc(1rem - 8px);
+      height: calc(1rem - 8px);
+      border-radius: 1rem;
+      background: #9A00B4;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      opacity: 0;
+      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+  input[type="radio"]:checked + label:before {
+    border: 1px solid #9A00B4; }
+  input[type="radio"]:checked + label:after {
+    opacity: 1; }
+
+/* ----------------------------------------
+  CHECKBOXES
+---------------------------------------- */
+.checkbox {
+  display: block;
+  position: relative; }
+  .checkbox input[type="checkbox"] {
+    opacity: 0; }
+    .checkbox input[type="checkbox"] + label {
+      margin-left: 0.5rem; }
+      .checkbox input[type="checkbox"] + label:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: calc(1rem - 2px);
+        height: calc(1rem - 2px);
+        border: 1px solid #90BFBA;
+        border-radius: 2px; }
+      .checkbox input[type="checkbox"] + label:after {
+        content: "";
+        width: calc(1rem - 6px);
+        height: calc(1rem - 6px);
+        border-radius: 1px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        background: #9A00B4;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+    .checkbox input[type="checkbox"]:checked + label:before {
+      border: 1px solid #9A00B4; }
+    .checkbox input[type="checkbox"]:checked + label:after {
+      opacity: 1; }
+
+/* ----------------------------------------
+  SELECT / OPTION BOX
+---------------------------------------- */
+.select-wrap {
+  position: relative; }
+  .select-wrap label {
+    display: block;
+    margin-bottom: 0.5rem; }
+  .select-wrap .select {
+    position: relative; }
+    .select-wrap .select:after {
+      content: "";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 6px 5px 0 5px;
+      border-color: #90BFBA transparent transparent transparent; }
+  .select-wrap select {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    font-size: 0.88889em;
+    font-size: 16px;
+    padding: 1rem;
+    padding-right: 2rem;
+    border: 1px solid #90BFBA;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 100; }
+    .select-wrap select:focus {
+      outline-color: #90bfba; }
+
+.input-text--wrap {
+  position: relative; }
+  .input-text--wrap .btn--reset-search {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #90BFBA;
+    cursor: pointer; }
+    .input-text--wrap .btn--reset-search.is-active {
+      display: block; }
+    .input-text--wrap .btn--reset-search .close-cross::before, .input-text--wrap .btn--reset-search .close-cross::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      height: 1px;
+      width: 60%;
+      margin-top: -1px;
+      background: #ffffff; }
+    .input-text--wrap .btn--reset-search .close-cross::before {
+      transform: rotate(45deg); }
+    .input-text--wrap .btn--reset-search .close-cross::after {
+      transform: rotate(-45deg); }
+
+/* ----------------------------------------
+  Accordion Base
+---------------------------------------- */
+.accordion dd {
+  margin-left: 0; }
+
+.accordion .panel {
+  display: none; }
+  .accordion .panel.active {
+    display: block; }
+
+/* All theme-specific styling */
+.navigation-trigger-wrapper {
+  position: fixed;
+  left: 22px;
+  top: 27px;
+  right: auto;
+  bottom: auto;
+  z-index: 2; }
+  .navigation-trigger-wrapper .hamburger {
+    width: 40px;
+    height: 40px;
+    background: none; }
+    .navigation-trigger-wrapper .hamburger span {
+      position: absolute;
+      left: 8px;
+      top: 21px;
+      right: auto;
+      bottom: auto;
+      width: 24px;
+      height: 1px;
+      display: block;
+      background: #0B0b0b; }
+      .navigation-trigger-wrapper .hamburger span:first-child {
+        top: 11px; }
+      .navigation-trigger-wrapper .hamburger span:last-child {
+        top: 31px; }
+      .navigation-trigger-wrapper .hamburger span:nth-child(2) {
+        width: 16px; }
+  .navigation-trigger-wrapper .hamburger:focus, .navigation-trigger-wrapper .hamburger:active {
+    outline: none; }
+
+.primary-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  width: 100vw;
+  height: 100vh;
+  color: #ffffff;
+  background: #9A00B4;
+  display: none; }
+  .primary-menu-container.is-open {
+    display: flex; }
+  .primary-menu-container .menu-item a {
+    color: #ffffff; }
+
+body {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }

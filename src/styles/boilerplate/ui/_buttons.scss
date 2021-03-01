@@ -1,0 +1,70 @@
+
+/* ----------------------------------------
+  Default button properties
+---------------------------------------- */
+
+
+/* ----- Variables ----- */
+
+$btn-border-radius: 2px;
+
+
+/* ----- Button base ----- */
+
+%btn {
+  border-radius: $btn-border-radius;
+  border: 0px;
+  display: inline-block;
+  cursor: pointer;
+  @include innerspace(1em, 1em);
+  @include transition();
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+}
+
+
+/* ----------------------------------------
+  Adjustment for outlined buttons to
+  achieve same height as a regular button
+---------------------------------------- */
+
+%btn-outlined {
+  @extend %btn;
+  @include innerspace(calc(1rem - 1px), calc(1rem - 1px));
+}
+
+
+/* ----------------------------------------
+  Different button sizes,
+  complement at will...
+---------------------------------------- */
+
+.btn {
+  @extend %btn;
+
+  &--small {
+    @include font-size(12px);
+  }
+
+  &--medium {
+    @include font-size(16px);
+  }
+
+  &--large {
+    @include font-size(16px);
+  }
+
+  &--full {
+    width: 100%;
+  }
+}
+
+
+
+/* stylelint-enable */
+
+
+/* ----------------------------------------
+  Button group - multiple buttons aside
+---------------------------------------- */
+

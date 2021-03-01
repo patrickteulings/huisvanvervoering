@@ -1,0 +1,59 @@
+
+// Main Navigation container
+.navigation {
+
+}
+
+// Trigger Button
+.navigation-trigger-wrapper {
+  @include position(fixed, 22px, 27px);
+  z-index: 2;
+
+  .hamburger {
+    @include size(40px);
+    background: none;
+
+    span {
+      @include position(absolute, 8px, 21px);
+      @include size(24px, 1px);
+      display: block;
+      background: #0B0b0b;
+
+      &:first-child {
+        top: 11px;
+      }
+      &:last-child {
+        top: 31px;
+      }
+      &:nth-child(2) {
+        width: 16px;
+      }
+    }
+  }
+
+  .hamburger {
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+}
+
+// The actual (fullscreen) menu, socials
+.primary-menu-container {
+  @include flex-center('center');
+  @include position(fixed, 0, 0);
+  @include size(100vw, 100vh);
+  color: color('white');
+  background: color('secondary');
+  display: none;
+
+  &.is-open {
+    display: flex;
+  }
+
+  .menu-item {
+    a {
+      color: color('white');
+    }
+  }
+}

@@ -1,0 +1,93 @@
+/* ----------------------------------------
+  Tabs component
+
+  Includes responsive behaviour
+---------------------------------------- */
+
+/* ----------------------------------------
+  tabs base
+---------------------------------------- */
+
+.tabs {
+  position: relative;
+}
+
+/* ----------------------------------------
+  tabs
+---------------------------------------- */
+
+.tabs {
+  &__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    transform: translateY(1px);
+    position: relative;
+    z-index: 2;
+
+    @include mq('tablet','min') {
+      display: flex;
+    }
+  }
+
+  &__nav-item {
+    display: block;
+
+    @include mq('tablet','min') {
+      display: inline-block;
+      flex: 0 1 auto;
+      margin-right: 0.4em;
+    }
+
+    &:first-child {
+      .tabs__tab {
+        border-top-width: 1px;
+      }
+    }
+  }
+
+  &__tab {
+    @include innerspace(0.8em, 1em);
+    @include transition();
+    border: 1px solid color('primary');
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-width: 0px;
+    display: block;
+
+    @include mq('tablet', 'min') {
+      display: inline-block;
+      border-top-width: 1px;
+    }
+
+    &:hover {
+
+    }
+
+    &.active {
+      background: color('white');
+
+      @include mq('tablet','min') {
+        border-bottom-color: color('white');
+      }
+    }
+  }
+
+
+  /* TAB PANELS */
+
+  &__panels {
+    position: relative;
+  }
+
+  &__panel {
+    display: none;
+    background: color('white');
+    @include innerspace(1rem);
+    border: 1px solid color('primary');
+
+    &.active {
+      display: block;
+    }
+  }
+}
