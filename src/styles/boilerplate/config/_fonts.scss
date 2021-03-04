@@ -1,9 +1,12 @@
 
 
 $primary-font-face: 'Josefin Sans', sans-serif !default;
+$heading-font-face: 'Merriweather', serif !default;
+$paragraph-font-face: 'Raleway', sans-serif !default;
+$alt-font-face: 'Yantramanav', sans-serif !default;
 
 %headings {
-  font-family: $primary-font-face;
+  font-family: $heading-font-face;
   font-weight: 300;
   margin-top: 0em;
   margin-bottom: 0.5em;

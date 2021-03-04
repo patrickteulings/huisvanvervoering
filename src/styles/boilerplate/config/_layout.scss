@@ -55,13 +55,8 @@ section {
   &.section {
     @include flex-center('horizontal');
     @include transition(all, 0.6s, $default-easing);
-    margin-top: 60px;
-    opacity: 0;
+    margin-top: 94px;
 
-    &.inview {
-      margin-top: 0;
-      opacity: 1;
-    }
   }
 }
 
@@ -77,6 +72,6 @@ section {
     // @include flex-child(1);
     @include innerspace(4rem 2rem);
     width: 100%;
-    max-width: 1140px;
+    max-width: $global-max-width--desktop;
   }
 }

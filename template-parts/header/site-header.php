@@ -13,9 +13,11 @@ $wrapper_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) 
 $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 ?>
 
+<?php if ( is_front_page() && ! is_paged() ) { ?>
+  <?php get_template_part( 'template-parts/header/frontpage-header' ); ?>
+<?php } ?>
+
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
-
-	<?php get_template_part( 'template-parts/header/site-branding' ); ?>
+  <?php get_template_part( 'template-parts/header/site-branding' ); ?>
 	<?php get_template_part( 'template-parts/header/site-nav' ); ?>
-
 </header><!-- #masthead -->

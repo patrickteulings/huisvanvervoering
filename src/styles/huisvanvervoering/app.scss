@@ -1,5 +1,14 @@
 
-@import 'components/navigation//navigation';
+@import
+  'ui/buttons/buttons';
+
+@import
+  'components/navigation/navigation',
+  'components/footer/footer',
+  'components/supporters/supporters',
+  'components/join/join-action-block',
+  'components/hero/hero';
+
 
 
 body {

@@ -6,11 +6,15 @@
 
 // Trigger Button
 .navigation-trigger-wrapper {
-  @include position(fixed, 22px, 27px);
+  @include position(fixed, 0, 0);
+  @include size(234px, 136px);
+  background-image: url('../../assets/images/ui/menu-background.svg');
+  background-repeat: no-repeat;
   z-index: 2;
 
   .hamburger {
     @include size(40px);
+    @include position(relative, 22px, 28px);
     background: none;
 
     span {

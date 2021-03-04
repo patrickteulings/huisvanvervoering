@@ -1,0 +1,16 @@
+
+.supporters {
+  background: color('white');
+
+  &.section {
+    margin-top: 0;
+  }
+  .section__inner {
+    display: flex;
+  }
+  .supporter {
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+}

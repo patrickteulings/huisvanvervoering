@@ -640,3 +640,159 @@ function huisvanvervoering_add_ie_class() {
 	<?php
 }
 add_action( 'wp_footer', 'huisvanvervoering_add_ie_class' );
+
+/*
+* Creating a function to create our CPT
+*/
+
+function custom_post_type_supporters() {
+
+  // Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => _x( 'Supporters', 'Post Type General Name', 'huisvanvervoering' ),
+    'singular_name'       => _x( 'Supporter', 'Post Type Singular Name', 'huisvanvervoering' ),
+    'menu_name'           => __( 'Supporters', 'huisvanvervoering' ),
+    'parent_item_colon'   => __( 'Parent Movie', 'huisvanvervoering' ),
+    'all_items'           => __( 'All Supporters', 'huisvanvervoering' ),
+    'view_item'           => __( 'View Supporter', 'huisvanvervoering' ),
+    'add_new_item'        => __( 'Add New Supporter', 'huisvanvervoering' ),
+    'add_new'             => __( 'Add New', 'huisvanvervoering' ),
+    'edit_item'           => __( 'Edit Supporter', 'huisvanvervoering' ),
+    'update_item'         => __( 'Update Supporter', 'huisvanvervoering' ),
+    'search_items'        => __( 'Search Supporter', 'huisvanvervoering' ),
+    'not_found'           => __( 'Not Found', 'huisvanvervoering' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'huisvanvervoering' ),
+  );
+
+  // Set other options for Custom Post Type
+
+  $args = array(
+    'label'               => __( 'supporters', 'huisvanvervoering' ),
+    'description'         => __( 'Supporters', 'huisvanvervoering' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+    // You can associate this CPT with a taxonomy or custom taxonomy.
+    'taxonomies'          => array( 'genres' ),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+    'show_in_rest' => true,
+  );
+
+      // Registering your Custom Post Type
+  register_post_type( 'supporters', $args );
+
+}
+
+/*
+* Creating a function to create our CPT
+*/
+
+function custom_post_type_team() {
+
+  // Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => _x( 'Team', 'Post Type General Name', 'huisvanvervoering' ),
+    'singular_name'       => _x( 'Member', 'Post Type Singular Name', 'huisvanvervoering' ),
+    'menu_name'           => __( 'Team', 'huisvanvervoering' ),
+    'parent_item_colon'   => __( 'Parent member', 'huisvanvervoering' ),
+    'all_items'           => __( 'All team members', 'huisvanvervoering' ),
+    'view_item'           => __( 'View team members', 'huisvanvervoering' ),
+    'add_new_item'        => __( 'Add New Team member', 'huisvanvervoering' ),
+    'add_new'             => __( 'Add New', 'huisvanvervoering' ),
+    'edit_item'           => __( 'Edit Team Member', 'huisvanvervoering' ),
+    'update_item'         => __( 'Update Team Member', 'huisvanvervoering' ),
+    'search_items'        => __( 'Search Team Members', 'huisvanvervoering' ),
+    'not_found'           => __( 'Not Found', 'huisvanvervoering' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'huisvanvervoering' ),
+  );
+
+  // Set other options for Custom Post Type
+
+  $args = array(
+    'label'               => __( 'team', 'huisvanvervoering' ),
+    'description'         => __( 'team members', 'huisvanvervoering' ),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+    // You can associate this CPT with a taxonomy or custom taxonomy.
+    'taxonomies'          => array( 'core'),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+    'show_in_rest' => true,
+  );
+
+      // Registering your Custom Post Type
+  register_post_type( 'team', $args );
+}
+
+/* Hook into the 'init' action so that the function
+* Containing our post type registration is not
+* unnecessarily executed.
+*/
+
+add_action( 'init', 'custom_post_type_supporters', 0 );
+add_action( 'init', 'custom_post_type_team', 0 );
+
+  // Our custom post type function
+function create_posttype() {
+
+  register_post_type( 'supporters',
+    // CPT Options
+    array(
+      'labels' => array(
+          'name' => __( 'Supporters' ),
+          'singular_name' => __( 'Supporter' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'supporters'),
+      'show_in_rest' => true,
+    )
+  );
+
+  register_post_type( 'team',
+    // CPT Options
+    array(
+      'labels' => array(
+          'name' => __( 'team' ),
+          'singular_name' => __( 'team' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'team'),
+      'show_in_rest' => true,
+    )
+  );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+

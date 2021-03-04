@@ -29,37 +29,37 @@
 
 
 
-  <?php if ( is_front_page() ) : ?>
-    <section class="section homepage-intro">
-      <div class="section__inner">
-  <?php
-    $image = get_field('image');
+  <section class="section team">
+    <div class="section__inner">
 
-    if( $image ):
+      <?php
+        $args = array(
+          'post_type' => 'team',
+          'post_status' => 'publish',
+        );
 
-    // Image variables.
-    $url = $image['url'];
-    $title = $image['title'];
-    $alt = $image['alt'];
-    $caption = $image['caption'];
+        $loop = new WP_Query( $args );
+      ?>
+      <?php  while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-    // Thumbnail size attributes.
-    $size = 'thumbnail';
-    $thumb = $image['sizes'][ $size ];
-    $width = $image['sizes'][ $size . '-width' ];
-    $height = $image['sizes'][ $size . '-height' ];
+        <?php
+            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+        ?>
 
-  ?>
+        <!-- <h2><?php the_title(); ?></h2> -->
+        <div class="team-member">
+          <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>"/>
+          <a href="<?php the_permalink(); ?>"><h2><?php the_title() ?></h2></a>
+          <?php the_content() ?>
+        </div>
+      <?php  endwhile; ?>
 
-    <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
-      <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-    </a>
-    <p><?= get_field('body'); ?></p>
+      <?php  wp_reset_postdata(); ?>
 
-  <?php endif; ?>
-  </div>
+
+    </div>
   </section>
-<?php endif; ?>
 
 
 

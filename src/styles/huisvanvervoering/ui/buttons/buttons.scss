@@ -1,0 +1,41 @@
+.btn-arrow {
+  @include size(70px);
+  @include flex-center('center');
+  display: inline-flex;
+  background: color('secondary');
+  border-radius: 50%;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.54);
+}
+
+.entry-content > .wp-block-group.hvv {
+  background-color: lighten(color('primary'), 30%);
+  max-width: none;
+
+  .wp-block-group__inner-container {
+    padding: 2rem;
+
+    @include mq('tablet', 'min') {
+      max-width: 1024px;
+      padding: 3rem;
+    }
+    @include mq('desktop', 'min') {
+      max-width: 1124px;
+    }
+  }
+
+  .wp-block-quote.is-large, .wp-block-quote.is-style-large {
+    p {
+      font-family: $heading-font-face;
+      font-style: italic;
+      color: color('secondary');
+      font-weight: 300;
+    }
+
+    cite {
+      font-family: $paragraph-font-face;
+      font-weight: 900;
+      @include font-size(12px);
+      font-style: italic;
+    }
+  }
+}

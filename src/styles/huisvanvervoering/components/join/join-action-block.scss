@@ -1,0 +1,17 @@
+.join {
+  background-image: url('./../../assets/images/join/join-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+
+  .section__inner {
+    @include innerspace(8rem, 2rem);
+  }
+
+  .join-container {
+    border-radius: 5px;
+    background: color('white');
+    @include innerspace(6rem, 2rem);
+    text-align: center;
+  }
+}

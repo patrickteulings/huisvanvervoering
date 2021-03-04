@@ -1,0 +1,32 @@
+.footer {
+  background-color: color('secondary-light');
+}
+
+.footer-inner {
+  max-width: $global-max-width--desktop;
+  @include innerspace(96px, 2rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.footer__column {
+  .column__title {
+    font-family: $heading-font-face;
+    @include font-size(24px);
+    color: color('secondary');
+    margin-bottom: 4rem;
+  }
+
+  .menu-item {
+    line-height: 30px;
+
+    a{
+    font-family: $alt-font-face;
+    text-decoration: none;
+    color: #806A83;
+    font-weight: 900;
+    @include font-size(18px);
+    }
+  }
+}

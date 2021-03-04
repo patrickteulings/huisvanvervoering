@@ -7,6 +7,10 @@
  * @since Huis Van Vervoering 1.0
  */
 
+$blog_info    = get_bloginfo( 'name' );
+$description  = get_bloginfo( 'description', 'display' );
+
+
 $wrapper_classes  = 'site-header';
 $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
 $wrapper_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) ? ' has-title-and-tagline' : '';
@@ -20,8 +24,15 @@ $post_thumbnail_url = wp_get_attachment_image_url( $post_thumbnail_id, $size );
 ?>
 
 <div class="hero" role="banner">
-<div style="border: 1px solid red"><img src="<?= $post_thumbnail_url ?>"></div>
-<?php huis_van_vervoering_post_thumbnail(); ?>
-  <h1><?php the_title('<span>hoi</span>','<span>doei</span>'); ?></h1>
+  <div class="hero__background" style="background-image: url('<?= $post_thumbnail_url ?>')"></div>
+  <div class="hero__content-wrapper">
+    <div class="hero__content-inner">
+      <h1 class="hero__title"><?= $blog_info ?></h1>
+      <div class="hero__subtitle"><?= $description ?></div>
+    </div>
+  </div>
+  <div class="hero__actions-wrapper">
+    <div class="hero__actions-inner">IK DOE MEE</div>
+  </div>
 </div>
 
