@@ -559,6 +559,9 @@ require get_template_directory() . '/inc/block-patterns.php';
 // Block Styles.
 require get_template_directory() . '/inc/block-styles.php';
 
+// Block Rendering Overwrites.
+require get_template_directory() . '/inc/block-overrides.php';
+
 // Dark Mode.
 require_once get_template_directory() . '/classes/class-huis-van-vervoering-dark-mode.php';
 new Huis_Van_Vervoering_Dark_Mode();
@@ -795,4 +798,7 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
+
+
+
 

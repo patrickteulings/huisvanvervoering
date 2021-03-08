@@ -3,13 +3,14 @@
 ---------------------------------------- */
 
 $primary-colors: (
-  'base': #5A5A5A,
-  'primary': #90BFBA,
-  'secondary': #9A00B4,
-  'secondary-light': #F6DEF9,
-  'warning': rgb(255, 255, 0),
-  'white': #ffffff,
-  'black': #111111
+  "base": #5a5a5a,
+  "primary": #90bfba,
+  "secondary": #9a00b4,
+  "secondary-light": #f6def9,
+  "warning": rgb(255, 255, 0),
+  "white": #ffffff,
+  "black": #111111,
+  "grey": #5a5a5a,
 );
 
 /* ----------------------------------------
@@ -23,20 +24,20 @@ $primary-colors: (
 ---------------------------------------- */
 
 $color-combinations: (
-  'base': (
-    'background': map-get($primary-colors, 'primary'),
-    'color': map-get($primary-colors, 'white')
+  "base": (
+    "background": map-get($primary-colors, "primary"),
+    "color": map-get($primary-colors, "white"),
   ),
-  'primary': (
-    'background': map-get($primary-colors, 'primary'),
-    'color': map-get($primary-colors, 'white'),
+  "primary": (
+    "background": map-get($primary-colors, "primary"),
+    "color": map-get($primary-colors, "white"),
   ),
-  'secondary': (
-    'background': map-get($primary-colors, 'secondary'),
-    'color': map-get($primary-colors, 'white'),
+  "secondary": (
+    "background": map-get($primary-colors, "secondary"),
+    "color": map-get($primary-colors, "white"),
   ),
-  'warning': (
-    'background': map-get($primary-colors, 'warning'),
-    'color': map-get($primary-colors, 'white'),
-  )
+  "warning": (
+    "background": map-get($primary-colors, "warning"),
+    "color": map-get($primary-colors, "white"),
+  ),
 );

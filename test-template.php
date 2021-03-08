@@ -3,14 +3,13 @@
 /**
  * The template for displaying all single posts
  *
- * Template Name: Team overview page
+ * Template Name: Test
  *
  * @package WordPress
  * @subpackage Huis_Van_Vervoering
  * @since Huis Van Vervoering 1.0
  */
 
-get_header();
 
 ?>
 hallooooo

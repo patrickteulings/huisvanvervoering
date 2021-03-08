@@ -1,0 +1,8 @@
+@mixin diamond($size: 40px) {
+  @include size($size);
+  content: "";
+  display: block;
+  background-color: color("secondary");
+  transform-origin: center;
+  transform: rotate(45deg);
+}

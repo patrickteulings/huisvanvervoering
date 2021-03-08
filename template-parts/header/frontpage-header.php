@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Displays the site header.
  *
@@ -7,18 +8,18 @@
  * @since Huis Van Vervoering 1.0
  */
 
-$blog_info    = get_bloginfo( 'name' );
-$description  = get_bloginfo( 'description', 'display' );
+$blog_info    = get_bloginfo('name');
+$description  = get_bloginfo('description', 'display');
 
 
 $wrapper_classes  = 'site-header';
 $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
-$wrapper_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) ? ' has-title-and-tagline' : '';
-$wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
+$wrapper_classes .= true === get_theme_mod('display_title_and_tagline', true) ? ' has-title-and-tagline' : '';
+$wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
 
 $size = 'post-thumbnail';
-$post_thumbnail_id = get_post_thumbnail_id( $post );
-$post_thumbnail_url = wp_get_attachment_image_url( $post_thumbnail_id, $size );
+$post_thumbnail_id = get_post_thumbnail_id($post);
+$post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
 
 /** @todo get all the right thumbnail sizes */
 ?>
@@ -32,7 +33,10 @@ $post_thumbnail_url = wp_get_attachment_image_url( $post_thumbnail_id, $size );
     </div>
   </div>
   <div class="hero__actions-wrapper">
-    <div class="hero__actions-inner">IK DOE MEE</div>
+    <div class="hero__actions-inner">
+      <div class="hero__actions-cta">
+        <a href="#">IK<br>DOE MEE<a>
+      </div>
+    </div>
   </div>
 </div>
-

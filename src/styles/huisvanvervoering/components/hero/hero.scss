@@ -10,10 +10,10 @@
   &__content-wrapper {
     @include position(relative);
     @include size(100%, 100%);
-    @include flex-center('vertical');
+    @include flex-center("vertical");
     max-width: $global-max-width--desktop;
     margin: 0 auto;
-    color: color('white');
+    color: color("white");
     z-index: 2;
   }
 
@@ -22,17 +22,54 @@
   }
 
   &__actions-wrapper {
-    //max-width: 1400px;
     width: 100%;
-    //margin: 0 auto;
-    @include position(absolute, auto, auto, 0px, 0px);
+    @include position(absolute, auto, auto, 0px, 40px);
   }
 
   &__actions-inner {
     max-width: $global-max-width--desktop;
-    background: rgba(255,255,255,0.5);
     text-align: right;
     margin: 0 auto;
     height: 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__actions-cta {
+    @include position;
+    @include flex-center("center");
+    @include size(150px);
+    &:before,
+    &:after {
+      @include position(absolute, 0, 0);
+      @include diamond();
+      @include size(150px);
+    }
+
+    a {
+      @include flex-center("center");
+      @include size(120px);
+      @include position(absolute, 15px, 15px);
+      @include font-size(24px);
+      font-family: $heading-font-face;
+      color: color("secondary");
+      text-align: center;
+      line-height: 180%;
+
+      z-index: 3;
+      text-decoration: none;
+    }
+
+    &:before {
+      background: #fff;
+      box-shadow: 0px 4px 16px 23px rgba(0, 0, 0, 0.15);
+    }
+
+    &:after {
+      left: 10px;
+      top: 10px;
+      @include size(calc(150px - 20px));
+      background: color("secondary-light");
+    }
   }
 }

@@ -1,5 +1,5 @@
 .join {
-  background-image: url('./../../assets/images/join/join-background.jpg');
+  background-image: url("./../../assets/images/join/join-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 0;
@@ -10,8 +10,26 @@
 
   .join-container {
     border-radius: 5px;
-    background: color('white');
+    background: color("white");
     @include innerspace(6rem, 2rem);
     text-align: center;
+    @include card-shadow(3);
+  }
+
+  h4 {
+    font-family: "Arial Black";
+    color: color("primary");
+    @include font-size(56px);
+  }
+
+  p {
+    @include font-size(16px);
+    @include outerspace(4rem, auto);
+    margin-bottom: 3rem;
+    line-height: 28px;
+
+    @include mq("tablet", "min") {
+      width: 60%;
+    }
   }
 }

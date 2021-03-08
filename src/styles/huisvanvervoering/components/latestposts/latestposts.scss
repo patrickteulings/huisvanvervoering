@@ -1,21 +1,17 @@
-.btn-arrow {
-  @include size(70px);
-  @include flex-center("center");
-  display: inline-flex;
-  background: color("secondary");
-  border-radius: 50%;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.54);
-}
-
 .wp-block-group.hvv.latest-posts {
   background: white;
+  max-width: none !important;
 
   .wp-block-latest-posts__list.wp-block-latest-posts {
+    @include position;
+    z-index: 2;
     // width: 300px;
-    overflow: scroll;
-    height: 380px;
+    cursor: grab;
+    overflow: auto;
+    height: auto;
     max-width: none !important;
     display: flex;
+    padding-bottom: 10px;
 
     &::-webkit-scrollbar {
       width: 0 !important;
@@ -36,14 +32,27 @@
   .wp-block-latest-posts {
     li {
       margin-top: 0;
+      margin-bottom: 0;
+      background: color("white");
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @include innerspace(1rem);
 
+      // Title / header
+      & > a {
+        margin: 2rem 1rem 0 1rem;
+        padding: 0;
+      }
+
+      // Image
       .wp-block-latest-posts__featured-image {
         height: 200px;
         @include size(240px, 176px);
         margin-bottom: 0;
+
         a {
           width: 100%;
           @include size(100%, 176px);
+          padding: 0;
 
           img {
             object-fit: cover;
@@ -51,14 +60,24 @@
           }
         }
       }
+
+      .wp-block-latest-posts__post-author {
+        @include innerspace(0rem, 1rem);
+      }
+
+      // Time
+      time {
+        @include font-size(10px);
+        @include innerspace(0rem, 1rem);
+      }
     }
 
     &__post-excerpt {
       width: 240px;
       font-family: $paragraph-font-face;
-      @include font-size(16px);
-      line-height: 140%;
-      @include truncate-multiline(3, 140%, 16px);
+      @include truncate-multiline(3, 160%, 16px);
+      @include innerspace(0, 1rem);
+      // height: 200px;
 
       a:last-child() {
         display: none;
@@ -66,6 +85,7 @@
     }
     // Title
     a {
+      @include innerspace(0, 1rem);
       @include font-size(18px);
       font-weight: 600;
       font-family: $heading-font-face;
@@ -73,6 +93,15 @@
       text-decoration: none;
     }
   }
-}
+  .wp-block-group__inner-container {
+    @include position;
 
-// wouter - 0624702720
+    .block-title {
+      @include position;
+      z-index: 3;
+    }
+  }
+  .diamond {
+    @include position(absolute, auto, -60px);
+  }
+}

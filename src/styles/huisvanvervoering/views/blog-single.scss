@@ -1,0 +1,33 @@
+.entry-content {
+  p {
+    &.hvv.intro {
+    }
+  }
+}
+
+.entry-content {
+  .wp-block-group.hvv.intro {
+    max-width: none;
+    background-color: color("white");
+
+    p {
+      font-family: $heading-font-face;
+      @include font-size(24px);
+      line-height: 38px;
+      color: color("grey");
+      max-width: 450px !important;
+      margin-left: 0 !important;
+    }
+
+    .wp-block-group__inner-container {
+      @include containerWidth();
+    }
+  }
+}
+
+.entry-content p {
+  font-family: $paragraph-font-face;
+  @include font-size(18px);
+  line-height: 28px;
+  color: color("grey");
+}

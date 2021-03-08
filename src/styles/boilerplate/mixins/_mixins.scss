@@ -14,8 +14,7 @@ $basefontsize: 18px;
   @each $key, $value in $selected {
     #{$key}: $value;
   }
-};
-
+}
 
 /* ----------------------------------------
   Add a prediefined set of font values
@@ -26,14 +25,13 @@ $basefontsize: 18px;
   Usage: @include fontcombi(combiname)
 ---------------------------------------- */
 
-@mixin fontcombi($type:base) {
+@mixin fontcombi($type: base) {
   $selected: map-get($fontcombinations, $type);
 
   @each $key, $value in $selected {
     #{$key}: $value;
   }
-};
-
+}
 
 /* ----------------------------------------
   Adds fontsmoothing to your project
@@ -49,7 +47,6 @@ $basefontsize: 18px;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
 }
 
-
 /* ----------------------------------------
   Change all header styles from $start to
   $end at one go
@@ -61,14 +58,13 @@ $basefontsize: 18px;
   }
 ---------------------------------------- */
 
-@mixin heading($start:1, $end:6) {
+@mixin heading($start: 1, $end: 6) {
   @for $i from $start through $end {
     h#{$i} {
       @content;
     }
   }
-};
-
+}
 
 /* ----------------------------------------
   Add a prediefined font size
@@ -78,14 +74,13 @@ $basefontsize: 18px;
   Usage: @include font(type)
 ---------------------------------------- */
 
-@mixin font($type:base) {
+@mixin font($type: base) {
   $selected: map-get($text, $type);
 
   @each $key, $value in $selected {
     #{$key}: $value;
   }
-};
-
+}
 
 /* ----------------------------------------
   Font size, recalculates your font-pixel
@@ -97,7 +92,6 @@ $basefontsize: 18px;
   font-size: $px;
 }
 
-
 /* ----------------------------------------
   Line height, recalculates your font-pixel
   sizes to EM
@@ -107,7 +101,6 @@ $basefontsize: 18px;
   line-height: $px;
   line-height: #{$px / $basefontsize}em;
 }
-
 
 /* ----------------------------------------
   Adds an ellipis to overflowing (single
@@ -120,17 +113,22 @@ $basefontsize: 18px;
   text-overflow: ellipsis;
 }
 
-
 /* ----------------------------------------
   Adds an ellipis to overflowing (single
   line) text.
 ---------------------------------------- */
 
-@mixin truncate-multiline($lines:3, $line-height: 1.4, $font-size:$basefontsize) {
+@mixin truncate-multiline(
+  $lines: 3,
+  $line-height: 1.4,
+  $font-size: $basefontsize
+) {
   display: block; /* Fallback for non-webkit */
   display: -webkit-box;
   max-width: 400px;
-  height: calc($font-size * $line-height * $lines); /* Fallback for non-webkit */
+  // height: calc(
+  //   $font-size * $line-height * $lines
+  // ); /* Fallback for non-webkit */
   margin: 0 auto;
   font-size: $font-size;
   line-height: $line-height;
@@ -139,7 +137,6 @@ $basefontsize: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 /* ----------------------------------------
   Adds a padding to your element. You have
@@ -150,15 +147,13 @@ $basefontsize: 18px;
   Usage: @include innerspace(10rem, 5rem)
 ---------------------------------------- */
 
-@mixin innerspace($horizontal:0, $vertical:0) {
-  @if $vertical != 0 {
+@mixin innerspace($horizontal: 0, $vertical: -1) {
+  @if $vertical != -1 and vertical != 0rem {
     padding: $horizontal $vertical;
-  }
-  @else {
+  } @else {
     padding: $horizontal;
   }
 }
-
 
 /* ----------------------------------------
   Defines the outer margins of an element
@@ -166,15 +161,13 @@ $basefontsize: 18px;
   parameters
 ---------------------------------------- */
 
-@mixin outerspace($top:0, $right:0) {
+@mixin outerspace($top: 0, $right: 0) {
   @if $right != 0 {
     margin: $top $right;
-  }
-  @else {
+  } @else {
     margin: $top;
   }
 }
-
 
 /* ----------------------------------------
   Simply defines width and/or height
@@ -184,12 +177,11 @@ $basefontsize: 18px;
   Usage: @include size(20px);
 ---------------------------------------- */
 
-@mixin size($width:auto, $height:auto) {
+@mixin size($width: auto, $height: auto) {
   @if $height != auto {
     width: $width;
     height: $height;
-  }
-  @else {
+  } @else {
     width: $width;
     height: $width;
   }
@@ -202,14 +194,19 @@ $basefontsize: 18px;
 
 ---------------------------------------- */
 
-@mixin position($type: relative, $left: 0, $top: 0, $right: auto, $bottom: auto) {
+@mixin position(
+  $type: relative,
+  $left: 0,
+  $top: 0,
+  $right: auto,
+  $bottom: auto
+) {
   position: $type;
   left: $left;
   top: $top;
   right: $right;
   bottom: $bottom;
 }
-
 
 /* ----------------------------------------
   Prerenders sections based on global

@@ -110,3 +110,8 @@ if ( function_exists( 'register_block_style' ) ) {
 	}
 	add_action( 'init', 'huis_van_vervoering_register_block_styles' );
 }
+
+
+
+
+

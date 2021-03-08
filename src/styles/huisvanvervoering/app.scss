@@ -1,18 +1,20 @@
+// Mixins - Huisvanvervoering
+@import "mixins/diamond", "mixins/layout";
 
-@import
-  'ui/buttons/buttons';
+@import "ui/buttons/buttons", "ui/typography/typography";
 
-@import
-  'components/navigation/navigation',
-  'components/footer/footer',
-  'components/supporters/supporters',
-  'components/join/join-action-block',
-  'components/hero/hero';
+@import "components/navigation/navigation", "components/footer/footer",
+  "components/supporters/supporters", "components/join/join-action-block",
+  "components/latestposts/latestposts", "components/quote/quote",
+  "components/hero/hero", "components/cta/homepage-cta",
+  "components/team/team-member";
 
-
+@import "views/blog-single", "views/team", "views/homepage";
 
 body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: color("white");
+  color: color("grey");
 }

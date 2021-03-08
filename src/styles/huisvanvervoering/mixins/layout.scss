@@ -1,0 +1,11 @@
+@mixin containerWidth() {
+  @include mq("phone", "min") {
+    width: 100%;
+  }
+  @include mq("tablet", "min") {
+    width: 100%;
+  }
+  @include mq("desktop", "min") {
+    width: 1024px;
+  }
+}
