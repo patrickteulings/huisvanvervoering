@@ -13,7 +13,7 @@
 get_header();
 
 ?>
-hallooooo
+
 <?php
 /* Start the Loop */
 while (have_posts()) :

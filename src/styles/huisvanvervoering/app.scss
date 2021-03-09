@@ -9,7 +9,8 @@
   "components/hero/hero", "components/cta/homepage-cta",
   "components/team/team-member";
 
-@import "views/blog-single", "views/team", "views/homepage";
+@import "views/blog-single", "views/team", "views/homepage",
+  "views/entry-header";
 
 body {
   scroll-behavior: smooth;

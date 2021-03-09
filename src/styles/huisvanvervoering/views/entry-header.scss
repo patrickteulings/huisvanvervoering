@@ -1,0 +1,10 @@
+.entry-header {
+  &.hvv {
+    @include flex-center("center");
+  }
+
+  &__inner {
+    @include containerWidth();
+    @include innerspace(0, 2rem);
+  }
+}

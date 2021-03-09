@@ -14,8 +14,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <?php if (!is_front_page()) : ?>
-    <header class="entry-header alignwide die">
-      <?php get_template_part('template-parts/header/entry-header'); ?>
+    <header class="entry-header hvv">
+      <div class="entry-header__inner">
+        <?php get_template_part('template-parts/header/entry-header'); ?>
+      </div>
       <?php huis_van_vervoering_post_thumbnail(); ?>
     </header>
   <?php elseif (has_post_thumbnail()) : ?>

@@ -1506,6 +1506,23 @@ p {
       min-height: 300px;
       min-width: 300px; } }
 
+.entry-header.hvv {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.entry-header__inner {
+  padding: 0 2rem; }
+  @media (min-width: 0px) {
+    .entry-header__inner {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .entry-header__inner {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .entry-header__inner {
+      width: 1024px; } }
+
 body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
