@@ -1,23 +1,29 @@
 .hero {
   @include position();
   @include size(100vw, 90vh);
+
   &__background {
     @include position(absolute);
     @include size(100%, 100%);
     background-size: cover;
   }
 
+  &__background--pillar {
+    background-color: color("secondary-light");
+  }
+
   &__content-wrapper {
     @include position(relative);
     @include size(100%, 100%);
     @include flex-center("vertical");
-    max-width: $global-max-width--desktop;
+    @include containerWidth();
     margin: 0 auto;
     color: color("white");
     z-index: 2;
   }
 
   &__content-inner {
+    @include innerspace(0, 2rem);
     max-width: $global-max-width--desktop;
   }
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for displaying posts
+ * Template part for displaying page content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,15 +13,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  speciale content pagina
 
-  <header class="entry-header hvv alignfull">
-    <div class="entry-header__inner">
-      <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-      <?php huis_van_vervoering_post_thumbnail(); ?>
-    </div>
+  <header class="entry-header enty-header--pillar-page alignwide">
+    <h1><?php the_title(); ?></h1>
+    <?php huis_van_vervoering_post_thumbnail(); ?>
   </header>
-
   <div class="entry-content">
+
     <?php
     the_content();
 
@@ -36,12 +35,19 @@
     ?>
   </div><!-- .entry-content -->
 
-  <footer class="entry-footer default-max-width">
-    <?php huis_van_vervoering_entry_meta_footer(); ?>
-  </footer><!-- .entry-footer -->
-
-  <?php if (!is_singular('attachment')) : ?>
-    <?php get_template_part('template-parts/post/author-bio'); ?>
+  <?php if (get_edit_post_link()) : ?>
+    <footer class="eentry-footer default-max-width">
+      <?php
+      edit_post_link(
+        sprintf(
+          /* translators: %s: Name of current post. Only visible to screen readers. */
+          esc_html__('Edit %s', 'huisvanvervoering'),
+          '<span class="screen-reader-text">' . get_the_title() . '</span>'
+        ),
+        '<span class="edit-link">',
+        '</span>'
+      );
+      ?>
+    </footer><!-- .entry-footer -->
   <?php endif; ?>
-
 </article><!-- #post-<?php the_ID(); ?> -->

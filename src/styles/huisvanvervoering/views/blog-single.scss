@@ -21,6 +21,7 @@
 
     .wp-block-group__inner-container {
       @include containerWidth();
+      padding: 0 2rem;
     }
   }
 }
@@ -31,3 +32,5 @@
   line-height: 28px;
   color: color("grey");
 }
+
+// *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),

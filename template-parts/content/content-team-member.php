@@ -11,10 +11,9 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-  <header class="entry-header hvv alignfull">
+  <header class="entry-header hvv content-team alignfull">
     <div class="entry-header__inner">
       <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
       <?php huis_van_vervoering_post_thumbnail(); ?>
@@ -36,9 +35,6 @@
     ?>
   </div><!-- .entry-content -->
 
-  <footer class="entry-footer default-max-width">
-    <?php huis_van_vervoering_entry_meta_footer(); ?>
-  </footer><!-- .entry-footer -->
 
   <?php if (!is_singular('attachment')) : ?>
     <?php get_template_part('template-parts/post/author-bio'); ?>
