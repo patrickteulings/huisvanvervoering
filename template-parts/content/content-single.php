@@ -16,6 +16,7 @@
 
   <header class="entry-header hvv alignfull">
     <div class="entry-header__inner">
+      <div class="blog-meta-title">Ons blog</div>
       <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
       <?php huis_van_vervoering_post_thumbnail(); ?>
     </div>
