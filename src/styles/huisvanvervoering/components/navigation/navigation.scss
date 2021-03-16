@@ -46,6 +46,7 @@
   @include flex-center("center");
   @include position(fixed, 0, 0);
   @include size(100vw, 100vh);
+  flex-direction: column;
   color: color("white");
   background: color("secondary");
   display: none;
@@ -58,6 +59,8 @@
   .menu-item {
     a {
       color: color("white");
+      font-family: $heading-font-face;
+      font-weight: 900;
     }
   }
 }
@@ -66,12 +69,34 @@
   margin-left: -30%;
 
   & > li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     @include font-size(24px);
     font-weight: 100;
 
     li {
       @include font-size(18px);
+    }
+  }
+}
+
+/* ----------------------------------------
+  SUBMENU
+---------------------------------------- */
+
+.menu-wrapper {
+  & > li {
+    li.menu-item {
+      @include font-size(18px);
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+
+      &:first-child {
+        margin-top: 1rem;
+      }
+
+      a {
+        font-weight: 400;
+      }
     }
   }
 }

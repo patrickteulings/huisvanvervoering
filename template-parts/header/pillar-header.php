@@ -18,12 +18,14 @@ $post_thumbnail_id = get_post_thumbnail_id($post);
 $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
 ?>
 
-<div class="hero" role="banner">
+<div class="hero hero--pillar" role="banner">
+  <div class="hero__background hero__background--pillar-z"></div>
+  <div class="hero__background hero__background--pillar-corner"></div>
   <div class="hero__background hero__background--pillar"></div>
-  <div class="hero__content-wrapper">
-    <div class="hero__content-inner">
+  <div class="hero__content-wrapper ">
+    <div class="hero__content-inner rellax" data-rellax-speed="-3">
       <h1 class="hero__title"><?= the_title() ?></h1>
-      <div class="hero__subtitle"><?= $description ?></div>
+      <div class="hero__subtitle"><?= get_field('subtitle') ?></div>
     </div>
   </div>
 </div>

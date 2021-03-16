@@ -9,3 +9,35 @@
     width: 1024px;
   }
 }
+
+.wp-block-group.alignfull.hvv {
+  .wp-block-image.size-large {
+    &.hvv {
+      max-width: 750px !important;
+    }
+  }
+}
+
+.wp-block-group p {
+  a {
+    @include transition;
+    text-underline-offset: 1px;
+    color: color("secondary");
+
+    &:hover {
+      text-decoration-style: solid;
+      text-decoration-skip-ink: inherit;
+      color: color("primary");
+    }
+  }
+}
+
+/* ----------------------------------------
+  Default image in post
+---------------------------------------- */
+
+.post-thumbnail {
+  .wp-post-image {
+    margin-top: 0;
+  }
+}

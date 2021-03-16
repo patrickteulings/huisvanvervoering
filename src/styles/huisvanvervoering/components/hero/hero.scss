@@ -2,6 +2,10 @@
   @include position();
   @include size(100vw, 90vh);
 
+  &--pillar {
+    max-height: 640px;
+  }
+
   &__background {
     @include position(absolute);
     @include size(100%, 100%);
@@ -9,7 +13,34 @@
   }
 
   &__background--pillar {
-    background-color: color("secondary-light");
+    background-color: #faf2fb;
+    // background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  &__background--pillar-z {
+    background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    z-index: 3;
+  }
+  &__background--pillar-corner {
+    background-image: url("./../../assets/images/ui/contentpage-header--background-smalll.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    z-index: 3;
+  }
+
+  &__title {
+    font-weight: 900;
+  }
+
+  &__subtitle {
+    color: color("grey");
+    font-family: $paragraph-font-face;
+    padding-left: 32px;
+    // font-style: italic;
   }
 
   &__content-wrapper {
@@ -19,7 +50,7 @@
     @include containerWidth();
     margin: 0 auto;
     color: color("white");
-    z-index: 2;
+    z-index: 4;
   }
 
   &__content-inner {
@@ -45,6 +76,7 @@
     @include position;
     @include flex-center("center");
     @include size(150px);
+
     &:before,
     &:after {
       @include position(absolute, 0, 0);
@@ -57,10 +89,11 @@
       @include size(120px);
       @include position(absolute, 15px, 15px);
       @include font-size(24px);
-      font-family: $heading-font-face;
+      font-family: "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 300;
       color: color("secondary");
       text-align: center;
-      line-height: 180%;
+      line-height: 140%;
 
       z-index: 3;
       text-decoration: none;

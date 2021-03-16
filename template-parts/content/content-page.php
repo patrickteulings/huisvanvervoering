@@ -53,7 +53,9 @@
           <a href="<?php echo esc_url($url); ?>" title="<?php echo esc_attr($title); ?>">
             <figure class="homepage-intro__image-wrapper">
               <img class="homepage-intro__image" src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-              <div class="diamond-bg" role="presentation"></div>
+              <span class="rellax" data-rellax-speed="1" style="display: block; padding-top: 70px">
+                <div class="diamond-bg" role="presentation"></div>
+              </span>
             </figure>
           </a>
           <p><?= get_field('body'); ?></p>

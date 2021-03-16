@@ -35,7 +35,7 @@ $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
   <div class="hero__actions-wrapper">
     <div class="hero__actions-inner">
       <div class="hero__actions-cta">
-        <a href="#">IK<br>DOE MEE<a>
+        <a href="#">Ik<br>doe mee!<a>
       </div>
     </div>
   </div>

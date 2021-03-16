@@ -1,4 +1,5 @@
 import scss from "rollup-plugin-scss";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 export default {
   input: "./src/js/main.js",
@@ -10,8 +11,9 @@ export default {
     scss({
       output: "./build/css/style.css",
       failOnError: true,
-      watch: './src/styles',
+      watch: "./src/styles",
     }),
+    nodeResolve(),
   ],
-  watch: true
+  watch: true,
 };

@@ -1,5 +1,49 @@
 .page-template-page-pillar {
   .entry-header {
     border: none;
+
+    h1 {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+  }
+
+  h1.hero__title {
+    color: color("secondary");
+    font-weight: 900;
+  }
+
+  .entry-content {
+    .wp-block-group.alignfull {
+      &.hvv.intro {
+        p {
+          max-width: 650px !important;
+          margin-left: auto !important;
+        }
+      }
+
+      .wp-block-group__inner-container {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          max-width: 650px !important;
+          margin-left: auto !important;
+        }
+      }
+    }
+  }
+}
+
+.entry-header--pillar-page {
+  padding-bottom: 0 !important;
+  padding-top: 2rem;
+
+  .header__inner {
+    @include containerWidth;
+    padding: 2rem 2rem 0;
+    margin: 0 auto;
   }
 }

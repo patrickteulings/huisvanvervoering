@@ -13,11 +13,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  speciale content pagina
 
-  <header class="entry-header enty-header--pillar-page alignwide">
-    <h1><?php the_title(); ?></h1>
-    <?php huis_van_vervoering_post_thumbnail(); ?>
+  <header class="entry-header entry-header--pillar-page alignwide">
+    <div class="header__inner">
+      <h1><?php the_title(); ?></h1>
+      <?php huis_van_vervoering_post_thumbnail(); ?>
+    </div>
   </header>
   <div class="entry-content">
 

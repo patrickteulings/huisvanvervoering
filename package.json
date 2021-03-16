@@ -13,6 +13,7 @@
 	},
 	"homepage": "https://wordpress.org/themes/huisvanvervoering/",
 	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^11.2.0",
 		"@wordpress/browserslist-config": "^2.2.2",
 		"@wordpress/eslint-plugin": "^7.3.0",
 		"autoprefixer": "^9.5.1",
@@ -64,5 +65,8 @@
 		"watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
 		"lint:scss": "stylelint **/*.scss",
 		"lint-fix:scss": "stylelint **/*.scss --fix"
+	},
+	"dependencies": {
+		"rellax": "^1.12.1"
 	}
 }
