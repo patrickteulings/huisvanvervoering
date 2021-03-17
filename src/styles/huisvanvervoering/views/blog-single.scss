@@ -15,7 +15,7 @@
       @include font-size(24px);
       line-height: 38px;
       color: color("grey");
-      max-width: 450px !important;
+      max-width: 650px !important;
       margin-left: 0 !important;
     }
 
@@ -34,3 +34,13 @@
 }
 
 // *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+
+.single-post {
+  .wp-block-group {
+    .wp-block-group__inner-container {
+      p {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

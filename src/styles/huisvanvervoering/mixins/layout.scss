@@ -41,3 +41,24 @@
     margin-top: 0;
   }
 }
+
+.post-thumbnail {
+  @include position(absolute, auto, -140px, -100px, auto);
+  width: 347px !important;
+  height: 347px !important;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+  .wp-post-image {
+    max-width: none;
+  }
+
+  &:before {
+    content: "";
+    width: 64%;
+    height: 64%;
+    border: 1px solid #fff;
+    @include position(absolute, 18%, 18%);
+    transform-origin: center center;
+    transform: rotate(45deg);
+  }
+}
