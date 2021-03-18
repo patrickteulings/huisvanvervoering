@@ -41,6 +41,22 @@
       p {
         margin-left: 0 !important;
       }
+
+      figure {
+        margin-left: 0 !important;
+
+        img {
+          max-width: 120%;
+          margin-left: -10%;
+        }
+      }
     }
   }
+}
+
+.blog-meta-title {
+  font-style: italic;
+  font-family: $heading-font-face;
+  margin-bottom: 2rem;
+  opacity: 0.8;
 }

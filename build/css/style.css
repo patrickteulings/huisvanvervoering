@@ -1500,6 +1500,18 @@ section.join {
 .single-post .wp-block-group .wp-block-group__inner-container p {
   margin-left: 0 !important; }
 
+.single-post .wp-block-group .wp-block-group__inner-container figure {
+  margin-left: 0 !important; }
+  .single-post .wp-block-group .wp-block-group__inner-container figure img {
+    max-width: 120%;
+    margin-left: -10%; }
+
+.blog-meta-title {
+  font-style: italic;
+  font-family: "Merriweather", serif;
+  margin-bottom: 2rem;
+  opacity: 0.8; }
+
 .entry-header h1 {
   color: #90bfba; }
 
