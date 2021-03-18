@@ -19,6 +19,16 @@
       <div class="blog-meta-title">Ons blog</div>
       <?php the_title('<h1 class="entry-title rellax">', '</h1>'); ?>
       <?php huis_van_vervoering_post_thumbnail(); ?>
+      <div class="posted">
+        <?php
+        huis_van_vervoering_posted_on();
+        ?>
+        &nbsp;
+        <?php // Posted by.
+        huis_van_vervoering_posted_by();
+        ?>
+      </div>
+
     </div>
   </header>
 
@@ -36,10 +46,16 @@
     );
     ?>
   </div><!-- .entry-content -->
+  <!-- SHARE -->
+  <?php huis_van_vervoering_share(); ?>
+  <!-- / SHARE -->
 
-  <footer class="entry-footer default-max-width">
-    <?php huis_van_vervoering_entry_meta_footer(); ?>
-  </footer><!-- .entry-footer -->
+  <!-- <footer class="entry-footer default-max-width"> -->
+  <?php
+  /** huis_van_vervoering_entry_meta_footer(); */
+  ?>
+  <!-- </footer> -->
+
 
   <?php if (!is_singular('attachment')) : ?>
     <?php get_template_part('template-parts/post/author-bio'); ?>

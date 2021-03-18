@@ -33,8 +33,6 @@
   color: color("grey");
 }
 
-// *[class*=inner-container] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
-
 .single-post {
   .wp-block-group {
     .wp-block-group__inner-container {
@@ -57,6 +55,16 @@
 .blog-meta-title {
   font-style: italic;
   font-family: $heading-font-face;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+  // margin-bottom: 2rem;
+  transform: translateY(-40px);
+  opacity: 0;
+  @include font-size(12px);
+}
+
+.posted {
+  transform: translateY(6px);
+  font-family: $heading-font-face;
+  font-style: italic;
+  opacity: 0.6;
+  @include font-size(12px);
 }
