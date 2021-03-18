@@ -12,13 +12,17 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+  <!-- DIAMOND IN BACKGROUND -->
+  <div class="main-content-diamond-parallax rellax" data-rellax-speed="4"><img width="200" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+  <div class="main-content-diamond-parallax light rellax" data-rellax-speed="-6" style="right: auto; left: -40px; top: 700px;"><img width="140" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
   <?php if (!is_front_page()) : ?>
     <header class="entry-header hvv">
       <div class="entry-header__inner">
         <?php get_template_part('template-parts/header/entry-header'); ?>
+        <div class="post-thumbnail-diamond post-thumbnail-diamond--team-overview rellax"><img width="180" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+        <div class="post-thumbnail-diamond-shadow"></div>
+        <?php huis_van_vervoering_post_thumbnail(); ?>
       </div>
-      <?php huis_van_vervoering_post_thumbnail(); ?>
     </header>
   <?php elseif (has_post_thumbnail()) : ?>
     ELSEIF

@@ -1,8 +1,9 @@
-.join {
+section.join {
   background-image: url("./../../assets/images/join/join-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 0;
+  margin-top: 64px;
 
   .section__inner {
     @include innerspace(8rem, 2rem);

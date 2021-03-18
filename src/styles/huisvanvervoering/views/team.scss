@@ -27,6 +27,16 @@
   }
 }
 
+.page-template-team-overview {
+  .wp-block-group.hvv.intro.alignfull {
+    .wp-block-group__inner-container {
+      p {
+        max-width: 650px !important;
+      }
+    }
+  }
+}
+
 .single-team {
   .entry-content {
     .wp-block-group.alignfull.hvv {
@@ -44,6 +54,10 @@
       }
     }
   }
+}
+
+section.section.team {
+  margin-top: 64px;
 }
 
 section > [class*="__inner"] {

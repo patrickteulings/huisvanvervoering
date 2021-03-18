@@ -62,3 +62,29 @@
     transform: rotate(45deg);
   }
 }
+
+.post-thumbnail-diamond {
+  @include position(absolute, auto, -50px, -140px, auto);
+}
+
+.post-thumbnail-diamond-shadow {
+  @include size(200px);
+  background: white;
+  @include position(absolute, auto, -40px, -50px, auto);
+  box-shadow: 1px 10px 42px 1px rgba(0, 0, 0, 0.52);
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------
+  Parallax diamonds for main content
+---------------------------------------- */
+
+article {
+  .main-content-diamond-parallax {
+    @include position(absolute, auto, 1000px, -100px, auto);
+
+    &.light {
+      opacity: 0.6;
+    }
+  }
+}

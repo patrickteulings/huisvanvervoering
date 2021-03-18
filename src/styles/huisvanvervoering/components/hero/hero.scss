@@ -35,11 +35,23 @@
   &__title {
     font-weight: 900;
   }
+  &__title--front-page {
+    font-weight: 900;
+    @include font-size(62px);
+  }
 
   &__subtitle {
     color: color("grey");
     font-family: $paragraph-font-face;
     padding-left: 32px;
+    // font-style: italic;
+  }
+
+  &__subtitle--front-page {
+    color: color("white");
+    font-family: $paragraph-font-face;
+    @include font-size(32px);
+    padding-left: 0;
     // font-style: italic;
   }
 
@@ -58,13 +70,17 @@
     max-width: $global-max-width--desktop;
   }
 
+  &__content-inner--front-page {
+    padding-top: 24rem;
+  }
+
   &__actions-wrapper {
     width: 100%;
     @include position(absolute, auto, auto, 0px, 40px);
   }
 
   &__actions-inner {
-    max-width: $global-max-width--desktop;
+    max-width: 1200px; //$global-max-width--desktop;
     text-align: right;
     margin: 0 auto;
     height: 40px;

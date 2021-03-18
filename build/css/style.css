@@ -653,6 +653,37 @@ input[type="radio"] {
     transform-origin: center center;
     transform: rotate(45deg); }
 
+.post-thumbnail-diamond {
+  position: absolute;
+  left: auto;
+  top: -50px;
+  right: -140px;
+  bottom: auto; }
+
+.post-thumbnail-diamond-shadow {
+  width: 200px;
+  height: 200px;
+  background: white;
+  position: absolute;
+  left: auto;
+  top: -40px;
+  right: -50px;
+  bottom: auto;
+  box-shadow: 1px 10px 42px 1px rgba(0, 0, 0, 0.52);
+  transform: rotate(45deg); }
+
+/* ----------------------------------------
+  Parallax diamonds for main content
+---------------------------------------- */
+article .main-content-diamond-parallax {
+  position: absolute;
+  left: auto;
+  top: 1000px;
+  right: -100px;
+  bottom: auto; }
+  article .main-content-diamond-parallax.light {
+    opacity: 0.6; }
+
 .btn-arrow {
   width: 70px;
   height: 70px;
@@ -944,32 +975,33 @@ p {
   .supporters .supporter:not(:last-child) {
     margin-right: 32px; }
 
-.join {
+section.join {
   background-image: url("./../../assets/images/join/join-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 0; }
-  .join .section__inner {
+  margin-bottom: 0;
+  margin-top: 64px; }
+  section.join .section__inner {
     padding: 8rem 2rem; }
-  .join .join-container {
+  section.join .join-container {
     border-radius: 5px;
     background: #ffffff;
     padding: 6rem 2rem;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-  .join h4 {
+  section.join h4 {
     font-family: "Arial Black";
     color: #90bfba;
     font-size: 3.11111em;
     font-size: 56px; }
-  .join p {
+  section.join p {
     font-size: 0.88889em;
     font-size: 16px;
     margin: 4rem auto;
     margin-bottom: 3rem;
     line-height: 28px; }
     @media (min-width: 600px) {
-      .join p {
+      section.join p {
         width: 60%; } }
 
 .wp-block-group.hvv.latest-posts {
@@ -1129,10 +1161,20 @@ p {
     z-index: 3; }
   .hero__title {
     font-weight: 900; }
+  .hero__title--front-page {
+    font-weight: 900;
+    font-size: 3.44444em;
+    font-size: 62px; }
   .hero__subtitle {
     color: #5a5a5a;
     font-family: "Raleway", sans-serif;
     padding-left: 32px; }
+  .hero__subtitle--front-page {
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.77778em;
+    font-size: 32px;
+    padding-left: 0; }
   .hero__content-wrapper {
     position: relative;
     left: 0;
@@ -1158,6 +1200,8 @@ p {
   .hero__content-inner {
     padding: 0 2rem;
     max-width: 1400px; }
+  .hero__content-inner--front-page {
+    padding-top: 24rem; }
   .hero__actions-wrapper {
     width: 100%;
     position: absolute;
@@ -1166,7 +1210,7 @@ p {
     right: 0px;
     bottom: 40px; }
   .hero__actions-inner {
-    max-width: 1400px;
+    max-width: 1200px;
     text-align: right;
     margin: 0 auto;
     height: 40px;
@@ -1250,6 +1294,10 @@ p {
     top: 0;
     right: auto;
     bottom: auto; }
+    .wp-block-group.alignfull.hvv.cta .wp-block-column:nth-child(2) figure {
+      transform: translate(-10%, -16%); }
+    .wp-block-group.alignfull.hvv.cta .wp-block-column:nth-child(3) figure {
+      transform: translate(-12%, -6%); }
     .wp-block-group.alignfull.hvv.cta .wp-block-column figure {
       display: block;
       position: relative;
@@ -1484,6 +1532,9 @@ p {
       max-width: 450px !important;
       margin: -3rem 0 2rem 0 !important; }
 
+.page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p {
+  max-width: 650px !important; }
+
 .single-team .entry-content .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem; }
   @media (min-width: 0px) {
@@ -1499,6 +1550,9 @@ p {
     margin-left: 0 !important; }
   .single-team .entry-content .wp-block-group.alignfull.hvv .wp-block-group__inner-container .wp-block-group__inner-container {
     padding: 0; }
+
+section.section.team {
+  margin-top: 64px; }
 
 @media (min-width: 0px) {
   section > [class*='__inner'] {
@@ -1531,9 +1585,11 @@ p {
 
 .homepage-intro .section__inner p {
   font-family: "Merriweather", serif;
-  font-size: 24px;
-  line-height: 180%;
-  color: #9a00b4;
+  font-size: 30px;
+  line-height: 140%;
+  color: #5a5a5a;
+  font-style: italic;
+  font-weight: 300;
   text-align: center; }
   @media (min-width: 600px) {
     .homepage-intro .section__inner p {
@@ -1682,6 +1738,8 @@ p {
 
 .site-header {
   padding-top: 160px; }
+  .site-header--front-page {
+    padding: 0; }
 
 .page-template-page-pillar .entry-header {
   border: none; }
