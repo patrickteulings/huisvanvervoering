@@ -19,7 +19,7 @@
     <header class="entry-header hvv">
       <div class="entry-header__inner">
         <?php get_template_part('template-parts/header/entry-header'); ?>
-        <div class="post-thumbnail-diamond post-thumbnail-diamond--team-overview rellax"><img width="180" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+        <div class="post-thumbnail-diamond post-thumbnail-diamond--team-overview rellax"><img width="180" height="auto" role="presentation" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
         <div class="post-thumbnail-diamond-shadow"></div>
         <?php huis_van_vervoering_post_thumbnail(); ?>
       </div>
