@@ -63,3 +63,13 @@ section.section.team {
 section > [class*="__inner"] {
   @include containerWidth;
 }
+
+.page-template-team-overview {
+  .post-thumbnail {
+    img {
+      max-width: 160%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

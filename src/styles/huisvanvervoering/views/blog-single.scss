@@ -33,6 +33,23 @@
   color: color("grey");
 }
 
+/* ----------------------------------------
+  Image in header-diamond
+---------------------------------------- */
+
+.single-post {
+  .post-thumbnail {
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+/* ----------------------------------------
+  Image in paragraph text
+---------------------------------------- */
 .single-post {
   .wp-block-group {
     .wp-block-group__inner-container {
@@ -61,10 +78,18 @@
   @include font-size(12px);
 }
 
+/* ----------------------------------------
+  Posted by <Admin> on <Date>
+---------------------------------------- */
 .posted {
-  transform: translateY(6px);
+  transform: translateY(24px);
   font-family: $heading-font-face;
   font-style: italic;
   opacity: 0.6;
   @include font-size(12px);
+
+  a {
+    color: color("secondary");
+    text-decoration: none;
+  }
 }
