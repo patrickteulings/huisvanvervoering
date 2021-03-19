@@ -128,3 +128,54 @@
     }
   }
 }
+
+/* ----------------------------------------
+  VARIANTIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
+---------------------------------------- */
+
+.hero {
+  &--pillar {
+    max-height: 640px;
+  }
+
+  &__background--pillar {
+    background-color: #faf2fb;
+    // background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  &__background--pillar-z {
+    background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    z-index: 3;
+  }
+  &__background--pillar-corner {
+    background-image: url("./../../assets/images/ui/contentpage-header--background-smalll.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    z-index: 3;
+  }
+}
+
+/* ----------------------------------------
+  VARIANTIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
+---------------------------------------- */
+
+.hero {
+  &--plain-content {
+    max-height: 640px;
+    background-color: #d7eeec;
+  }
+
+  &__background--plain-content {
+    background-image: url("./../../assets/images/ui/contentpage-header--background--green.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  .hero__title {
+    color: darken(color("primary"), 10%);
+  }
+}

@@ -8,4 +8,9 @@
  * @since Huis Van Vervoering 1.0
  */
 
-the_title('<h1 class="entry-title">', '</h1>');
+?>
+
+
+<header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" role="banner">
+  <?php get_template_part('template-parts/header/site-nav'); ?>
+</header><!-- #masthead -->

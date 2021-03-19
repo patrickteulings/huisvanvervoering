@@ -15,11 +15,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <?php if (!is_front_page()) : ?>
-    <header class="entry-header alignwide">
-      IF
-      <?php get_template_part('template-parts/header/entry-header'); ?>
-      <?php huis_van_vervoering_post_thumbnail(); ?>
-    </header>
+
   <?php elseif (has_post_thumbnail() && !is_front_page()) : ?>
     ELSEIF
     <header class="entry-header alignwide">

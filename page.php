@@ -10,7 +10,7 @@
  * @since Huis Van Vervoering 1.0
  */
 
-get_header();
+get_header("plain");
 
 /* Start the Loop */
 while (have_posts()) :
