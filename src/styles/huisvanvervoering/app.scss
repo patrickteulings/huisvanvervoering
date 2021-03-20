@@ -3,12 +3,13 @@
 
 @import "ui/buttons/buttons", "ui/typography/typography";
 
-@import "components/navigation/navigation", "components/footer/footer",
+@import "components/navigation/navigation",
+  "components/navigation/post-navigation", "components/footer/footer",
   "components/supporters/supporters", "components/join/join-action-block",
   "components/latestposts/latestposts", "components/quote/quote",
   "components/hero/hero", "components/cta/homepage-cta",
   "components/team/team-member", "components/headers/header-pillar",
-  "components/share/share";
+  "components/share/share", "components/forms/forms";
 
 @import "views/general", "views/blog-single", "views/team", "views/homepage",
   "views/entry-header", "views/site-header", "views/page-pillar";

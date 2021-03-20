@@ -48,7 +48,11 @@
   @include size(100vw, 100vh);
   flex-direction: column;
   color: color("white");
-  background: color("secondary");
+  background-color: color("secondary");
+  background-image: url("../../assets/images/ui/menu-background-main.svg");
+  background-position: 100% 100%;
+  background-size: 60%;
+  background-repeat: no-repeat;
   display: none;
   z-index: 98;
 
@@ -63,10 +67,32 @@
       font-weight: 900;
     }
   }
+
+  .socials {
+    padding-top: 2rem;
+
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include mq("tablet", "min") {
+    }
+  }
+
+  .container__inner {
+    @include transition;
+    @include mq("tablet", "min") {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 .menu-wrapper {
-  margin-left: -30%;
+  @include mq("tablet", "min") {
+    //transform: translateX(-100%);
+  }
 
   & > li {
     margin-bottom: 1.5rem;

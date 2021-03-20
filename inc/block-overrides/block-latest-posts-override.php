@@ -53,7 +53,8 @@ function huisvanvervoering_render_block_core_latest_posts($attributes)
 
     $list_items_markup .= '<li>';
 
-    if ($attributes['displayFeaturedImage'] && has_post_thumbnail($post)) {
+    // if ($attributes['displayFeaturedImage'] && has_post_thumbnail($post)) {
+    if ('a' !== 'v') {
       $image_style = '';
       if (isset($attributes['featuredImageSizeWidth'])) {
         $image_style .= sprintf('max-width:%spx;', $attributes['featuredImageSizeWidth']);
@@ -125,12 +126,12 @@ function huisvanvervoering_render_block_core_latest_posts($attributes)
       && isset($attributes['displayPostContentRadio']) && 'excerpt' === $attributes['displayPostContentRadio']
     ) { */
 
-      $trimmed_excerpt = get_the_excerpt($post);
+    $trimmed_excerpt = get_the_excerpt($post);
 
-      $list_items_markup .= sprintf(
-        '<div class="wp-block-latest-posts__post-excerpt">%1$s</div>',
-        $trimmed_excerpt
-      );
+    $list_items_markup .= sprintf(
+      '<div class="wp-block-latest-posts__post-excerpt">%1$s</div>',
+      $trimmed_excerpt
+    );
     /* } */
 
     if (
@@ -169,7 +170,7 @@ function huisvanvervoering_render_block_core_latest_posts($attributes)
   $wrapper_attributes = get_block_wrapper_attributes(array('class' => $class));
 
   return sprintf(
-    '<h3 class="block-title">❤️ Laatste blogberichten</h3><div class="diamond"><img src="'. get_template_directory_uri() .'/assets/images/ui/img/diamond-large.svg"></div><ul %1$s>%2$s</ul>',
+    '<h3 class="block-title">Laatste blogberichten</h3><div class="diamond"><img src="' . get_template_directory_uri() . '/assets/images/ui/img/diamond-large.svg"></div><ul %1$s>%2$s</ul>',
     $wrapper_attributes,
     $list_items_markup
   );
@@ -178,14 +179,10 @@ function huisvanvervoering_render_block_core_latest_posts($attributes)
 /**
  * Registers the `core/latest-posts` block on server.
  */
-function huisvanvervoering_register_block_core_latest_posts() {
-	register_block_type( 'core/latest-posts', array(
-		'render_callback' => 'huisvanvervoering_render_block_core_latest_posts',
-	) );
+function huisvanvervoering_register_block_core_latest_posts()
+{
+  register_block_type('core/latest-posts', array(
+    'render_callback' => 'huisvanvervoering_render_block_core_latest_posts',
+  ));
 }
 add_action('after_setup_theme', 'huisvanvervoering_register_block_core_latest_posts');
-
-
-
-
-

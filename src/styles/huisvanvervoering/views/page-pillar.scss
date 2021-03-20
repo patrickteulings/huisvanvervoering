@@ -15,7 +15,8 @@
 
   .entry-content {
     .wp-block-group.alignfull {
-      &.hvv.intro {
+      &.hvv.intro,
+      &.hvv {
         p {
           max-width: 650px !important;
           margin-left: auto !important;

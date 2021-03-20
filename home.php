@@ -10,12 +10,8 @@
  * @since Huis Van Vervoering 1.0
  */
 
-if (is_front_page()) {
-  get_header();
-} else {
-  get_header('plain');
-}
-
+get_header();
+echo 'home';
 /* Start the Loop */
 while (have_posts()) :
   the_post();

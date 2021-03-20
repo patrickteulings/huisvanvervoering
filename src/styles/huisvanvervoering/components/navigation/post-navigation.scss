@@ -1,0 +1,60 @@
+.post-navigation {
+  // margin-left: 0;
+
+  &__inner {
+    @include containerWidth;
+    @include innerspace(0, 2rem);
+    margin: 0 auto;
+  }
+  .nav-links {
+    max-width: 650px;
+  }
+
+  .post-title {
+    font-family: $heading-font-face;
+    @include font-size(16px);
+    font-weight: 300;
+  }
+
+  .nav-previous,
+  .nav-next {
+    @include position;
+
+    .meta-nav {
+      display: none;
+    }
+
+    &:before {
+      content: " ";
+      @include transition;
+      @include position(absolute, 0, 3px, auto, auto);
+      @include size(24px);
+      background-image: url("./../../assets/images/ui/icons/chevron-left.svg");
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .nav-next {
+    &:before {
+      @include position(absolute, auto, 3px, 0, auto);
+      background-image: url("./../../assets/images/ui/icons/chevron-right.svg");
+    }
+
+    &:hover {
+      &:before {
+        right: -5px;
+      }
+    }
+  }
+
+  .nav-previous {
+    &:hover {
+      &:before {
+        left: -5px;
+      }
+    }
+  }
+}

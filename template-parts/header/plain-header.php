@@ -18,6 +18,9 @@ $post_thumbnail_id = get_post_thumbnail_id($post);
 $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
 ?>
 
+
+<?php get_template_part('template-parts/header/site-nav'); ?>
+
 <div class="hero hero--plain-content" role="banner">
   <div class="hero__background hero__background--plain-content"></div>
   <div class="hero__content-wrapper ">
@@ -27,7 +30,3 @@ $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
     </div>
   </div>
 </div>
-
-<header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" role="banner">
-  <?php get_template_part('template-parts/header/site-nav'); ?>
-</header><!-- #masthead -->

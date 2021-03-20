@@ -32,5 +32,15 @@
     .wpforms-container {
       margin-left: 0 !important;
     }
+
+    .wp-block-columns {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.singular {
+  .entry-header {
+    display: none;
   }
 }

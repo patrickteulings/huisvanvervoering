@@ -178,4 +178,8 @@
   .hero__title {
     color: darken(color("primary"), 10%);
   }
+
+  .hero__title--front-page {
+    color: #fff;
+  }
 }

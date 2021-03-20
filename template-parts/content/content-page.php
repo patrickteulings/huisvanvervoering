@@ -14,7 +14,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+  <!-- DIAMOND IN BACKGROUND -->
+  <div role="presentation" class="main-content-diamond-parallax rellax" data-rellax-speed="-6"><img width="200" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+  <!-- / DIAMOND IN BACKGROUND -->
+
   <?php if (!is_front_page()) : ?>
+    <header class="entry-header alignwide">
+      <?php huis_van_vervoering_post_thumbnail(); ?>
+    </header>
 
   <?php elseif (has_post_thumbnail() && !is_front_page()) : ?>
     ELSEIF
@@ -23,7 +30,6 @@
       <?php huis_van_vervoering_post_thumbnail(); ?>
     </header>
   <?php endif; ?>
-
 
 
   <?php if (is_front_page()) : ?>

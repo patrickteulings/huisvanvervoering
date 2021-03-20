@@ -19,7 +19,6 @@ $wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
   <?php get_template_part('template-parts/header/frontpage-header'); ?>
 <?php } ?>
 
-<header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" role="banner">
-
+<header id="masthead" class="algemene header <?php echo esc_attr($wrapper_classes); ?>" role="banner">
   <?php get_template_part('template-parts/header/site-nav'); ?>
 </header><!-- #masthead -->

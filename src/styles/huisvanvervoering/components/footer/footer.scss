@@ -10,16 +10,28 @@
   max-width: $global-max-width--desktop;
   @include innerspace(96px, 2rem);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr;
+
+  @include mq("tablet", "min") {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
 }
 
 .footer__column {
+  margin-bottom: 3rem;
+
+  @include mq("tablet", "min") {
+    margin-bottom: 0;
+  }
   .column__title {
     font-family: $heading-font-face;
     @include font-size(24px);
     color: color("secondary");
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+
+    @include mq("tablet", "min") {
+      margin-bottom: 4rem;
+    }
   }
 
   .menu-item {
@@ -66,17 +78,24 @@
   @include position;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   z-index: 0;
+
+  @include mq("tablet", "min") {
+    justify-content: center;
+  }
 
   .column__title {
     @include position;
-    text-align: center;
+    @include mq("tablet", "min") {
+      text-align: center;
+    }
   }
 
   .column__content {
     display: inline;
-    text-align: center;
+    @include mq("tablet", "min") {
+      text-align: center;
+    }
   }
 
   &:hover {
@@ -84,20 +103,21 @@
       margin-left: 30px;
     }
   }
-
-  &:before {
-    @include diamond();
-    background-color: #fff;
-    @include size(700px);
-    @include position(absolute, -5%, -40px);
-    box-shadow: -8px -14px 30px rgba(0, 0, 0, 0.14);
-  }
-  &:after {
-    @include diamond();
-    border: 1px solid color("grey");
-    background-color: transparent;
-    @include size(680px);
-    @include position(absolute, calc(-5% + 10px), -30px);
-    // box-shadow: -8px -14px 30px rgba(0, 0, 0, 0.25);
+  @include mq("tablet", "min") {
+    &:before {
+      @include diamond();
+      background-color: #fff;
+      @include size(700px);
+      @include position(absolute, -5%, -40px);
+      box-shadow: -8px -14px 30px rgba(0, 0, 0, 0.14);
+    }
+    &:after {
+      @include diamond();
+      border: 1px solid color("grey");
+      background-color: transparent;
+      @include size(680px);
+      @include position(absolute, calc(-5% + 10px), -30px);
+      // box-shadow: -8px -14px 30px rgba(0, 0, 0, 0.25);
+    }
   }
 }

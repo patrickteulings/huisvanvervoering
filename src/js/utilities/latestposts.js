@@ -17,14 +17,18 @@ export default class LatestPosts {
   onResize() {
     this.firstListItem.style.marginLeft = 0;
     let marginLeft = (window.innerWidth - 900) / 2;
+
     if (window.innerWidth >= breakpoints.tabletWide) {
       this.firstListItem.style.marginLeft = `${
         (window.innerWidth - 900) / 2
       }px`;
     }
+
     if (window.innerWidth >= breakpoints.desktop) {
       marginLeft = (window.innerWidth - 1058) / 2;
     }
+
+    marginLeft = marginLeft <= 32 ? 32 : marginLeft;
     this.firstListItem.style.marginLeft = `${marginLeft}px`;
     this.blockTitle.style.marginLeft = `${marginLeft}px`;
   }
