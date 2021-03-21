@@ -34,6 +34,19 @@
 }
 
 /* ----------------------------------------
+  Title
+---------------------------------------- */
+
+.single-post {
+  .entry-title {
+    max-width: 650px;
+  }
+  // .entry-header {
+  //   max-width: 650px;
+  // }
+}
+
+/* ----------------------------------------
   Image in header-diamond
 ---------------------------------------- */
 
@@ -41,7 +54,7 @@
   .post-thumbnail {
     img {
       max-width: 100%;
-      height: auto;
+      min-height: 100%;
       object-fit: cover;
     }
   }

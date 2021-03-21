@@ -818,9 +818,37 @@ p {
   .primary-menu-container.is-open {
     display: flex; }
   .primary-menu-container .menu-item a {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
     color: #ffffff;
     font-family: "Merriweather", serif;
     font-weight: 900; }
+    .primary-menu-container .menu-item a:hover {
+      text-decoration: none; }
+      .primary-menu-container .menu-item a:hover:before {
+        transform: rotate(135deg);
+        opacity: 1;
+        left: -24px; }
+    .primary-menu-container .menu-item a:before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 10px;
+      right: auto;
+      bottom: auto;
+      width: 12px;
+      height: 12px;
+      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+      transform: rotate(45deg);
+      opacity: 0;
+      transform-origin: center;
+      background: rgba(255, 255, 255, 0.6);
+      border: 2px solid #fff; }
+  .primary-menu-container .menu-item .menu-item a:before {
+    top: 6px; }
   .primary-menu-container .socials {
     padding-top: 2rem;
     opacity: 0.5; }
@@ -1726,6 +1754,15 @@ section.section.share {
 .singular .entry-header {
   display: none; }
 
+/* ----------------------------------------
+  DEFAULT FOCUS OVERRIDE
+---------------------------------------- */
+.site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: none; }
+
 .entry-content .wp-block-group.hvv.intro {
   max-width: none;
   background-color: #ffffff; }
@@ -1757,11 +1794,17 @@ section.section.share {
   color: #5a5a5a; }
 
 /* ----------------------------------------
+  Title
+---------------------------------------- */
+.single-post .entry-title {
+  max-width: 650px; }
+
+/* ----------------------------------------
   Image in header-diamond
 ---------------------------------------- */
 .single-post .post-thumbnail img {
   max-width: 100%;
-  height: auto;
+  min-height: 100%;
   object-fit: cover; }
 
 /* ----------------------------------------

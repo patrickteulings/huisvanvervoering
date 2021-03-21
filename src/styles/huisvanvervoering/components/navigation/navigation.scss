@@ -62,9 +62,38 @@
 
   .menu-item {
     a {
+      @include position;
       color: color("white");
       font-family: $heading-font-face;
       font-weight: 900;
+
+      &:hover {
+        text-decoration: none;
+
+        &:before {
+          transform: rotate(135deg);
+          opacity: 1;
+          left: -24px;
+        }
+      }
+
+      &:before {
+        content: "";
+        @include position(absolute, -32px, 10px);
+        @include size(12px);
+        @include transition;
+        transform: rotate(45deg);
+        opacity: 0;
+        transform-origin: center;
+        background: rgba(255, 255, 255, 0.6);
+        border: 2px solid #fff;
+      }
+    }
+    // submenu
+    .menu-item {
+      a:before {
+        top: 6px;
+      }
     }
   }
 

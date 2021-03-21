@@ -44,3 +44,14 @@
     display: none;
   }
 }
+
+/* ----------------------------------------
+  DEFAULT FOCUS OVERRIDE
+---------------------------------------- */
+
+.site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
