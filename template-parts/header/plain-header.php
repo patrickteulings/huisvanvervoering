@@ -29,4 +29,20 @@ $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
       <div class="hero__subtitle"><?= get_field('subtitle') ?></div>
     </div>
   </div>
+  <div class="submenu-wrapper">
+    <div class="submenu-wrapper__inner">
+      <div class="submenu-wrapper__inner-background"></div>
+      <ul class="submenu">
+        <?php
+        global $id;
+        wp_list_pages(array(
+          'title_li'    => '',
+          'child_of'    => $id,
+          'show_date'   => 'modified',
+          'date_format' => $date_format
+        ));
+        ?>
+      </ul>
+    </div>
+  </div>
 </div>

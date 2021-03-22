@@ -19,7 +19,7 @@
   <!-- / DIAMOND IN BACKGROUND -->
 
   <?php if (!is_front_page()) : ?>
-    <header class="entry-header alignwide">
+    <header class="entry-header alignwide wide">
       <?php huis_van_vervoering_post_thumbnail(); ?>
     </header>
 
@@ -66,12 +66,6 @@
       </div>
     </section>
   <?php endif; ?>
-
-
-
-
-
-
 
 
   <div class="entry-content">

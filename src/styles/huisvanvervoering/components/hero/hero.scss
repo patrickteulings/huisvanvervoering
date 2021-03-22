@@ -183,3 +183,58 @@
     color: #fff;
   }
 }
+
+/* ----------------------------------------
+  SUBMENU IN HERO
+---------------------------------------- */
+
+.submenu-wrapper {
+  @include position;
+  z-index: 101;
+
+  &__inner {
+    @include innerspace(0, 1rem);
+    @include containerWidth();
+    @include position;
+    margin: 0 auto;
+    max-width: 1024px;
+
+    .submenu {
+      @include position(absolute);
+      @include innerspace(0, 1rem);
+      height: 40px;
+      list-style-type: none;
+      display: flex;
+      transform: translateY(-40px);
+
+      li {
+        a {
+          display: block;
+          @include flex-center("center");
+          @include innerspace(0.8rem, 1rem);
+          font-family: $heading-font-face;
+          text-decoration: none;
+          background: rgba(255, 255, 255, 0);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.5);
+          }
+        }
+
+        &.current_page_item {
+          background: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+
+  &__inner-background {
+    background: rgba(255, 255, 255, 0.2);
+    // @include containerWidth;
+    height: 40px;
+    width: 100%;
+    max-width: 650px;
+    @include position();
+    transform: translateY(-40px);
+  }
+}
