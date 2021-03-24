@@ -1783,6 +1783,11 @@ section.section.share {
   background: #d7eeec;
   border: 0px; }
 
+.wp-block-group.alignwide.hvv .wp-block-group__inner-container {
+  opacity: 0.8; }
+  .wp-block-group.alignwide.hvv .wp-block-group__inner-container .envira-gallery-wrap {
+    max-width: 750px !important; }
+
 .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem;
   text-align: left; }
