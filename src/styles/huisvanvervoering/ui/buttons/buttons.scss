@@ -1,10 +1,28 @@
 .btn-arrow {
   @include size(70px);
   @include flex-center("center");
+  @include transition;
   display: inline-flex;
   background: color("secondary");
   border-radius: 50%;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.54);
+
+  svg {
+    @include transition;
+  }
+
+  &:active,
+  &:focus {
+    background: color("secondary") !important;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.64);
+    background: lighten(color("secondary"), 5%);
+    svg {
+      transform: translateX(10px);
+    }
+  }
 }
 
 .wp-block-group.hvv.latest-posts {

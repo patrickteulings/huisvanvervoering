@@ -690,10 +690,20 @@ article .main-content-diamond-parallax {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
   display: inline-flex;
   background: #9a00b4;
   border-radius: 50%;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.54); }
+  .btn-arrow svg {
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+  .btn-arrow:active, .btn-arrow:focus {
+    background: #9a00b4 !important; }
+  .btn-arrow:hover {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.64);
+    background: #b000ce; }
+    .btn-arrow:hover svg {
+      transform: translateX(10px); }
 
 .wp-block-group.hvv.latest-posts {
   background: white; }
@@ -766,7 +776,7 @@ p {
   height: 136px;
   background-image: url("../../assets/images/ui/menu-background.svg");
   background-repeat: no-repeat;
-  z-index: 99; }
+  z-index: 999; }
   .navigation-trigger-wrapper .hamburger {
     width: 40px;
     height: 40px;
@@ -814,7 +824,7 @@ p {
   background-size: 60%;
   background-repeat: no-repeat;
   display: none;
-  z-index: 98; }
+  z-index: 998; }
   .primary-menu-container.is-open {
     display: flex; }
   .primary-menu-container .menu-item a {
@@ -1432,7 +1442,8 @@ section.join {
   background-position: right top; }
 
 .hero .hero__title {
-  color: #70aca6; }
+  color: #70aca6;
+  word-break: break-all; }
 
 .hero .hero__title--front-page {
   color: #fff; }
@@ -2116,14 +2127,21 @@ section.section.team {
       width: 1024px; } }
 
 .entry-header.content-team .post-thumbnail {
+  display: block;
   position: absolute;
   left: auto;
-  top: -660px;
-  right: -400px;
+  top: 60px;
+  right: -150px;
   bottom: auto;
-  width: 1000px !important;
-  height: 1000px !important;
+  width: 300px !important;
+  height: 300px !important;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  @media (min-width: 900px) {
+    .entry-header.content-team .post-thumbnail {
+      top: -660px;
+      right: -400px;
+      width: 1000px !important;
+      height: 1000px !important; } }
 
 .entry-header.content-team .post-thumbnail .wp-post-image {
   max-width: none;
@@ -2152,7 +2170,10 @@ section.section.team {
   z-index: 2; }
 
 .site-header {
-  padding-top: 160px; }
+  padding-top: 80px; }
+  @media (min-width: 900px) {
+    .site-header {
+      padding-top: 160px; } }
   .site-header--front-page {
     padding: 0; }
 

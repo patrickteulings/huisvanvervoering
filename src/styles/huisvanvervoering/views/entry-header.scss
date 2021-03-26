@@ -13,14 +13,22 @@
 .entry-header {
   &.content-team {
     .post-thumbnail {
+      display: block;
       position: absolute;
       left: auto;
-      top: -660px;
-      right: -400px;
+      top: 60px;
+      right: -150px;
       bottom: auto;
-      width: 1000px !important;
-      height: 1000px !important;
+      width: 300px !important;
+      height: 300px !important;
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+      @include mq("tablet-wide", "min") {
+        top: -660px;
+        right: -400px;
+        width: 1000px !important;
+        height: 1000px !important;
+      }
     }
 
     .post-thumbnail .wp-post-image {

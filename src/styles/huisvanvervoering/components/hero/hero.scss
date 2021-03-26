@@ -177,6 +177,7 @@
 
   .hero__title {
     color: darken(color("primary"), 10%);
+    word-break: break-all;
   }
 
   .hero__title--front-page {

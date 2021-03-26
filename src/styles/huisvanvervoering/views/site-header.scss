@@ -1,5 +1,9 @@
 .site-header {
-  padding-top: 160px;
+  padding-top: 80px;
+
+  @include mq("tablet-wide", "min") {
+    padding-top: 160px;
+  }
 
   &--front-page {
     padding: 0;
