@@ -264,8 +264,7 @@ if (!function_exists('huis_van_vervoering_the_posts_navigation')) {
 
 if (!function_exists('huis_van_vervoering_share')) {
   /**
-   * Prints HTML with meta information for the categories, tags and comments.
-   * Footer entry meta is displayed differently in archives and single posts.
+   * Shows the share button for major social networks
    *
    * @since Huis Van Vervoering 1.0
    *

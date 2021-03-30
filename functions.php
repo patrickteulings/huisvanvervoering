@@ -724,6 +724,59 @@ function custom_post_type_supporters()
   register_post_type('supporters', $args);
 }
 
+function custom_post_type_laboratorium()
+{
+
+  // Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => _x('laboratorium', 'Post Type General Name', 'huisvanvervoering'),
+    'singular_name'       => _x('laboratorium', 'Post Type Singular Name', 'huisvanvervoering'),
+    'menu_name'           => __('laboratorium', 'huisvanvervoering'),
+    'parent_item_colon'   => __('Parent Movie', 'huisvanvervoering'),
+    'all_items'           => __('All Supporters', 'huisvanvervoering'),
+    'view_item'           => __('View Supporter', 'huisvanvervoering'),
+    'add_new_item'        => __('Add New Supporter', 'huisvanvervoering'),
+    'add_new'             => __('Add New', 'huisvanvervoering'),
+    'edit_item'           => __('Edit Supporter', 'huisvanvervoering'),
+    'update_item'         => __('Update Supporter', 'huisvanvervoering'),
+    'search_items'        => __('Search Supporter', 'huisvanvervoering'),
+    'not_found'           => __('Not Found', 'huisvanvervoering'),
+    'not_found_in_trash'  => __('Not found in Trash', 'huisvanvervoering'),
+  );
+
+  // Set other options for Custom Post Type
+
+  $args = array(
+    'label'               => __('laboratorium', 'huisvanvervoering'),
+    'description'         => __('laboratorium', 'huisvanvervoering'),
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',),
+    // You can associate this CPT with a taxonomy or custom taxonomy.
+    'taxonomies'          => array('genres'),
+    /* A hierarchical CPT is like Pages and can have
+    * Parent and child items. A non-hierarchical CPT
+    * is like Posts.
+    */
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+    'show_in_rest' => true,
+  );
+
+  // Registering your Custom Post Type
+  register_post_type('laboratorium', $args);
+}
+
 /*
 * Creating a function to create our CPT
 */
@@ -781,6 +834,8 @@ function custom_post_type_team()
   register_post_type('team', $args);
 }
 
+
+
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not
 * unnecessarily executed.
@@ -788,6 +843,7 @@ function custom_post_type_team()
 
 add_action('init', 'custom_post_type_supporters', 0);
 add_action('init', 'custom_post_type_team', 0);
+add_action('init', 'custom_post_type_laboratorium', 0);
 
 // Our custom post type function
 function create_posttype()
