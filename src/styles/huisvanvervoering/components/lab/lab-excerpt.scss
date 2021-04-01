@@ -1,0 +1,88 @@
+.lab-excerpt {
+  // display: flex;
+  max-width: 816px;
+  margin-bottom: 4rem;
+
+  @include mq("tablet", "min") {
+    display: flex;
+  }
+
+  &:nth-child(even) {
+    .team-member__content {
+      order: 0;
+    }
+    .team-member__image {
+      order: 1;
+      margin: 0 auto 2rem;
+
+      @include mq("tablet", "min") {
+        margin-left: 4rem;
+        margin-right: 0;
+      }
+
+      &:before {
+        left: -10px;
+        top: 77px;
+      }
+    }
+  }
+
+  img {
+    max-height: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  &__content {
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    h2 {
+      font-family: $heading-font-face;
+      @include font-size(24px);
+      font-weight: 600;
+      color: color("secondary");
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    @include position;
+    width: 150px;
+    margin: 0 auto 2rem;
+
+    @include mq("tablet", "min") {
+      margin-right: 4rem;
+      margin-bottom: 0;
+    }
+
+    .image-background {
+      @include diamond(100px);
+      @include position(absolute, 25px, 25px);
+      background-color: color("white");
+      box-shadow: 3px 4px 30px 6px rgba(0, 0, 0, 0.47);
+      z-index: 0;
+    }
+
+    img {
+      position: relative;
+      z-index: 5;
+    }
+    &:before {
+      @include diamond(60px);
+      @include position(absolute, 100px, 30px);
+      background-color: color("secondary-light");
+    }
+
+    &:after {
+      @include diamond(100px);
+      @include position(absolute, 25px, 25px);
+      background-color: transparent;
+      border: 1px solid color("white");
+      z-index: 5;
+    }
+  }
+}

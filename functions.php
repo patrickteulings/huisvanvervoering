@@ -733,13 +733,13 @@ function custom_post_type_laboratorium()
     'singular_name'       => _x('laboratorium', 'Post Type Singular Name', 'huisvanvervoering'),
     'menu_name'           => __('laboratorium', 'huisvanvervoering'),
     'parent_item_colon'   => __('Parent Movie', 'huisvanvervoering'),
-    'all_items'           => __('All Supporters', 'huisvanvervoering'),
-    'view_item'           => __('View Supporter', 'huisvanvervoering'),
-    'add_new_item'        => __('Add New Supporter', 'huisvanvervoering'),
+    'all_items'           => __('All Lab posts', 'huisvanvervoering'),
+    'view_item'           => __('View posts', 'huisvanvervoering'),
+    'add_new_item'        => __('Add New Lab post', 'huisvanvervoering'),
     'add_new'             => __('Add New', 'huisvanvervoering'),
-    'edit_item'           => __('Edit Supporter', 'huisvanvervoering'),
-    'update_item'         => __('Update Supporter', 'huisvanvervoering'),
-    'search_items'        => __('Search Supporter', 'huisvanvervoering'),
+    'edit_item'           => __('Edit Lab post', 'huisvanvervoering'),
+    'update_item'         => __('Update Lab post', 'huisvanvervoering'),
+    'search_items'        => __('Search Lab post', 'huisvanvervoering'),
     'not_found'           => __('Not Found', 'huisvanvervoering'),
     'not_found_in_trash'  => __('Not found in Trash', 'huisvanvervoering'),
   );
@@ -751,25 +751,27 @@ function custom_post_type_laboratorium()
     'description'         => __('laboratorium', 'huisvanvervoering'),
     'labels'              => $labels,
     // Features this CPT supports in Post Editor
-    'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',),
+    'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'types'),
     // You can associate this CPT with a taxonomy or custom taxonomy.
-    'taxonomies'          => array('genres'),
+    'taxonomies'          => array('core'),
     /* A hierarchical CPT is like Pages and can have
     * Parent and child items. A non-hierarchical CPT
     * is like Posts.
     */
-    'hierarchical'        => false,
+    'hierarchical'        => true,
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
     'show_in_nav_menus'   => true,
     'show_in_admin_bar'   => true,
-    'menu_position'       => 5,
+    'menu_position'       => 4,
     'can_export'          => true,
     'has_archive'         => true,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
-    'capability_type'     => 'post',
+    'capability_type'     => 'page',
+    'taxonomies'         => array('post_tag'),
+    'menu_icon'          => 'dashicons-color-picker',
     'show_in_rest' => true,
   );
 
@@ -808,7 +810,7 @@ function custom_post_type_team()
     'description'         => __('team members', 'huisvanvervoering'),
     'labels'              => $labels,
     // Features this CPT supports in Post Editor
-    'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',),
+    'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'categories'),
     // You can associate this CPT with a taxonomy or custom taxonomy.
     'taxonomies'          => array('core'),
     /* A hierarchical CPT is like Pages and can have
@@ -821,12 +823,14 @@ function custom_post_type_team()
     'show_in_menu'        => true,
     'show_in_nav_menus'   => true,
     'show_in_admin_bar'   => true,
-    'menu_position'       => 5,
+    'menu_position'       => 4,
     'can_export'          => true,
     'has_archive'         => true,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
+    'taxonomies'         => array('post_tag'),
     'capability_type'     => 'post',
+    'menu_icon'          => 'dashicons-groups',
     'show_in_rest' => true,
   );
 
@@ -843,7 +847,6 @@ function custom_post_type_team()
 
 add_action('init', 'custom_post_type_supporters', 0);
 add_action('init', 'custom_post_type_team', 0);
-add_action('init', 'custom_post_type_laboratorium', 0);
 
 // Our custom post type function
 function create_posttype()
@@ -860,6 +863,8 @@ function create_posttype()
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'supporters'),
+      'menu_position' => 6,
+      'menu_icon' => 'dashicons-heart',
       'show_in_rest' => true,
     )
   );
@@ -875,9 +880,67 @@ function create_posttype()
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'team'),
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-groups',
       'show_in_rest' => true,
     )
   );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
+
+
+function create_taxonomies_lab()
+{
+  $labels = array(
+    'name'              => _x('Lab Categories', 'taxonomy general name'),
+    'singular_name'     => _x('Lab Category', 'taxonomy singular name'),
+    'search_items'      => __('Search Lab Categories'),
+    'all_items'         => __('All Lab Categories'),
+    'parent_item'       => __('Parent Lab Category'),
+    'parent_item_colon' => __('Parent Lab Category:'),
+    'edit_item'         => __('Edit Lab Category'),
+    'update_item'       => __('Update Lab Category'),
+    'add_new_item'      => __('Add New Lab Category'),
+    'new_item_name'     => __('New Lab Category'),
+    'menu_name'         => __('Lab Categories'),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+    'rewrite' => array('slug' => 'laboratorium'),
+  );
+  register_taxonomy('lab_category', 'laboratorium', $args);
+}
+
+function create_taxonomies_team()
+{
+  $labels = array(
+    'name'              => _x('Team Categories', 'taxonomy general name'),
+    'singular_name'     => _x('Team Category', 'taxonomy singular name'),
+    'search_items'      => __('Search Team Categories'),
+    'all_items'         => __('All Team Categories'),
+    'parent_item'       => __('Parent Team Category'),
+    'parent_item_colon' => __('Parent Team Category:'),
+    'edit_item'         => __('Edit Team Category'),
+    'update_item'       => __('Update Team Category'),
+    'add_new_item'      => __('Add New Team Category'),
+    'new_item_name'     => __('New Team Category'),
+    'menu_name'         => __('Team Categories'),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+    'rewrite' => array('slug' => 'team'),
+  );
+  register_taxonomy('team_category', 'team', $args);
+}
+
+
+add_action('init', 'create_taxonomies_team', 0);
+add_action('init', 'create_taxonomies_lab', 0);
+add_action('init', 'custom_post_type_laboratorium', 0);

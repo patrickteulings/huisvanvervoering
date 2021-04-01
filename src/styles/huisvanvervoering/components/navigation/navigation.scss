@@ -5,8 +5,8 @@
 // Trigger Button
 .navigation-trigger-wrapper {
   @include position(fixed, 0, 0);
-  @include size(234px, 136px);
-  background-image: url("../../assets/images/ui/menu-background.svg");
+  @include size(234px, 234px);
+  background-image: url("../../assets/images/ui/menu-background-2.svg");
   background-repeat: no-repeat;
   z-index: 999;
 

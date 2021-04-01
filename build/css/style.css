@@ -773,8 +773,8 @@ p {
   right: auto;
   bottom: auto;
   width: 234px;
-  height: 136px;
-  background-image: url("../../assets/images/ui/menu-background.svg");
+  height: 234px;
+  background-image: url("../../assets/images/ui/menu-background-2.svg");
   background-repeat: no-repeat;
   z-index: 999; }
   .navigation-trigger-wrapper .hamburger {
@@ -1279,20 +1279,6 @@ section.join {
     width: 100%;
     height: 100%;
     background-size: cover; }
-  .hero__background--pillar {
-    background-color: #faf2fb;
-    background-repeat: no-repeat;
-    background-position: right top; }
-  .hero__background--pillar-z {
-    background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
-    background-repeat: no-repeat;
-    background-position: right top;
-    z-index: 3; }
-  .hero__background--pillar-corner {
-    background-image: url("./../../assets/images/ui/contentpage-header--background-smalll.svg");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    z-index: 3; }
   .hero__title {
     font-weight: 900; }
   .hero__title--front-page {
@@ -1409,22 +1395,24 @@ section.join {
 /* ----------------------------------------
   VARIANTIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
 ---------------------------------------- */
-.hero--pillar {
-  max-height: 640px; }
+.hero.hero--pillar {
+  max-height: 640px;
+  background-color: #b955c1; }
+  .hero.hero--pillar .hero__title,
+  .hero.hero--pillar .hero__subtitle {
+    color: #ffffff; }
 
 .hero__background--pillar {
-  background-color: #faf2fb;
   background-repeat: no-repeat;
   background-position: right top; }
 
 .hero__background--pillar-z {
-  background-image: url("./../../assets/images/ui/contentpage-header--background.svg");
+  background-image: url("./../../assets/images/ui/contentpage--pillar-header--background.svg");
   background-repeat: no-repeat;
   background-position: right top;
   z-index: 3; }
 
 .hero__background--pillar-corner {
-  background-image: url("./../../assets/images/ui/contentpage-header--background-smalll.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   z-index: 3; }
@@ -1798,6 +1786,100 @@ section.section.share {
   opacity: 0.8; }
   .wp-block-group.alignwide.hvv .wp-block-group__inner-container .envira-gallery-wrap {
     max-width: 750px !important; }
+
+.lab-excerpt {
+  max-width: 816px;
+  margin-bottom: 4rem; }
+  @media (min-width: 600px) {
+    .lab-excerpt {
+      display: flex; } }
+  .lab-excerpt:nth-child(even) .team-member__content {
+    order: 0; }
+  .lab-excerpt:nth-child(even) .team-member__image {
+    order: 1;
+    margin: 0 auto 2rem; }
+    @media (min-width: 600px) {
+      .lab-excerpt:nth-child(even) .team-member__image {
+        margin-left: 4rem;
+        margin-right: 0; } }
+    .lab-excerpt:nth-child(even) .team-member__image:before {
+      left: -10px;
+      top: 77px; }
+  .lab-excerpt img {
+    max-height: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+  .lab-excerpt__content a {
+    text-decoration: none; }
+    .lab-excerpt__content a:hover {
+      text-decoration: none; }
+  .lab-excerpt__content h2 {
+    font-family: "Merriweather", serif;
+    font-size: 1.33333em;
+    font-size: 24px;
+    font-weight: 600;
+    color: #9a00b4;
+    margin-bottom: 2rem; }
+  .lab-excerpt__image {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 150px;
+    margin: 0 auto 2rem; }
+    @media (min-width: 600px) {
+      .lab-excerpt__image {
+        margin-right: 4rem;
+        margin-bottom: 0; } }
+    .lab-excerpt__image .image-background {
+      width: 100px;
+      height: 100px;
+      content: "";
+      display: block;
+      background-color: #9a00b4;
+      transform-origin: center;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      right: auto;
+      bottom: auto;
+      background-color: #ffffff;
+      box-shadow: 3px 4px 30px 6px rgba(0, 0, 0, 0.47);
+      z-index: 0; }
+    .lab-excerpt__image img {
+      position: relative;
+      z-index: 5; }
+    .lab-excerpt__image:before {
+      width: 60px;
+      height: 60px;
+      content: "";
+      display: block;
+      background-color: #9a00b4;
+      transform-origin: center;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 100px;
+      top: 30px;
+      right: auto;
+      bottom: auto;
+      background-color: #f6def9; }
+    .lab-excerpt__image:after {
+      width: 100px;
+      height: 100px;
+      content: "";
+      display: block;
+      background-color: #9a00b4;
+      transform-origin: center;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 25px;
+      top: 25px;
+      right: auto;
+      bottom: auto;
+      background-color: transparent;
+      border: 1px solid #ffffff;
+      z-index: 5; }
 
 .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem;
@@ -2182,10 +2264,6 @@ section.section.team {
   .page-template-page-pillar .entry-header h1 {
     max-width: 650px;
     margin: 0 auto; }
-
-.page-template-page-pillar h1.hero__title {
-  color: #9a00b4;
-  font-weight: 900; }
 
 .page-template-page-pillar .entry-content .wp-block-group.alignfull.hvv.intro p, .page-template-page-pillar .entry-content .wp-block-group.alignfull.hvv p {
   max-width: 650px !important;

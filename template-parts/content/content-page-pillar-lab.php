@@ -55,7 +55,7 @@
   <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
-<section class="section team">
+<section class="section lab-excerpt__pinned">
   <div class="section__inner">
 
     <?php
@@ -72,17 +72,21 @@
       $thumbnail_id = get_post_thumbnail_id($post->ID);
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
       $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+      $term_list = get_the_term_list($post->ID, 'lab_category');
       ?>
 
       <!-- <h2><?php the_title(); ?></h2> -->
-      <div class="team-member">
-        <div class="team-member__image">
+      <div class="lab-excerpt">
+        <div class="lab-excerpt__image">
           <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
           <div class="image-background" role="presentation"></div>
         </div>
-        <div class="team-member__content">
+        <div class="lab-excerpt__content">
           <a href="<?php the_permalink(); ?>">
             <h2><?php the_title() ?></h2>
+            <?php if ($term_list) : ?>
+              <span class="lab-excerpt__category"><?= $term_list; ?></span>
+            <?php endif; ?>
           </a>
           <p>
             <?= $trimmed ?>
@@ -94,5 +98,61 @@
     <?php wp_reset_postdata(); ?>
 
 
+  </div>
+</section>
+
+<section class="section lab-excerpt__archive">
+  <div class="section__inner">
+
+    <?php
+    $args = array(
+      'post_type' => 'laboratorium',
+      'post_status' => 'publish',
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'lab_category',
+          'field' => 'slug',
+          'terms' => 'pinned'
+        )
+      ),
+      'posts_per_page' => '8',
+    );
+
+    $loop = new WP_Query($args);
+    ?>
+    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+
+      <?php
+      $thumbnail_id = get_post_thumbnail_id($post->ID);
+      $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+      $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+      $cats = get_the_category();
+      $cat_name = $cats[0]->name;
+      $taxonomies = get_object_taxonomies('lab_category');
+      $term_list = get_the_term_list($post->ID, 'lab_category');
+      ?>
+
+      <!-- <h2><?php the_title(); ?></h2> -->
+      <div class="lab-excerpt">
+        <div class="lab-excerpt__image">
+          <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
+          <div class="image-background" role="presentation"></div>
+        </div>
+        <div class="lab-excerpt__content">
+          <a href="<?php the_permalink(); ?>">
+            <h2><?php the_title() ?></h2>
+            <?php if ($terms_list) : ?>
+              <?= $terms_list ?>
+            <?php endif; ?>
+          </a>
+          <p>
+            <?= $trimmed ?>
+          </p>
+        </div>
+      </div>
+
+    <?php endwhile; ?>
+
+    <?php wp_reset_postdata(); ?>
   </div>
 </section>

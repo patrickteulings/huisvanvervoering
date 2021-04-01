@@ -18,7 +18,7 @@ $post_thumbnail_id = get_post_thumbnail_id($post);
 $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
 ?>
 
-<div class="hero hero--pillar" role="banner">
+<div class="hero hero--pillar" role="banner" style="background-image: url(<?= $post_thumbnail_url; ?>);">
   <div class="hero__background hero__background--pillar-z"></div>
   <div class="hero__background hero__background--pillar-corner"></div>
   <div class="hero__background hero__background--pillar"></div>
