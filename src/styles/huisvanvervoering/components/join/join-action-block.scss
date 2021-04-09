@@ -20,7 +20,11 @@ section.join {
   h4 {
     font-family: "Arial Black";
     color: color("primary");
-    @include font-size(56px);
+    @include font-size(32px);
+
+    @include mq("tablet", "min") {
+      @include font-size(56px);
+    }
   }
 
   p {

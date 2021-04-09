@@ -895,78 +895,83 @@ p {
   .menu-wrapper > li li.menu-item a {
     font-weight: 400; }
 
-.post-navigation {
-  margin-left: 0; }
-  .post-navigation__inner {
-    padding: 0 2rem;
-    margin-left: 0 auto; }
-    @media (min-width: 0px) {
-      .post-navigation__inner {
-        width: 100%; } }
-    @media (min-width: 600px) {
-      .post-navigation__inner {
-        width: 100%; } }
-    @media (min-width: 1200px) {
-      .post-navigation__inner {
-        width: 1024px; } }
-  .post-navigation .nav-links {
-    max-width: 650px;
-    display: flex;
-    justify-content: space-between; }
-  .post-navigation .post-title {
-    font-family: "Merriweather", serif;
-    font-size: 0.88889em;
-    font-size: 16px;
-    position: relative;
+.post-navigation__inner {
+  padding: 0 2rem;
+  margin: 0 auto; }
+  @media (min-width: 0px) {
+    .post-navigation__inner {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .post-navigation__inner {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .post-navigation__inner {
+      width: 1024px; } }
+
+.post-navigation .nav-links {
+  max-width: 650px;
+  margin-left: 0;
+  display: flex;
+  justify-content: space-between; }
+
+.post-navigation .post-title {
+  font-family: "Merriweather", serif;
+  font-size: 0.88889em;
+  font-size: 16px;
+  position: relative;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  font-weight: 300;
+  margin: 0 !important; }
+
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto; }
+  .post-navigation .nav-previous .meta-nav,
+  .post-navigation .nav-next .meta-nav {
+    display: none; }
+  .post-navigation .nav-previous:before,
+  .post-navigation .nav-next:before {
+    content: " ";
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+    position: absolute;
     left: 0;
-    top: 0;
+    top: -1px;
     right: auto;
     bottom: auto;
-    font-weight: 300;
-    margin: 0 !important; }
-  .post-navigation .nav-previous,
-  .post-navigation .nav-next {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: auto;
-    bottom: auto; }
-    .post-navigation .nav-previous .meta-nav,
-    .post-navigation .nav-next .meta-nav {
-      display: none; }
-    .post-navigation .nav-previous:before,
-    .post-navigation .nav-next:before {
-      content: " ";
-      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
-      position: absolute;
-      left: 0;
-      top: -1px;
-      right: auto;
-      bottom: auto;
-      width: 24px;
-      height: 24px;
-      background-image: url("./../../assets/images/ui/icons/chevron-left.svg"); }
-    .post-navigation .nav-previous a:hover,
-    .post-navigation .nav-next a:hover {
-      text-decoration: none; }
-  .post-navigation .nav-next {
-    margin-top: 0px; }
-    .post-navigation .nav-next .post-title {
-      left: auto;
-      right: 30px; }
-    .post-navigation .nav-next:before {
-      position: absolute;
-      left: auto;
-      top: -1px;
-      right: 0;
-      bottom: auto;
-      background-image: url("./../../assets/images/ui/icons/chevron-right.svg"); }
-    .post-navigation .nav-next:hover:before {
-      right: -5px; }
-  .post-navigation .nav-previous .post-title {
-    left: 30px; }
-  .post-navigation .nav-previous:hover:before {
-    left: -5px; }
+    width: 24px;
+    height: 24px;
+    background-image: url("./../../assets/images/ui/icons/chevron-left.svg"); }
+  .post-navigation .nav-previous a:hover,
+  .post-navigation .nav-next a:hover {
+    text-decoration: none; }
+
+.post-navigation .nav-next {
+  margin-top: 0px; }
+  .post-navigation .nav-next .post-title {
+    left: auto;
+    right: 30px; }
+  .post-navigation .nav-next:before {
+    position: absolute;
+    left: auto;
+    top: -1px;
+    right: 0;
+    bottom: auto;
+    background-image: url("./../../assets/images/ui/icons/chevron-right.svg"); }
+  .post-navigation .nav-next:hover:before {
+    right: -5px; }
+
+.post-navigation .nav-previous .post-title {
+  left: 30px; }
+
+.post-navigation .nav-previous:hover:before {
+  left: -5px; }
 
 .footer {
   background-color: #f6def9;
@@ -1135,8 +1140,12 @@ section.join {
   section.join h4 {
     font-family: "Arial Black";
     color: #90bfba;
-    font-size: 3.11111em;
-    font-size: 56px; }
+    font-size: 1.77778em;
+    font-size: 32px; }
+    @media (min-width: 600px) {
+      section.join h4 {
+        font-size: 3.11111em;
+        font-size: 56px; } }
   section.join p {
     font-size: 0.88889em;
     font-size: 16px;
