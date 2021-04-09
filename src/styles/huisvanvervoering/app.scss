@@ -1,4 +1,5 @@
 // Mixins - Huisvanvervoering
+/* prettier-ignore-start */
 @import "mixins/diamond", "mixins/layout";
 
 @import "ui/buttons/buttons", "ui/typography/typography";
@@ -13,7 +14,7 @@
   "components/gallery/envira", "components/lab/lab-excerpt";
 
 @import "views/general", "views/blog-single", "views/team", "views/homepage",
-  "views/entry-header", "views/site-header", "views/page-pillar";
+  "views/entry-header", "views/site-header", "views/page-pillar", "views/lab";
 
 body {
   scroll-behavior: smooth;

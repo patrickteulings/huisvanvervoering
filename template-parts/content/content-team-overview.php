@@ -39,11 +39,17 @@
 
   <section class="section team">
     <div class="section__inner">
-
       <?php
       $args = array(
         'post_type' => 'team',
         'post_status' => 'publish',
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'team_category',
+            'field' => 'slug',
+            'terms' => 'core'
+          )
+        ),
       );
 
       $loop = new WP_Query($args);
@@ -74,11 +80,71 @@
       <?php endwhile; ?>
 
       <?php wp_reset_postdata(); ?>
-
-
     </div>
   </section>
 
+
+  <!-- TEAM - BOARD MEMBERS -->
+
+  <section class="section team team-board">
+    <div class="section__inner">
+      <div class="textcontent">
+        <h3><?php the_field('heading'); ?></h3>
+        <p><?php the_field('paragraph'); ?></p>
+      </div>
+      <div class="team-board--members-overview">
+        <?php
+        $args = array(
+          'post_type' => 'team',
+          'post_status' => 'publish',
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'team_category',
+              'field' => 'slug',
+              'terms' => 'board'
+            )
+          ),
+        );
+
+        $loop = new WP_Query($args);
+        ?>
+        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+
+          <?php
+          $thumbnail_id = get_post_thumbnail_id($post->ID);
+          $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+          $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+          $term_list = get_the_term_list($post->ID, 'team_category');
+          ?>
+
+          <!-- <h2><?php the_title(); ?></h2> -->
+          <div class="team-board-member">
+            <div class="team-board-member__inner">
+              <div class="team-board-member__image">
+                <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
+                <div class="image-background" role="presentation"></div>
+              </div>
+              <div class="team-board-member__content">
+                <a href="<?php the_permalink(); ?>">
+                  <h2><?php the_title() ?></h2>
+                </a>
+                <?php if ($term_list) : ?>
+                  <span class="team-board-member__category"><?= $term_list; ?></span>
+                <?php endif; ?>
+                <p>
+                  <?= $trimmed ?>
+                </p>
+              </div>
+            </div>
+          </div>
+        <?php endwhile; ?>
+
+
+        <?php wp_reset_postdata(); ?>
+      </div>
+
+    </div>
+  </section>
 
 
 

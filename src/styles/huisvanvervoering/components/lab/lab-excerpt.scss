@@ -46,6 +46,11 @@
       font-weight: 600;
       color: color("secondary");
       margin-bottom: 2rem;
+
+      .lab-excerpt__date {
+        color: darken(color("secondary-light"), 10%);
+        font-size: 0.9em;
+      }
     }
   }
 
@@ -83,6 +88,30 @@
       background-color: transparent;
       border: 1px solid color("white");
       z-index: 5;
+    }
+  }
+
+  &__category {
+    display: none;
+  }
+}
+
+.lab-excerpt__archive {
+  .lab-excerpt {
+    &__content {
+      h2 {
+        color: lighten(color("grey"), 30%);
+      }
+    }
+    &:nth-child(odd) {
+      .lab-excerpt__image {
+        order: 2;
+
+        &:before {
+          background-color: color("primary-light");
+          @include position(absolute, 70px, 70px);
+        }
+      }
     }
   }
 }

@@ -1,19 +1,23 @@
 .post-navigation {
-  // margin-left: 0;
+  margin-left: 0;
 
   &__inner {
     @include containerWidth;
     @include innerspace(0, 2rem);
-    margin: 0 auto;
+    margin-left: 0 auto;
   }
   .nav-links {
     max-width: 650px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .post-title {
     font-family: $heading-font-face;
     @include font-size(16px);
+    @include position;
     font-weight: 300;
+    margin: 0 !important;
   }
 
   .nav-previous,
@@ -27,7 +31,7 @@
     &:before {
       content: " ";
       @include transition;
-      @include position(absolute, 0, 3px, auto, auto);
+      @include position(absolute, 0, -1px, auto, auto);
       @include size(24px);
       background-image: url("./../../assets/images/ui/icons/chevron-left.svg");
     }
@@ -38,8 +42,14 @@
   }
 
   .nav-next {
+    margin-top: 0px;
+
+    .post-title {
+      left: auto;
+      right: 30px;
+    }
     &:before {
-      @include position(absolute, auto, 3px, 0, auto);
+      @include position(absolute, auto, -1px, 0, auto);
       background-image: url("./../../assets/images/ui/icons/chevron-right.svg");
     }
 
@@ -51,6 +61,10 @@
   }
 
   .nav-previous {
+    .post-title {
+      left: 30px;
+    }
+
     &:hover {
       &:before {
         left: -5px;

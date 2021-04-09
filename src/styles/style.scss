@@ -1,7 +1,7 @@
 $global-max-width--desktop: 1400px;
 
 /* mixins / functions / config etc */
-@import 'boilerplate/boilerplate';
+@import "boilerplate/boilerplate";
 
 /* All theme-specific styling */
-@import 'huisvanvervoering/app';
+@import "huisvanvervoering/app";

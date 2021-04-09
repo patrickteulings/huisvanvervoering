@@ -73,3 +73,28 @@ section > [class*="__inner"] {
     }
   }
 }
+
+/* ----------------------------------------
+  BOARD MEMBERS
+---------------------------------------- */
+
+.page-template-team-overview {
+  section.section.team {
+    margin-bottom: 0;
+  }
+
+  section.section.team-board {
+    margin-top: 0;
+
+    .section__inner {
+      .textcontent {
+        h3 {
+          color: color("primary");
+          font-weight: 900;
+        }
+        max-width: 816px;
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}

@@ -1,7 +1,10 @@
 .team-member {
-  // display: flex;
   max-width: 816px;
   margin-bottom: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include mq("tablet", "min") {
     display: flex;
@@ -84,5 +87,71 @@
       border: 1px solid color("white");
       z-index: 5;
     }
+  }
+}
+
+/* ----------------------------------------
+  BOARD MEMBERS
+---------------------------------------- */
+
+.team-board--members-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include mq("tablet", "min") {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+.team-board-member {
+  background: color("white");
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+
+  @include mq("tablet", "min") {
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    @include innerspace(1rem);
+  }
+
+  &__image {
+    @include size(100%, 200px);
+    img {
+      object-fit: cover;
+      object-position: center center;
+      @include size(100%);
+    }
+  }
+
+  &__content {
+    a {
+      text-decoration: none;
+      pointer-events: none;
+      h2 {
+        @include font-size(18px);
+        margin: 2rem 0 0 1rem;
+        color: color("secondary");
+        font-weight: 600;
+      }
+    }
+  }
+
+  p {
+    // width: 240px;
+    font-family: $paragraph-font-face;
+    @include truncate-multiline(3, 160%, 16px);
+    @include innerspace(0, 1rem);
+    margin-top: 1rem;
+  }
+  // Title / header
+  & > a {
+    padding: 0;
+  }
+
+  .team-board-member__category {
+    display: none;
   }
 }

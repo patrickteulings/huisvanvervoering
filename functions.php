@@ -127,7 +127,7 @@ if (!function_exists('huis_van_vervoering_setup')) {
 
     // Add support for editor styles.
     add_theme_support('editor-styles');
-    $background_color = get_theme_mod('background_color', 'D1E4DD');
+    $background_color = get_theme_mod('background_color', 'FFFFFF');
     if (127 > Huis_Van_Vervoering_Custom_Colors::get_relative_luminance_from_hex($background_color)) {
       add_theme_support('dark-editor-style');
     }
@@ -667,6 +667,8 @@ function huisvanvervoering_add_ie_class()
 }
 add_action('wp_footer', 'huisvanvervoering_add_ie_class');
 
+flush_rewrite_rules(false);
+
 /*
 * Creating a function to create our CPT
 */
@@ -761,12 +763,13 @@ function custom_post_type_laboratorium()
     'hierarchical'        => true,
     'public'              => true,
     'show_ui'             => true,
+    'rewrite' => array('slug' => 'laboratorium'),
     'show_in_menu'        => true,
     'show_in_nav_menus'   => true,
     'show_in_admin_bar'   => true,
     'menu_position'       => 4,
     'can_export'          => true,
-    'has_archive'         => true,
+    'has_archive'         => false,
     'exclude_from_search' => false,
     'publicly_queryable'  => true,
     'capability_type'     => 'page',
@@ -845,7 +848,7 @@ function custom_post_type_team()
 * unnecessarily executed.
 */
 
-add_action('init', 'custom_post_type_supporters', 0);
+// add_action('init', 'custom_post_type_supporters', 0);
 add_action('init', 'custom_post_type_team', 0);
 
 // Our custom post type function
@@ -863,6 +866,7 @@ function create_posttype()
       'public' => true,
       'has_archive' => true,
       'rewrite' => array('slug' => 'supporters'),
+      'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
       'menu_position' => 6,
       'menu_icon' => 'dashicons-heart',
       'show_in_rest' => true,
@@ -883,6 +887,27 @@ function create_posttype()
       'menu_position' => 5,
       'menu_icon' => 'dashicons-groups',
       'show_in_rest' => true,
+    )
+  );
+
+  register_post_type(
+    'lab',
+    // CPT Options
+    array(
+      'labels' => array(
+        'name' => __('Lab'),
+        'singular_name' => __('Lab')
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions'),
+      'menu_position' => 4,
+      "taxonomies" => ["category", "lab_category"],
+      'menu_icon' => 'dashicons-color-picker',
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'lab'),
+      'publicly_queryable'    => true,
+      'capability_type'       => 'post',
     )
   );
 }
@@ -910,9 +935,8 @@ function create_taxonomies_lab()
     'hierarchical' => true,
     'show_in_rest' => true,
     'query_var' => true,
-    'rewrite' => array('slug' => 'laboratorium'),
   );
-  register_taxonomy('lab_category', 'laboratorium', $args);
+  register_taxonomy('lab_category', 'lab', $args);
 }
 
 function create_taxonomies_team()
@@ -935,7 +959,6 @@ function create_taxonomies_team()
     'hierarchical' => true,
     'show_in_rest' => true,
     'query_var' => true,
-    'rewrite' => array('slug' => 'team'),
   );
   register_taxonomy('team_category', 'team', $args);
 }
@@ -943,4 +966,8 @@ function create_taxonomies_team()
 
 add_action('init', 'create_taxonomies_team', 0);
 add_action('init', 'create_taxonomies_lab', 0);
-add_action('init', 'custom_post_type_laboratorium', 0);
+
+// MOVE YOAST BOX BELOW ACF BOXES
+add_filter('wpseo_metabox_prio', function () {
+  return 'low';
+});

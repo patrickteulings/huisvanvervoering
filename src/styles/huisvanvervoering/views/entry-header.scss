@@ -15,13 +15,13 @@
     .post-thumbnail {
       display: block;
       position: absolute;
+      z-index: 3;
       left: auto;
       top: 60px;
       right: -150px;
       bottom: auto;
       width: 300px !important;
       height: 300px !important;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 
       @include mq("tablet-wide", "min") {
         top: -660px;
@@ -35,14 +35,35 @@
       max-width: none;
       height: 100%;
       object-fit: cover;
+      position: relative;
+      z-index: 10;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
-
-    .post-thumbnail:before {
+    .post-thumbnail {
+      clip-path: none;
+    }
+    .post-thumbnail:after {
       content: "";
       width: 64%;
       height: 64%;
       border: 1px solid #fff;
       position: absolute;
+      left: 18%;
+      top: 18%;
+      z-index: 11;
+      right: auto;
+      bottom: auto;
+      transform-origin: center center;
+      transform: rotate(45deg);
+    }
+    .post-thumbnail:before {
+      content: "";
+      width: 64%;
+      height: 64%;
+      background: #fff;
+      box-shadow: 0 6px 80px rgba(0, 0, 0, 10%);
+      position: absolute;
+      z-index: 0;
       left: 18%;
       top: 18%;
       right: auto;

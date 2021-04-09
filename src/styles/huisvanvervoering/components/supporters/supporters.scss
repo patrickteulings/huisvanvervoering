@@ -1,12 +1,12 @@
-
 .supporters {
-  background: color('white');
+  background: color("white");
 
   &.section {
     margin-top: 0;
   }
   .section__inner {
     display: flex;
+    justify-content: space-around;
   }
   .supporter {
     &:not(:last-child) {

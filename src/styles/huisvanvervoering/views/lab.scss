@@ -1,0 +1,35 @@
+.page-template-page-pillar-lab {
+  .lab-archive--intro {
+    p.hvv.intro {
+      margin-bottom: 4rem;
+      max-width: 850px !important;
+    }
+  }
+}
+
+/* ----------------------------------------
+  SINGLE PAGE - DETAIL PAGE
+---------------------------------------- */
+
+.single-lab {
+  .entry-content {
+    .wp-block-group.alignfull.hvv {
+      .wp-block-group__inner-container {
+        @include containerWidth();
+
+        p {
+          margin-left: 0 !important;
+        }
+        padding: 0 2rem;
+
+        .wp-block-group__inner-container {
+          padding: 0;
+        }
+
+        .wp-block-gallery {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+}

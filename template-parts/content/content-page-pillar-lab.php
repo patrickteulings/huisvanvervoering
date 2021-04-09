@@ -60,8 +60,15 @@
 
     <?php
     $args = array(
-      'post_type' => 'laboratorium',
+      'post_type' => 'lab',
       'post_status' => 'publish',
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'lab_category',
+          'field' => 'slug',
+          'terms' => 'pinned'
+        )
+      ),
     );
 
     $loop = new WP_Query($args);
@@ -83,11 +90,12 @@
         </div>
         <div class="lab-excerpt__content">
           <a href="<?php the_permalink(); ?>">
-            <h2><?php the_title() ?></h2>
-            <?php if ($term_list) : ?>
-              <span class="lab-excerpt__category"><?= $term_list; ?></span>
-            <?php endif; ?>
+            <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
           </a>
+          <?php if ($term_list) : ?>
+            <span class="lab-excerpt__category"><?= $term_list; ?></span>
+          <?php endif; ?>
+
           <p>
             <?= $trimmed ?>
           </p>
@@ -103,16 +111,19 @@
 
 <section class="section lab-excerpt__archive">
   <div class="section__inner">
-
+    <div class="lab-archive--intro">
+      <h3>Lab archief</h3>
+      <p class="hvv intro">Dear Lanyon,--You are one of my oldest friends; and although we may have differed at times on scientific questions, I cannot remember, at least on my side, any break in our affection. There was never a day when, if you had said to me, 'Jekyll, my life, my honour, my reason, depend upon you,’ I would not have sacrificed my left hand to help you. Lanyon my life, my honour, my reason, are all at your mercy; if you fail me to-night, I am lost. You might suppose, after this preface, that I am going to ask you for something dishonourable to grant. Judge for yourself.</p>
+    </div>
     <?php
     $args = array(
-      'post_type' => 'laboratorium',
+      'post_type' => 'lab',
       'post_status' => 'publish',
       'tax_query' => array(
         array(
           'taxonomy' => 'lab_category',
           'field' => 'slug',
-          'terms' => 'pinned'
+          'terms' => 'archived'
         )
       ),
       'posts_per_page' => '8',
@@ -140,7 +151,7 @@
         </div>
         <div class="lab-excerpt__content">
           <a href="<?php the_permalink(); ?>">
-            <h2><?php the_title() ?></h2>
+            <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
             <?php if ($terms_list) : ?>
               <?= $terms_list ?>
             <?php endif; ?>
