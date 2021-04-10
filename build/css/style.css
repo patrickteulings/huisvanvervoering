@@ -2012,7 +2012,7 @@ section.section.share {
   margin-left: 0 !important; }
 
 .page .wp-block-group.alignfull.hvv .wp-block-columns {
-  margin-left: 0 !important; }
+  max-width: 100% !important; }
 
 .singular .entry-header {
   display: none; }
@@ -2352,7 +2352,7 @@ section.section.team {
       height: 1000px !important; } }
 
 .entry-header.content-team .post-thumbnail .wp-post-image {
-  max-width: none;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
   position: relative;
@@ -2397,7 +2397,8 @@ section.section.team {
   top: 0;
   right: auto;
   bottom: auto;
-  z-index: 2; }
+  z-index: 2;
+  max-width: 680px; }
 
 .site-header {
   padding-top: 80px; }
