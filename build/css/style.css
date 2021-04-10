@@ -1982,6 +1982,83 @@ section.section.share {
     right: auto;
     bottom: auto; }
 
+.summerschool-programs .wp-block-column {
+  background: #ffffff;
+  position: relative;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  padding: 4rem; }
+  .summerschool-programs .wp-block-column:after {
+    content: "";
+    background: #ffffff;
+    width: 75%;
+    height: 70%;
+    position: absolute;
+    left: 15%;
+    top: 28%;
+    right: auto;
+    bottom: auto;
+    z-index: -2;
+    box-shadow: 4px 4px 16px 20px rgba(0, 0, 0, 0.09);
+    transform: rotate(-2deg); }
+  .summerschool-programs .wp-block-column figure {
+    width: 170px;
+    height: 170px;
+    margin-left: 1rem;
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    z-index: 2; }
+    .summerschool-programs .wp-block-column figure img {
+      max-width: 170px;
+      max-height: 170px;
+      object-fit: cover;
+      width: 100%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+    .summerschool-programs .wp-block-column figure:after {
+      content: "";
+      background: #ffffff;
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: 43px;
+      bottom: 30px;
+      width: 80px;
+      height: 80px;
+      transform: rotate(45deg);
+      box-shadow: 4px 4px 16px 20px rgba(0, 0, 0, 0.09);
+      z-index: -1; }
+
+.summerschool-programs h5 {
+  color: #9a00b4;
+  font-weight: 600; }
+  .summerschool-programs h5 a {
+    text-decoration: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto; }
+    .summerschool-programs h5 a:after {
+      content: "";
+      height: 2px;
+      width: 0%;
+      background: #9a00b4;
+      position: absolute;
+      left: 0;
+      top: auto;
+      right: auto;
+      bottom: -5px;
+      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+    .summerschool-programs h5 a:hover {
+      text-decoration: none; }
+      .summerschool-programs h5 a:hover:after {
+        width: 30%; }
+
 .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem;
   text-align: left; }

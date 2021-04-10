@@ -1,0 +1,71 @@
+.summerschool-programs {
+  .wp-block-column {
+    background: color("white");
+    @include position;
+    //@include card-shadow(3);
+    @include innerspace(4rem);
+
+    &:after {
+      content: "";
+      background: color("white");
+      width: 75%;
+      height: 70%;
+      @include position(absolute, 15%, 28%);
+      z-index: -2;
+      box-shadow: 4px 4px 16px 20px rgba(0, 0, 0, 0.09);
+      transform: rotate(-2deg);
+    }
+
+    figure {
+      @include size(170px);
+      margin-left: 1rem;
+      @include position;
+      z-index: 2;
+
+      img {
+        max-width: 170px;
+        max-height: 170px;
+        object-fit: cover;
+        width: 100%;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+
+      &:after {
+        content: "";
+        background: color("white");
+        @include position(absolute, auto, auto, 43px, 30px);
+        @include size(80px);
+        transform: rotate(45deg);
+        box-shadow: 4px 4px 16px 20px rgba(0, 0, 0, 0.09);
+        z-index: -1;
+      }
+    }
+  }
+
+  h5 {
+    color: color("secondary");
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      @include position;
+
+      &:after {
+        content: "";
+        height: 2px;
+        width: 0%;
+        background: color("secondary");
+        @include position(absolute, 0, auto, auto, -5px);
+        @include transition;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        &:after {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
