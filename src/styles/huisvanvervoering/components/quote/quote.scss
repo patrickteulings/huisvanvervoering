@@ -1,33 +1,68 @@
-.entry-content > .wp-block-group.quote.hvv {
-  background-color: lighten(color("primary"), 30%);
+.entry-content > .wp-block-group.alignfull.quote.hvv {
+  background-color: color("secondary");
   max-width: none;
 
   .wp-block-group__inner-container {
-    padding: 2rem;
-
-    @include mq("tablet", "min") {
-      max-width: 1024px;
-      @include innerspace(4rem, 0rem);
-    }
-    @include mq("desktop", "min") {
-      max-width: 100%;
-    }
+    @include containerWidth;
+    // padding: 2rem;
+    // @include mq("tablet", "min") {
+    //   max-width: 1024px;
+    //   @include innerspace(4rem, 0rem);
+    // }
+    // @include mq("desktop", "min") {
+    //   max-width: 100%;
+    // };
   }
 
-  .wp-block-quote.is-large,
-  .wp-block-quote.is-style-large {
+  .wp-block-quote {
+    max-width: 650px;
+    margin-left: 0 !important;
+    @include outerspace(4rem, 0px);
+
+    // Quatation mark
+    &:before {
+      font-family: $heading-font-face;
+      font-style: italic;
+      font-size: 48px;
+      color: color("white");
+      top: -10px;
+    }
+
     p {
       font-family: $heading-font-face;
       font-style: italic;
-      color: color("secondary");
+      font-size: 32px;
+      line-height: 160%;
       font-weight: 300;
+      color: color("white");
+
+      &:first-letter {
+        margin-left: 32px;
+      }
     }
 
     cite {
       font-family: $paragraph-font-face;
       font-weight: 900;
+      color: color("white");
+      @include position(relative, 48px);
       @include font-size(12px);
       font-style: italic;
+      padding-left: 64px;
+
+      &:before,
+      &:after {
+        content: "";
+        height: 1px;
+        width: 48px;
+        background-color: color("white");
+        z-index: 4;
+        @include position(absolute, 0px, 50%);
+      }
+
+      &:after {
+        left: calc(100% + 16px);
+      }
     }
   }
 }
