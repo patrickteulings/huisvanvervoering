@@ -16,6 +16,7 @@
   <header class="entry-header hvv content-team alignfull">
     <div class="entry-header__inner">
       <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+      <div class="entry-header__subtitle"><?= get_field('subtitle'); ?></div>
       <?php huis_van_vervoering_post_thumbnail(); ?>
     </div>
   </header>

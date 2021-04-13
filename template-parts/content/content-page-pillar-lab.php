@@ -112,8 +112,8 @@
 <section class="section lab-excerpt__archive">
   <div class="section__inner">
     <div class="lab-archive--intro">
-      <h3>Lab archief</h3>
-      <p class="hvv intro">Dear Lanyon,--You are one of my oldest friends; and although we may have differed at times on scientific questions, I cannot remember, at least on my side, any break in our affection. There was never a day when, if you had said to me, 'Jekyll, my life, my honour, my reason, depend upon you,’ I would not have sacrificed my left hand to help you. Lanyon my life, my honour, my reason, are all at your mercy; if you fail me to-night, I am lost. You might suppose, after this preface, that I am going to ask you for something dishonourable to grant. Judge for yourself.</p>
+      <h3><?= get_field('archive_title') ?></h3>
+      <p class="hvv intro"><?= get_field('archive_intro') ?></p>
     </div>
     <?php
     $args = array(

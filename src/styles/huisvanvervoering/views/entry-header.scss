@@ -78,4 +78,12 @@
       max-width: 680px;
     }
   }
+
+  &__subtitle {
+    @include font-size(20px);
+    font-family: $paragraph-font-face;
+    color: color("primary");
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
 }

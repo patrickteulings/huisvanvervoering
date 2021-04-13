@@ -29,7 +29,7 @@ $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
   <div class="hero__content-wrapper">
     <div class="hero__content-inner hero__content-inner--front-page rellax">
       <h1 class="hero__title hero__title--front-page"><?= $blog_info ?></h1>
-      <div class="hero__subtitle hero__subtitle--front-page"><?= $description ?></div>
+      <div class="hero__subtitle hero__subtitle--front-page"><?= get_field('subtitle') ?></div>
     </div>
   </div>
   <div class="hero__actions-wrapper">
