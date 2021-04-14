@@ -6,8 +6,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Huis_Van_Vervoering
- * @since Huis Van Vervoering 1.0
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
  */
 
 ?>
@@ -20,21 +20,21 @@
       <?php the_title(sprintf('<h2 class="entry-title default-max-width"><a href="%s">', esc_url(get_permalink())), '</a></h2>'); ?>
     <?php endif; ?>
 
-    <?php huis_van_vervoering_post_thumbnail(); ?>
+    <?php twenty_twenty_one_post_thumbnail(); ?>
   </header><!-- .entry-header -->
 
   <div class="entry-content">
     <?php
     the_content(
-      huis_van_vervoering_continue_reading_text()
+      twenty_twenty_one_continue_reading_text()
     );
 
     wp_link_pages(
       array(
-        'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'huisvanvervoering') . '">',
+        'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
         'after'    => '</nav>',
         /* translators: %: page number. */
-        'pagelink' => esc_html__('Page %', 'huisvanvervoering'),
+        'pagelink' => esc_html__('Page %', 'twentytwentyone'),
       )
     );
 
@@ -42,6 +42,6 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-footer default-max-width">
-    <?php huis_van_vervoering_entry_meta_footer(); ?>
+    <?php twenty_twenty_one_entry_meta_footer(); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

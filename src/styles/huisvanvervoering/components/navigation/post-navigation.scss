@@ -48,7 +48,7 @@
 
     .post-title {
       left: auto;
-      right: 30px;
+      padding-right: 30px;
     }
     &:before {
       @include position(absolute, auto, -1px, 0, auto);

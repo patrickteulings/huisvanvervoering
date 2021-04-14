@@ -33,6 +33,7 @@
   }
 
   &__content {
+    flex-grow: 2;
     a {
       text-decoration: none;
 
@@ -99,6 +100,8 @@
 .lab-excerpt__archive {
   .lab-excerpt {
     &__content {
+      flex-grow: 2;
+
       h2 {
         color: lighten(color("grey"), 30%);
       }

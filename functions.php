@@ -910,6 +910,27 @@ function create_posttype()
       'capability_type'       => 'post',
     )
   );
+
+  register_post_type(
+    'inhouse',
+    // CPT Options
+    array(
+      'labels' => array(
+        'name' => __('Inhouse production'),
+        'singular_name' => __('Inhouse production')
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions'),
+      'menu_position' => 4,
+      "taxonomies" => ["category", "inhouse_category"],
+      'menu_icon' => 'dashicons-format-audio',
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'huisvoorstellingen'),
+      'publicly_queryable'    => true,
+      'capability_type'       => 'post',
+    )
+  );
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
@@ -939,6 +960,30 @@ function create_taxonomies_lab()
   register_taxonomy('lab_category', 'lab', $args);
 }
 
+function create_taxonomies_inhouse()
+{
+  $labels = array(
+    'name'              => _x('Inhouse Categories', 'taxonomy general name'),
+    'singular_name'     => _x('Inhouse Category', 'taxonomy singular name'),
+    'search_items'      => __('Search Lab Categories'),
+    'all_items'         => __('All Inhouse Categories'),
+    'parent_item'       => __('Parent Inhouse Category'),
+    'parent_item_colon' => __('Parent Inhouse Category:'),
+    'edit_item'         => __('Edit Inhouse Category'),
+    'update_item'       => __('Update Inhouse Category'),
+    'add_new_item'      => __('Add New Inhouse Category'),
+    'new_item_name'     => __('New Inhouse Category'),
+    'menu_name'         => __('Inhouse Categories'),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+    'show_in_rest' => true,
+    'query_var' => true,
+  );
+  register_taxonomy('inhouse_category', 'inhouse', $args);
+}
+
 function create_taxonomies_team()
 {
   $labels = array(
@@ -965,6 +1010,7 @@ function create_taxonomies_team()
 
 
 add_action('init', 'create_taxonomies_team', 0);
+add_action('init', 'create_taxonomies_inhouse', 0);
 add_action('init', 'create_taxonomies_lab', 0);
 
 // MOVE YOAST BOX BELOW ACF BOXES
