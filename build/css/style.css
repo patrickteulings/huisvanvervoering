@@ -1260,7 +1260,10 @@ section.join {
 
 .entry-content > .wp-block-group.alignfull.quote.hvv {
   background-color: #9a00b4;
-  max-width: none; }
+  max-width: none;
+  /* ----------------------------------------
+    BLACK AND WHITE VARIANT OF THE QUOTE
+  ---------------------------------------- */ }
   @media (min-width: 0px) {
     .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-group__inner-container {
       width: 100%; } }
@@ -1322,6 +1325,13 @@ section.join {
         bottom: auto; }
       .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote cite:after {
         left: calc(100% + 16px); }
+  .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite {
+    background-color: #ffffff; }
+    .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite .wp-block-quote p,
+    .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite .wp-block-quote cite {
+      color: #111111; }
+    .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite .wp-block-quote cite:before, .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite .wp-block-quote cite:after {
+      background-color: #111111; }
 
 .hero {
   position: relative;

@@ -77,4 +77,24 @@
       }
     }
   }
+  /* ----------------------------------------
+    BLACK AND WHITE VARIANT OF THE QUOTE
+  ---------------------------------------- */
+  &.blackwhite {
+    background-color: color("white");
+
+    .wp-block-quote {
+      p,
+      cite {
+        color: color("black");
+      }
+
+      cite {
+        &:before,
+        &:after {
+          background-color: color("black");
+        }
+      }
+    }
+  }
 }
