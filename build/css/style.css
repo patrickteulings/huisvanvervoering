@@ -1270,10 +1270,13 @@ section.join {
   @media (min-width: 1200px) {
     .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-group__inner-container {
       width: 1024px; } }
+  .entry-content > .wp-block-group.alignfull.quote.hvv.quotewide .wp-block-quote {
+    max-width: none !important; }
   .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote {
     max-width: 650px;
     margin-left: 0 !important;
-    margin: 4rem; }
+    margin: 4rem;
+    text-align: left; }
     .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote:before {
       font-family: "Merriweather", serif;
       font-style: italic;
@@ -1286,6 +1289,7 @@ section.join {
       font-size: 32px;
       line-height: 160%;
       font-weight: 300;
+      text-align: center;
       color: #ffffff; }
       .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote p:first-letter {
         margin-left: 32px; }
@@ -1294,7 +1298,7 @@ section.join {
       font-weight: 900;
       color: #ffffff;
       position: relative;
-      left: 48px;
+      left: 32px;
       top: 0;
       right: auto;
       bottom: auto;
@@ -1302,6 +1306,9 @@ section.join {
       font-size: 12px;
       font-style: italic;
       padding-left: 64px; }
+      @media (min-width: 600px) {
+        .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote cite {
+          left: 148px; } }
       .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote cite:before, .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote cite:after {
         content: "";
         height: 1px;
@@ -1897,11 +1904,6 @@ section.section.share {
   background: #d7eeec;
   border: 0px; }
 
-.wp-block-group.alignwide.hvv .wp-block-group__inner-container {
-  opacity: 0.8; }
-  .wp-block-group.alignwide.hvv .wp-block-group__inner-container .envira-gallery-wrap {
-    max-width: 750px !important; }
-
 .lab-excerpt {
   max-width: 750px;
   margin-bottom: 4rem; }
@@ -2053,7 +2055,8 @@ section.section.share {
       max-width: 170px;
       max-height: 170px;
       object-fit: cover;
-      width: 100%;
+      min-width: 101%;
+      min-height: 101%;
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
     .summerschool-programs .wp-block-column figure:after {
       content: "";

@@ -26,7 +26,8 @@
         max-width: 170px;
         max-height: 170px;
         object-fit: cover;
-        width: 100%;
+        min-width: 101%;
+        min-height: 101%;
         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
       }
 

@@ -14,10 +14,17 @@
     // };
   }
 
+  &.quotewide {
+    .wp-block-quote {
+      max-width: none !important;
+    }
+  }
+
   .wp-block-quote {
     max-width: 650px;
     margin-left: 0 !important;
     @include outerspace(4rem, 0px);
+    text-align: left;
 
     // Quatation mark
     &:before {
@@ -34,6 +41,7 @@
       font-size: 32px;
       line-height: 160%;
       font-weight: 300;
+      text-align: center;
       color: color("white");
 
       &:first-letter {
@@ -45,10 +53,14 @@
       font-family: $paragraph-font-face;
       font-weight: 900;
       color: color("white");
-      @include position(relative, 48px);
+      @include position(relative, 32px);
       @include font-size(12px);
       font-style: italic;
       padding-left: 64px;
+
+      @include mq("tablet", "min") {
+        left: 148px;
+      }
 
       &:before,
       &:after {
