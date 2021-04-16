@@ -1262,7 +1262,10 @@ section.join {
   background-color: #9a00b4;
   max-width: none;
   /* ----------------------------------------
-    BLACK AND WHITE VARIANT OF THE QUOTE
+    A WIDER VERSION OF THE QUOTE
+  ---------------------------------------- */
+  /* ----------------------------------------
+    BLACK AND WHITE VERSION OF THE QUOTE
   ---------------------------------------- */ }
   @media (min-width: 0px) {
     .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-group__inner-container {
@@ -1273,8 +1276,6 @@ section.join {
   @media (min-width: 1200px) {
     .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-group__inner-container {
       width: 1024px; } }
-  .entry-content > .wp-block-group.alignfull.quote.hvv.quotewide .wp-block-quote {
-    max-width: none !important; }
   .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote {
     max-width: 650px;
     margin-left: 0 !important;
@@ -1325,6 +1326,8 @@ section.join {
         bottom: auto; }
       .entry-content > .wp-block-group.alignfull.quote.hvv .wp-block-quote cite:after {
         left: calc(100% + 16px); }
+  .entry-content > .wp-block-group.alignfull.quote.hvv.quotewide .wp-block-quote {
+    max-width: none !important; }
   .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite {
     background-color: #ffffff; }
     .entry-content > .wp-block-group.alignfull.quote.hvv.blackwhite .wp-block-quote p,

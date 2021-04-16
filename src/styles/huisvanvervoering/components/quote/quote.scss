@@ -4,20 +4,6 @@
 
   .wp-block-group__inner-container {
     @include containerWidth;
-    // padding: 2rem;
-    // @include mq("tablet", "min") {
-    //   max-width: 1024px;
-    //   @include innerspace(4rem, 0rem);
-    // }
-    // @include mq("desktop", "min") {
-    //   max-width: 100%;
-    // };
-  }
-
-  &.quotewide {
-    .wp-block-quote {
-      max-width: none !important;
-    }
   }
 
   .wp-block-quote {
@@ -77,8 +63,19 @@
       }
     }
   }
+
   /* ----------------------------------------
-    BLACK AND WHITE VARIANT OF THE QUOTE
+    A WIDER VERSION OF THE QUOTE
+  ---------------------------------------- */
+
+  &.quotewide {
+    .wp-block-quote {
+      max-width: none !important;
+    }
+  }
+
+  /* ----------------------------------------
+    BLACK AND WHITE VERSION OF THE QUOTE
   ---------------------------------------- */
   &.blackwhite {
     background-color: color("white");
