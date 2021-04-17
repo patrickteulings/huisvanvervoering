@@ -43,15 +43,32 @@
 
     h2 {
       font-size: 24px;
+      font-weight: 500;
       line-height: 160%;
       color: color("secondary");
 
       a {
         text-decoration: none;
+        display: inline-block;
+        @include position;
 
         &:hover {
           text-decoration: none;
+
+          &:before {
+            width: 30%;
+          }
         }
+
+        &:before {
+          content: "";
+          height: 2px;
+          background: color('secondary');
+          width: 6px;
+          @include transition;
+          @include position(absolute, 0, auto, auto, 0);
+        }
+
       }
     }
 

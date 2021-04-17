@@ -1006,12 +1006,31 @@ p {
   .footer__column .menu-item {
     line-height: 30px; }
     .footer__column .menu-item a {
+      display: inline-block;
       font-family: "Yantramanav", sans-serif;
       text-decoration: none;
       color: #806a83;
       font-weight: 900;
+      position: relative;
+      left: 0;
+      top: 0;
+      right: auto;
+      bottom: auto;
       font-size: 1em;
       font-size: 18px; }
+      .footer__column .menu-item a:before {
+        content: "";
+        height: 1px;
+        width: 0%;
+        background: #5a5a5a;
+        position: absolute;
+        left: 0px;
+        top: auto;
+        right: auto;
+        bottom: 0px;
+        transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+      .footer__column .menu-item a:hover:before {
+        width: 30%; }
 
 .footer__socials {
   display: inline-flex; }
@@ -1397,7 +1416,10 @@ section.join {
     padding: 0 2rem;
     max-width: 1400px; }
   .hero__content-inner--front-page {
-    padding-top: 24rem; }
+    padding-top: 8rem; }
+    @media (min-width: 600px) {
+      .hero__content-inner--front-page {
+        padding-top: 24rem; } }
   .hero__actions-wrapper {
     width: 100%;
     position: absolute;
@@ -1619,12 +1641,32 @@ section.join {
         height: 100%; }
     .wp-block-group.alignfull.hvv.cta .wp-block-column h2 {
       font-size: 24px;
+      font-weight: 500;
       line-height: 160%;
       color: #9a00b4; }
       .wp-block-group.alignfull.hvv.cta .wp-block-column h2 a {
-        text-decoration: none; }
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        left: 0;
+        top: 0;
+        right: auto;
+        bottom: auto; }
         .wp-block-group.alignfull.hvv.cta .wp-block-column h2 a:hover {
           text-decoration: none; }
+          .wp-block-group.alignfull.hvv.cta .wp-block-column h2 a:hover:before {
+            width: 30%; }
+        .wp-block-group.alignfull.hvv.cta .wp-block-column h2 a:before {
+          content: "";
+          height: 2px;
+          background: #9a00b4;
+          width: 6px;
+          transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+          position: absolute;
+          left: 0;
+          top: auto;
+          right: auto;
+          bottom: 0; }
     .wp-block-group.alignfull.hvv.cta .wp-block-column p {
       color: #5a5a5a;
       font-size: 0.88889em;

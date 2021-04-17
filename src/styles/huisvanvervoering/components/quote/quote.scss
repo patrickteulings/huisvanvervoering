@@ -21,6 +21,7 @@
       top: -10px;
     }
 
+    // Acutal quote and Cite
     p {
       font-family: $heading-font-face;
       font-style: italic;
@@ -48,6 +49,7 @@
         left: 148px;
       }
 
+      // Cite lines before/after
       &:before,
       &:after {
         content: "";

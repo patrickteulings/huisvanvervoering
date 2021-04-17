@@ -23,6 +23,7 @@
   @include mq("tablet", "min") {
     margin-bottom: 0;
   }
+
   .column__title {
     font-family: $heading-font-face;
     @include font-size(24px);
@@ -38,11 +39,28 @@
     line-height: 30px;
 
     a {
+      display: inline-block;
       font-family: $alt-font-face;
       text-decoration: none;
       color: #806a83;
       font-weight: 900;
+      @include position;
       @include font-size(18px);
+
+      &:before {
+        content: "";
+        height: 1px;
+        width: 0%;
+        background: color('grey');
+        @include position(absolute, 0px, auto, auto, 0px);
+        @include transition;
+      }
+
+      &:hover {
+        &:before {
+          width: 30%;
+        }
+      }
     }
   }
 }
