@@ -1,0 +1,80 @@
+.single-inhouse {
+  .entry-content {
+    .wp-block-group.alignfull {
+      &.hvv.intro,
+      &.hvv {
+        p {
+          max-width: 650px !important;
+          margin-left: 0 !important;
+        }
+      }
+      &.gallery {
+        .wp-block-gallery {
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          max-width: 750px !important;
+          margin-left: -50px !important;
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------
+  Creation / Production and Players
+---------------------------------------- */
+
+.inhouse-meta {
+  .creation-header {
+    h3 {
+      margin-bottom: 2rem;
+    }
+  }
+  .creation {
+    font-family: $heading-font-face;
+    font-style: italic;
+    font-size: 100% !important;
+    line-height: 1.4em !important;
+    display: flex;
+    margin-bottom: 2rem;
+
+    .type {
+      margin-right: 2rem;
+      min-width: 200px;
+      font-family: $heading-font-face;
+      font-style: italic;
+    }
+
+    p {
+      margin: 0 !important;
+      font-family: $heading-font-face;
+      line-height: 1.4em !important;
+    }
+
+    a {
+      color: color("secondary");
+      text-decoration: none;
+      @include transition;
+
+      &:hover {
+        color: color("grey");
+        text-decoration: none;
+      }
+    }
+  }
+
+  .actors {
+    font-style: italic;
+    &__intro {
+      p {
+        font-family: $heading-font-face;
+        font-weight: 100;
+        @include font-size(18px);
+        line-height: 38px;
+        color: color("grey");
+        max-width: 650px !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

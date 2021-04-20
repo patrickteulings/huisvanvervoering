@@ -45,6 +45,18 @@
   }
 }
 
+.single {
+  .entry-header {
+    &__post-type {
+      @include position(relative, 0, -48px);
+      font-family: $heading-font-face;
+      font-style: italic;
+      @include font-size(12px);
+      color: lighten(color("grey"), 30%);
+    }
+  }
+}
+
 /* ----------------------------------------
   DEFAULT FOCUS OVERRIDE
 ---------------------------------------- */

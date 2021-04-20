@@ -1,0 +1,32 @@
+.hvv.mediatext {
+  &.wp-block-group.alignfull {
+    .wp-block-group__inner-container {
+      @include containerWidth;
+
+      .wp-block-media-text {
+        max-width: 850px;
+
+        &.alignwide {
+          margin-right: 0;
+        }
+
+        @include mq("tablet", "min") {
+          width: 850px;
+          margin-left: -50px;
+        }
+
+        &__content {
+          p {
+            @include font-size(16px);
+            line-height: 140%;
+
+            &.has-large-font-size {
+              @include font-size(18px);
+              line-height: 160%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

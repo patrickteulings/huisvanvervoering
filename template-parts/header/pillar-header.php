@@ -18,7 +18,7 @@ $post_thumbnail_id = get_post_thumbnail_id($post);
 $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
 ?>
 
-<div class="hero hero--pillar" role="banner" style="background-image: url(<?= $post_thumbnail_url; ?>);">
+<div class="hero hero--pillar" role="banner">
   <div class="hero__background hero__background--pillar-z"></div>
   <div class="hero__background hero__background--pillar-corner"></div>
   <div class="hero__background hero__background--pillar"></div>
@@ -27,6 +27,10 @@ $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, $size);
       <h1 class="hero__title"><?= the_title() ?></h1>
       <div class="hero__subtitle"><?= get_field('subtitle') ?></div>
     </div>
+    <figure class="post-thumbnail">
+      <div class="image-background"></div>
+      <img class="wp-post-image" src="<?= $post_thumbnail_url ?>" />
+    </figure>
   </div>
   <div class="submenu-wrapper">
     <div class="submenu-wrapper__inner">
