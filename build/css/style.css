@@ -1516,7 +1516,7 @@ section.join {
     @media (min-width: 900px) {
       .hero.hero--pillar .post-thumbnail {
         top: -320px;
-        right: -460px;
+        right: -560px;
         width: 1000px !important;
         height: 1000px !important; } }
   .hero.hero--pillar .image-background {
@@ -2212,34 +2212,41 @@ section.section.share {
       .summerschool-programs h5 a:hover:after {
         width: 30%; }
 
-@media (min-width: 0px) {
-  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
-    width: 100%; } }
-
-@media (min-width: 600px) {
-  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
-    width: 100%; } }
-
-@media (min-width: 1200px) {
-  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
-    width: 1024px; } }
-
-.hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
-  max-width: 850px; }
-  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text.alignwide {
-    margin-right: 0; }
+.hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
+  padding-right: 0;
+  padding-left: 0; }
+  @media (min-width: 0px) {
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
+      width: 100%; } }
   @media (min-width: 600px) {
-    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
-      width: 850px;
-      margin-left: -50px; } }
-  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__content p {
-    font-size: 0.88889em;
-    font-size: 16px;
-    line-height: 140%; }
-    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__content p.has-large-font-size {
-      font-size: 1em;
-      font-size: 18px;
-      line-height: 160%; }
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
+      width: 1024px; } }
+  .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
+    max-width: 850px;
+    margin-left: 0px;
+    width: 100%; }
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text.alignwide {
+      margin-right: 0; }
+    @media (min-width: 600px) {
+      .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
+        width: 850px;
+        margin-left: -50px; } }
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__media {
+      width: 100%;
+      margin-bottom: 2rem; }
+    .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__content {
+      padding: 0 2rem; }
+      .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__content p {
+        font-size: 0.88889em;
+        font-size: 16px;
+        line-height: 140%; }
+        .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text__content p.has-large-font-size {
+          font-size: 1em;
+          font-size: 18px;
+          line-height: 160%; }
 
 .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem;

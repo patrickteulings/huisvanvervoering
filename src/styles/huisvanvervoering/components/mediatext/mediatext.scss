@@ -2,9 +2,13 @@
   &.wp-block-group.alignfull {
     .wp-block-group__inner-container {
       @include containerWidth;
+      padding-right: 0;
+      padding-left: 0;
 
       .wp-block-media-text {
         max-width: 850px;
+        margin-left: 0px;
+        width: 100%;
 
         &.alignwide {
           margin-right: 0;
@@ -15,7 +19,13 @@
           margin-left: -50px;
         }
 
+        &__media {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
         &__content {
+          padding: 0 2rem;
           p {
             @include font-size(16px);
             line-height: 140%;
