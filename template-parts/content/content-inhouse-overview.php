@@ -55,31 +55,48 @@
   <?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
+
+<?php
+  $args = array(
+    'post_type' => 'inhouse',
+    'post_status' => 'publish',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'inhouse_category',
+        'field' => 'slug',
+        'terms' => 'pinned'
+      )
+    ),
+  );
+
+  $loop = new WP_Query($args);
+  ?>
+
+<?php if ($loop->have_posts()) : ?>
+
 <section class="section lab-excerpt__pinned">
   <div class="section__inner">
 
-    <?php
-    $args = array(
-      'post_type' => 'inhouse',
-      'post_status' => 'publish',
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'inhouse_category',
-          'field' => 'slug',
-          'terms' => 'pinned'
-        )
-      ),
-    );
 
-    $loop = new WP_Query($args);
-    ?>
+    <!-- -----------------------  -->
+    <!-- CURRENT PRODUCTIONS title-->
+    <!-- -----------------------  -->
+
+    <section class="section">
+      <div class="section__inner">
+        <h3><?= get_field('current_production_title'); ?></h3>
+        <p><?= get_field('current_production_intro'); ?></p>
+      </div>
+    </section>
+
+
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
       <?php
       $thumbnail_id = get_post_thumbnail_id($post->ID);
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
       $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
-      $term_list = get_the_term_list($post->ID, 'lab_category');
+      $term_list = get_the_term_list($post->ID, 'inhouse_category');
       ?>
 
       <!-- <h2><?php the_title(); ?></h2> -->
@@ -109,11 +126,13 @@
   </div>
 </section>
 
+<? endif; ?>
+
 <section class="section lab-excerpt__archive">
   <div class="section__inner">
     <div class="lab-archive--intro">
-      <h3><?= get_field('archive_title') ?></h3>
-      <p class="hvv intro"><?= get_field('archive_intro') ?></p>
+      <h3><?= get_field('archived_productions_title') ?></h3>
+      <p class="hvv intro"><?= get_field('archived_productions_body') ?></p>
     </div>
     <?php
     $args = array(
@@ -140,7 +159,7 @@
       $cats = get_the_category();
       $cat_name = $cats[0]->name;
       $taxonomies = get_object_taxonomies('lab_category');
-      $term_list = get_the_term_list($post->ID, 'lab_category');
+      $term_list = get_the_term_list($post->ID, 'inhouse_category');
       ?>
 
       <!-- <h2><?php the_title(); ?></h2> -->
