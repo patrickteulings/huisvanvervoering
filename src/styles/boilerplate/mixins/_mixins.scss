@@ -221,3 +221,16 @@ $basefontsize: 18px;
     }
   }
 }
+
+/* ----------------------------------------
+  HIDES SCROLLBAR BUT KEEPS ITS FUNCTIONS
+---------------------------------------- */
+@mixin hide-scrollbar() {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    // All webkit bowsers (eg Chrome)
+    display: none;
+  }
+}

@@ -283,8 +283,12 @@
       @include innerspace(0, 1rem);
       height: 40px;
       list-style-type: none;
-      display: flex;
       transform: translateY(-40px);
+      display: none;
+
+      @include mq("tablet", "min") {
+        display: flex;
+      }
 
       li {
         a {
@@ -315,5 +319,10 @@
     max-width: 650px;
     @include position();
     transform: translateY(-40px);
+    display: none;
+
+    @include mq("tablet", "min") {
+      display: flex;
+    }
   }
 }

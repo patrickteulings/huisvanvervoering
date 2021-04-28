@@ -166,6 +166,9 @@ table {
   background-color: yellow;
   color: #ffffff; }
 
+/* ----------------------------------------
+  HIDES SCROLLBAR BUT KEEPS ITS FUNCTIONS
+---------------------------------------- */
 h1,
 h2,
 h3,
@@ -973,6 +976,74 @@ p {
 .post-navigation .nav-previous:hover:before {
   left: -5px; }
 
+.entry-content .submenu--content-section {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  max-width: none !important;
+  margin-bottom: 4rem; }
+  @media (min-width: 0px) {
+    .entry-content .submenu--content-section {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .entry-content .submenu--content-section {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .entry-content .submenu--content-section {
+      width: 1024px; } }
+  @media (min-width: 600px) {
+    .entry-content .submenu--content-section {
+      display: none; } }
+  .entry-content .submenu--content-section:after {
+    content: "";
+    width: 80px;
+    height: 100%;
+    position: absolute;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    background: linear-gradient(96deg, rgba(255, 255, 255, 0) 0%, white 100%); }
+  .entry-content .submenu--content-section__inner {
+    margin: 0;
+    padding: 0 1rem;
+    height: 30px;
+    display: flex;
+    overflow: scroll;
+    padding: 0 2rem;
+    max-width: none !important;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto; }
+    .entry-content .submenu--content-section__inner::-webkit-scrollbar {
+      display: none; }
+    .entry-content .submenu--content-section__inner > div {
+      display: inline-block; }
+    .entry-content .submenu--content-section__inner a {
+      padding: 1rem 2rem;
+      font-size: 1.22222em;
+      font-size: 22px;
+      color: #90bfba;
+      font-family: "Merriweather", serif;
+      word-break: keep-all;
+      white-space: nowrap;
+      text-decoration: none; }
+      .entry-content .submenu--content-section__inner a:first-child {
+        padding-left: 0; }
+      .entry-content .submenu--content-section__inner a:hover {
+        text-decoration: none; }
+    .entry-content .submenu--content-section__inner .current_page_item a {
+      color: #9a00b4; }
+
 .footer {
   background-color: #f6def9;
   background-image: url("./../../assets/images/ui/img/diamonds-footer.png");
@@ -1630,8 +1701,11 @@ section.join {
       padding: 0 1rem;
       height: 40px;
       list-style-type: none;
-      display: flex;
-      transform: translateY(-40px); }
+      transform: translateY(-40px);
+      display: none; }
+      @media (min-width: 600px) {
+        .submenu-wrapper__inner .submenu {
+          display: flex; } }
       .submenu-wrapper__inner .submenu li a {
         display: block;
         display: flex;
@@ -1655,7 +1729,11 @@ section.join {
     top: 0;
     right: auto;
     bottom: auto;
-    transform: translateY(-40px); }
+    transform: translateY(-40px);
+    display: none; }
+    @media (min-width: 600px) {
+      .submenu-wrapper__inner-background {
+        display: flex; } }
 
 .wp-block-group.alignfull.hvv.cta {
   padding: 4rem 0rem; }

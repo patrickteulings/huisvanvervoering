@@ -1,21 +1,45 @@
 // Mixins - Huisvanvervoering
-/* prettier-ignore-start */
-@import "mixins/diamond", "mixins/layout";
 
-@import "ui/buttons/buttons", "ui/typography/typography";
+// prettier-ignore
+@import
+  "mixins/diamond",
+  "mixins/layout";
 
+// prettier-ignore
+@import
+  "ui/buttons/buttons",
+  "ui/typography/typography";
+
+// prettier-ignore
 @import "components/navigation/navigation",
-  "components/navigation/post-navigation", "components/footer/footer",
-  "components/supporters/supporters", "components/join/join-action-block",
-  "components/latestposts/latestposts", "components/quote/quote",
-  "components/hero/hero", "components/cta/homepage-cta",
-  "components/team/team-member", "components/headers/header-pillar",
-  "components/share/share", "components/forms/forms",
-  "components/lab/lab-excerpt", "components/summerschool/summerschool-programs",
+  "components/navigation/post-navigation",
+  "components/navigation/subnavigation",
+  "components/footer/footer",
+  "components/supporters/supporters",
+  "components/join/join-action-block",
+  "components/latestposts/latestposts",
+  "components/quote/quote",
+  "components/hero/hero",
+  "components/cta/homepage-cta",
+  "components/team/team-member",
+  "components/headers/header-pillar",
+  "components/share/share",
+  "components/forms/forms",
+  "components/blog/blog-list-item",
+  "components/lab/lab-excerpt",
+  "components/summerschool/summerschool-programs",
   "components/mediatext/mediatext";
 
-@import "views/general", "views/blog-single", "views/team", "views/homepage",
-  "views/entry-header", "views/site-header", "views/page-pillar", "views/lab",
+// prettier-ignore
+@import
+  "views/general",
+  "views/blog-single",
+  "views/team",
+  "views/homepage",
+  "views/entry-header",
+  "views/site-header",
+  "views/page-pillar",
+  "views/lab",
   "views/inhouse-productions";
 
 body {

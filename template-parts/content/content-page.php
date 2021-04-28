@@ -84,25 +84,42 @@
     $parent = new WP_Query($args);
 
     if ($parent->have_posts()) :
+    ?>
 
-      while ($parent->have_posts()) : $parent->the_post(); ?>
-        <div id="parent-<?php the_ID(); ?>" class="parent-page">
+      <div class="submenu--content-section">
+        <div class="submenu--content-section__inner">
+          <?php
+          while ($parent->have_posts()) : $parent->the_post(); ?>
+            <div id="parent-<?php the_ID(); ?>" class="parent-page <?php if ($post->ID == $globalPostID) {
+                                                                      echo ' current_page_item';
+                                                                    } ?>">
 
-          <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            </div>
+          <?php
+          endwhile;
+          ?>
         </div>
+      </div>
     <?php
-      endwhile;
-
     endif;
     wp_reset_postdata();
     ?>
+    <div class="blog-list-item">
+      <div class="blog-list-item__inner">
+        <h2 class="blog-list-item__title">
+          <?php the_title(); ?>
+        </h2>
+        <div class="blog-list-item__content">
+          <?php the_content(); ?>
+        </div>
+      </div>
+    </div>
     <?php
-    the_content();
-
     wp_link_pages(
       array(
-        'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'huisvanvervoering') . '">',
-        'after'    => '</nav>',
+        'before' => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'huisvanvervoering') . '">',
+        'after' => '</nav>',
         /* translators: %: page number. */
         'pagelink' => esc_html__('Page %', 'huisvanvervoering'),
       )
