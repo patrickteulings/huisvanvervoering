@@ -231,13 +231,13 @@ if (!function_exists('huis_van_vervoering_the_posts_navigation')) {
   {
     the_posts_pagination(
       array(
-        'before_page_number' => esc_html__('Page', 'huisvanvervoering') . ' ',
+        'before_page_number' => esc_html__('', 'huisvanvervoering') . ' ',
         'mid_size'           => 0,
         'prev_text'          => sprintf(
           '%s <span class="nav-prev-text">%s</span>',
           is_rtl() ? huis_van_vervoering_get_icon_svg('ui', 'arrow_right') : huis_van_vervoering_get_icon_svg('ui', 'arrow_left'),
           wp_kses(
-            __('Newer <span class="nav-short">posts</span>', 'huisvanvervoering'),
+            __('nieuwer <span class="nav-short"></span>', 'huisvanvervoering'),
             array(
               'span' => array(
                 'class' => array(),
@@ -248,7 +248,7 @@ if (!function_exists('huis_van_vervoering_the_posts_navigation')) {
         'next_text'          => sprintf(
           '<span class="nav-next-text">%s</span> %s',
           wp_kses(
-            __('Older <span class="nav-short">posts</span>', 'huisvanvervoering'),
+            __('ouder <span class="nav-short"></span>', 'huisvanvervoering'),
             array(
               'span' => array(
                 'class' => array(),

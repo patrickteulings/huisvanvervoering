@@ -12,15 +12,30 @@
 
 get_header();
 
-/* Start the Loop */
-while (have_posts()) :
-  the_post();
-  get_template_part('template-parts/content/content-page');
+if (is_home()) {
+?>
+  <div class="blog-overview">
+    <div class="blog-overview__list-wrapper">
+      <?php
+      /* Start the Loop */
+      while (have_posts()) :
+        the_post();
+        get_template_part('template-parts/content/content-page-blog');
 
-  // If comments are open or there is at least one comment, load up the comment template.
-  if (comments_open() || get_comments_number()) {
-    comments_template();
-  }
-endwhile; // End of the loop.
+        // If comments are open or there is at least one comment, load up the comment template.
+        if (comments_open() || get_comments_number()) {
+          comments_template();
+        }
+      endwhile; // End of the loop.
+      ?>
+    </div>
+  </div>
+  <div class="blog-overview-navigation">
+    <div class="blog-overview-navigation__inner">
+      <?php huis_van_vervoering_the_posts_navigation(); ?>
+    </div>
+  </div>
 
+<?php
+}; // endif
 get_footer();

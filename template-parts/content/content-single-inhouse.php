@@ -47,25 +47,40 @@
         <h3>Hoe wat en waar</h3>
       </div>
 
-      <div class="creation">
-        <div class="type">Wanneer?</div>
-        <div class="creator"><?= get_field('production_date') ?></div>
-      </div>
+      <?php if (get_field('production_date')) : ?>
+        <div class="creation">
+          <div class="type">Wanneer?</div>
+          <div class="creator"><?= get_field('production_date') ?></div>
+        </div>
+      <?php endif; ?>
 
-      <div class="creation">
-        <div class="type">Waar</div>
-        <div class="creator"><?= get_field('production_location') ?></div>
-      </div>
-      <div class="creation">
-        <div class="type">In</div>
-        <div class="creator"><?= get_field('production_city') ?></div>
-      </div>
+      <?php if (get_field('production_location')) : ?>
+        <div class="creation">
+          <div class="type">Waar</div>
+          <div class="creator"><?= get_field('production_location') ?></div>
+        </div>
+      <?php endif; ?>
 
-      <div class="creation">
-        <div class="type">Linkje</div>
-        <div class="creator"><a href="<?= get_field('production_link_to_theater') ?>"><?= get_field('production_link_to_theater') ?></a></div>
-      </div>
+      <?php if (get_field('production_city')) : ?>
+        <div class="creation">
+          <div class="type">In</div>
+          <div class="creator"><?= get_field('production_city') ?></div>
+        </div>
+      <?php endif; ?>
 
+      <?php if (get_field('production_link_to_theater')) : ?>
+        <div class="creation">
+          <div class="type">Linkje</div>
+          <div class="creator"><a href="<?= get_field('production_link_to_theater') ?>"><?= get_field('production_link_to_theater') ?></a></div>
+        </div>
+      <?php endif; ?>
+
+      <?php if (get_field('production_partners')) : ?>
+        <div class="creation">
+          <div class="type">Partners</div>
+          <div class="creator"><?= get_field('production_partners') ?>"></div>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
 
@@ -94,6 +109,12 @@
         <div class="creation">
           <div class="type"><?= get_field('activity_type_3') ?></div>
           <div class="creator"><?= get_field('creator_3') ?></div>
+        </div>
+      <?php endif; ?>
+      <?php if (get_field('activity_type_4')) : ?>
+        <div class="creation">
+          <div class="type"><?= get_field('activity_type_4') ?></div>
+          <div class="creator"><?= get_field('creator_4') ?></div>
         </div>
       <?php endif; ?>
     </div>

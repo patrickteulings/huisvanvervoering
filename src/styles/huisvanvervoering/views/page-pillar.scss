@@ -14,7 +14,7 @@
       &.hvv {
         p {
           max-width: 650px !important;
-          margin-left: auto !important;
+          margin-left: 0 !important;
         }
       }
 
@@ -26,9 +26,21 @@
         h5,
         h6 {
           max-width: 650px !important;
-          margin-left: auto !important;
+          margin-left: 0 !important;
         }
       }
+    }
+
+    .wp-block-image {
+      margin-left: 0px !important;
+
+      @include mq("tablet-wide", "min") {
+        margin-left: -50px !important;
+      }
+    }
+
+    .wp-block-gallery {
+      margin-left: 0 !important;
     }
   }
 }
@@ -41,5 +53,19 @@
     @include containerWidth;
     padding: 2rem 2rem 0;
     margin: 0 auto;
+  }
+}
+
+.page-template-page-pillar-lab {
+  .entry-content {
+    .wp-block-group.alignfull {
+      &.hvv.intro,
+      &.hvv {
+        p {
+          max-width: 650px !important;
+          margin-left: 0 !important;
+        }
+      }
+    }
   }
 }

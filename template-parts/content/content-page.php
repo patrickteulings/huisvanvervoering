@@ -24,7 +24,6 @@
     </header>
 
   <?php elseif (has_post_thumbnail() && !is_front_page()) : ?>
-    ELSEIF
     <header class="entry-header alignwide">
       <h1><?php the_title() ?></h1>
       <?php huis_van_vervoering_post_thumbnail(); ?>
@@ -105,16 +104,7 @@
     endif;
     wp_reset_postdata();
     ?>
-    <div class="blog-list-item">
-      <div class="blog-list-item__inner">
-        <h2 class="blog-list-item__title">
-          <?php the_title(); ?>
-        </h2>
-        <div class="blog-list-item__content">
-          <?php the_content(); ?>
-        </div>
-      </div>
-    </div>
+    <?php the_content(); ?>
     <?php
     wp_link_pages(
       array(
