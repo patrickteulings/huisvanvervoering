@@ -1076,39 +1076,6 @@ p {
     .entry-content .submenu--content-section__inner .current_page_item a {
       color: #9a00b4; }
 
-.galleryContainer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  transform: translate3d(0px, 0, 0);
-  overflow: hidden; }
-  .galleryContainer .galleryNavigation {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    display: inline-block;
-    transform: translateY(-50%); }
-    .galleryContainer .galleryNavigation.next {
-      left: auto;
-      right: 0; }
-
-.galleryImagesWrapper {
-  display: flex; }
-
-.imageContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; }
-
 .swiper-container.gallery-container {
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
