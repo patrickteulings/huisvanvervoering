@@ -1,16 +1,13 @@
-import { breakpoints } from './../../config/breakpoints';
 import SwiperCore, { Navigation } from 'swiper/core';
 import Swiper from 'swiper';
-SwiperCore.use([Navigation]);
-// import Swiper styles
 import 'swiper/swiper-bundle.css';
+
+SwiperCore.use([Navigation]);
 
 export default class Gallery {
   // Constructor always gets called, pass initial params here
   constructor(_elem) {
     this.elem = _elem;
-    this.firstListItem = this.elem.getElementsByTagName('li')[0];
-    this.blockTitle = this.elem.querySelector('.block-title');
     this.elementsArray = this.elem.querySelectorAll('.blocks-gallery-item');
     this.imageObjects = [];
     this.galleryIsOpen = false;
@@ -22,8 +19,6 @@ export default class Gallery {
     this.getImages();
     this.addEvents();
   }
-
-  onResize() {}
 
   // An initializer to create a nice array of objects
   getImages() {
@@ -40,7 +35,6 @@ export default class Gallery {
 
   // Navigation entry-point
   jumpToImage(item, index) {
-    console.log(item, index);
     if (!document.getElementById('galleryContainer')) {
       this.createGallery(index);
     } else {
@@ -73,7 +67,6 @@ export default class Gallery {
     container.appendChild(next);
     container.appendChild(prev);
     container.appendChild(closeButton);
-
     container.appendChild(imagesWrapper);
 
     document.body.appendChild(container);
@@ -94,13 +87,10 @@ export default class Gallery {
       wrapper.appendChild(image);
     });
 
-    prev.onclick = (e) => {
-      console.log('prev');
-    };
-
     this.swiper = new Swiper('.swiper-container', {
       // Optional parameters
       loop: false,
+      initialSlide: index,
 
       // Navigation arrows
       navigation: {
@@ -108,8 +98,6 @@ export default class Gallery {
         prevEl: '.swiper-button-prev',
       },
     });
-
-    this.swiper.slideTo(index);
 
     document.addEventListener('keydown', (e) => {
       if (e.code === 'Escape') {
@@ -131,8 +119,7 @@ export default class Gallery {
 
   // Click events etc
   addEvents() {
-    window.addEventListener('resize', () => this.onResize());
-
+    // Open gallery on Image Click
     this.imageObjects.forEach((item, index) => {
       item.trigger.onclick = (e) => {
         this.jumpToImage(item, index);
