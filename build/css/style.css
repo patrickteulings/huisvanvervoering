@@ -3086,7 +3086,13 @@ section.section.team {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   max-width: 750px !important;
-  margin-left: -50px !important; }
+  margin-left: 0px !important; }
+  @media (min-width: 600px) {
+    .single-inhouse .entry-content .wp-block-group.alignfull.gallery .wp-block-gallery {
+      margin-left: -24px !important; } }
+  @media (min-width: 1200px) {
+    .single-inhouse .entry-content .wp-block-group.alignfull.gallery .wp-block-gallery {
+      margin-left: -50px !important; } }
 
 /* ----------------------------------------
   Creation / Production and Players

@@ -13,7 +13,15 @@
           margin-top: 1.5rem;
           margin-bottom: 1.5rem;
           max-width: 750px !important;
-          margin-left: -50px !important;
+          margin-left: 0px !important;
+
+          @include mq('tablet', 'min') {
+            margin-left: -24px !important;
+          }
+
+          @include mq('desktop', 'min') {
+            margin-left: -50px !important;
+          }
         }
       }
     }
