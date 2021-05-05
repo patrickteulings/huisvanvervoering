@@ -25,6 +25,15 @@
   }
 }
 
+.gallery-container {
+  .swiper-button-next {
+    right: 2rem;
+  }
+  .swiper-button-prev {
+    left: 2rem;
+  }
+}
+
 .swiper-button-close {
   color: #fff;
   cursor: pointer;

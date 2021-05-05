@@ -1101,6 +1101,12 @@ p {
   color: #ffffff;
   font-size: 30px !important; }
 
+.gallery-container .swiper-button-next {
+  right: 2rem; }
+
+.gallery-container .swiper-button-prev {
+  left: 2rem; }
+
 .swiper-button-close {
   color: #fff;
   cursor: pointer;
