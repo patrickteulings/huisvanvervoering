@@ -6,6 +6,11 @@
     max-width: none !important;
   }
 
+  .single-inhouse & {
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
   &__inner {
     @include containerWidth;
     @include innerspace(0, 2rem);
@@ -36,11 +41,11 @@
     }
 
     &:before {
-      content: " ";
+      content: ' ';
       @include transition;
       @include position(absolute, 0, -1px, auto, auto);
       @include size(24px);
-      background-image: url("./../../assets/images/ui/icons/chevron-left.svg");
+      background-image: url('./../../assets/images/ui/icons/chevron-left.svg');
     }
 
     a:hover {
@@ -57,7 +62,7 @@
     }
     &:before {
       @include position(absolute, auto, -1px, 0, auto);
-      background-image: url("./../../assets/images/ui/icons/chevron-right.svg");
+      background-image: url('./../../assets/images/ui/icons/chevron-right.svg');
     }
 
     &:hover {

@@ -936,6 +936,9 @@ p {
   .single-team .post-navigation {
     margin: 0 !important;
     max-width: none !important; }
+  .single-inhouse .post-navigation {
+    margin: 0 !important;
+    max-width: none !important; }
   .post-navigation__inner {
     padding: 0 2rem;
     margin: 0 auto; }
@@ -976,7 +979,7 @@ p {
       display: none; }
     .post-navigation .nav-previous:before,
     .post-navigation .nav-next:before {
-      content: " ";
+      content: ' ';
       transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
       position: absolute;
       left: 0;
