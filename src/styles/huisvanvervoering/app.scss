@@ -14,6 +14,7 @@
 @import "components/navigation/navigation",
   "components/navigation/post-navigation",
   "components/navigation/subnavigation",
+  "components/gallery/gallery",
   "components/footer/footer",
   "components/supporters/supporters",
   "components/join/join-action-block",
@@ -46,7 +47,7 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: color("white");
-  color: color("grey");
+  background-color: color('white');
+  color: color('grey');
   overflow-x: hidden;
 }
