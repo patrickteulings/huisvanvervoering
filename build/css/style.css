@@ -3099,13 +3099,19 @@ section.section.team {
   font-style: italic;
   font-size: 100% !important;
   line-height: 1.4em !important;
-  display: flex;
   margin-bottom: 2rem; }
+  @media (min-width: 600px) {
+    .inhouse-meta .creation {
+      display: flex; } }
   .inhouse-meta .creation .type {
-    margin-right: 2rem;
-    min-width: 200px;
     font-family: "Merriweather", serif;
-    font-style: italic; }
+    font-style: italic;
+    opacity: 0.6;
+    margin-bottom: 1rem; }
+    @media (min-width: 600px) {
+      .inhouse-meta .creation .type {
+        margin-right: 2rem;
+        min-width: 200px; } }
   .inhouse-meta .creation p {
     margin: 0 !important;
     font-family: "Merriweather", serif;

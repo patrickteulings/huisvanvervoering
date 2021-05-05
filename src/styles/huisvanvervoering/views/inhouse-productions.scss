@@ -35,14 +35,22 @@
     font-style: italic;
     font-size: 100% !important;
     line-height: 1.4em !important;
-    display: flex;
     margin-bottom: 2rem;
 
+    @include mq('tablet', 'min') {
+      display: flex;
+    }
+
     .type {
-      margin-right: 2rem;
-      min-width: 200px;
       font-family: $heading-font-face;
       font-style: italic;
+      opacity: 0.6;
+      margin-bottom: 1rem;
+
+      @include mq('tablet', 'min') {
+        margin-right: 2rem;
+        min-width: 200px;
+      }
     }
 
     p {
@@ -52,12 +60,12 @@
     }
 
     a {
-      color: color("secondary");
+      color: color('secondary');
       text-decoration: none;
       @include transition;
 
       &:hover {
-        color: color("grey");
+        color: color('grey');
         text-decoration: none;
       }
     }
@@ -71,7 +79,7 @@
         font-weight: 100;
         @include font-size(18px);
         line-height: 38px;
-        color: color("grey");
+        color: color('grey');
         max-width: 650px !important;
         margin-left: 0 !important;
       }
