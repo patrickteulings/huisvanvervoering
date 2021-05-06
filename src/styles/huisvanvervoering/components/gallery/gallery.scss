@@ -1,7 +1,8 @@
 .swiper-container {
   &.gallery-container {
     background: rgba(0, 0, 0, 0.8);
-    @include position(fixed);
+    @include position(fixed, 0px, 0px);
+    -webkit-backface-visibility: hidden;
     z-index: 999;
     @include size(100vw, 100vh);
   }

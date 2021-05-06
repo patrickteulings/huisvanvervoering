@@ -1,0 +1,27 @@
+.wp-block-group__inner-container {
+  ul {
+    margin-left: 0 !important;
+
+    li {
+      @include position;
+      @include font-size(18px);
+      font-family: $paragraph-font-face;
+      line-height: 28px;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+
+      &:before {
+        content: '';
+        @include position(absolute, 0px, 7px);
+        @include size(12px);
+        @include card-shadow(1);
+        transform: rotate(-45deg);
+        opacity: 1;
+        transform-origin: center;
+        background: color('primary');
+        border: 2px solid #fff;
+        display: block;
+      }
+    }
+  }
+}

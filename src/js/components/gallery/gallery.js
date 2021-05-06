@@ -41,6 +41,8 @@ export default class Gallery {
       const container = document.getElementById('galleryContainer');
       container.removeAttribute('hidden');
       this.swiper.slideTo(index);
+
+      document.body.classList.add('body-is-locked');
     }
   }
 
@@ -99,6 +101,8 @@ export default class Gallery {
       },
     });
 
+    document.body.classList.add('body-is-locked');
+
     document.addEventListener('keydown', (e) => {
       if (e.code === 'Escape') {
         this.closeGallery();
@@ -115,6 +119,7 @@ export default class Gallery {
     const container = document.getElementById('galleryContainer');
     container.setAttribute('hidden', 'true');
     this.galleryIsOpen = false;
+    document.body.classList.remove('body-is-locked');
   }
 
   // Click events etc
