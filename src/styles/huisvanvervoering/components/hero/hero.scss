@@ -14,6 +14,10 @@
 
   &__title {
     font-weight: 900;
+
+    @include mq('tablet', 'max') {
+      @include font-size(36px);
+    }
   }
   &__title--front-page {
     font-weight: 900;
@@ -21,14 +25,14 @@
   }
 
   &__subtitle {
-    color: color("grey");
+    color: color('grey');
     font-family: $paragraph-font-face;
     padding-left: 32px;
     // font-style: italic;
   }
 
   &__subtitle--front-page {
-    color: color("white");
+    color: color('white');
     font-family: $paragraph-font-face;
     @include font-size(32px);
     padding-left: 0;
@@ -38,10 +42,10 @@
   &__content-wrapper {
     @include position(relative);
     @include size(100%, 100%);
-    @include flex-center("vertical");
+    @include flex-center('vertical');
     @include containerWidth();
     margin: 0 auto;
-    color: color("white");
+    color: color('white');
     z-index: 4;
   }
 
@@ -53,7 +57,7 @@
   &__content-inner--front-page {
     padding-top: 8rem;
 
-    @include mq("tablet", "min") {
+    @include mq('tablet', 'min') {
       padding-top: 24rem;
     }
   }
@@ -74,7 +78,7 @@
 
   &__actions-cta {
     @include position;
-    @include flex-center("center");
+    @include flex-center('center');
     @include size(150px);
 
     &:before,
@@ -85,13 +89,13 @@
     }
 
     a {
-      @include flex-center("center");
+      @include flex-center('center');
       @include size(120px);
       @include position(absolute, 15px, 15px);
       @include font-size(24px);
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
+      font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
       font-weight: 300;
-      color: color("secondary");
+      color: color('secondary');
       text-align: center;
       line-height: 140%;
 
@@ -108,13 +112,13 @@
       left: 10px;
       top: 10px;
       @include size(calc(150px - 20px));
-      background: color("secondary-light");
+      background: color('secondary-light');
     }
   }
 }
 
 /* ----------------------------------------
-  VARIANTIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
+  VARIATIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
 ---------------------------------------- */
 
 .hero {
@@ -130,7 +134,7 @@
 
     .hero__title,
     .hero__subtitle {
-      color: color("secondary");
+      color: color('secondary');
     }
 
     /* ----------------------------------------
@@ -143,49 +147,69 @@
       z-index: 3;
       left: auto;
       top: 300px;
-      right: -150px;
+      right: 0px;
       bottom: auto;
-      width: 300px !important;
+      width: 150px !important;
       height: 300px !important;
 
-      @include mq("tablet-wide", "min") {
+      .wp-post-image {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 10;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+      }
+
+      @include mq('tablet-wide', 'min') {
         top: -320px;
         right: -560px;
         width: 1000px !important;
         height: 1000px !important;
+
+        .wp-post-image {
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
       }
     }
 
     .image-background {
+      // display: none;
       background: #fff;
       width: 64%;
-      height: 64%;
+      height: 36%;
       position: absolute;
       left: 18%;
-      top: 18%;
+      top: 30%;
       z-index: 1;
       right: auto;
       bottom: auto;
       transform-origin: center center;
       box-shadow: 0 6px 80px rgba(0, 0, 0, 10%);
       transform: rotate(45deg);
+
+      @include mq('tablet-wide', 'min') {
+        @include size(64%);
+        top: 17%;
+      }
     }
 
     .post-thumbnail .wp-post-image {
-      max-width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: relative;
-      z-index: 10;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      // max-width: 100%;
+      // height: 100%;
+      // object-fit: cover;
+      // position: relative;
+      // z-index: 10;
+      // clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
     .post-thumbnail {
       clip-path: none;
     }
     .post-thumbnail:after {
-      content: "";
+      display: none;
+      content: '';
       width: 64%;
-      height: 64%;
+      height: 32%;
       position: absolute;
       left: 38%;
       top: 38%;
@@ -195,13 +219,19 @@
       bottom: auto;
       transform-origin: center center;
       transform: rotate(45deg);
+
+      @include mq('tablet-wide', 'min') {
+        display: inline-block;
+        @include size(64%);
+      }
     }
 
     .post-thumbnail:before {
-      content: "";
+      // display: none;
+      content: '';
       border: 0px solid;
       width: 64%;
-      height: 64%;
+      height: 32%;
       background: #b955c1;
 
       position: absolute;
@@ -212,6 +242,10 @@
       bottom: auto;
       transform-origin: center center;
       transform: rotate(45deg);
+
+      @include mq('tablet-wide', 'min') {
+        @include size(64%);
+      }
     }
   }
 
@@ -248,14 +282,14 @@
   }
 
   &__background--plain-content {
-    background-image: url("./../../assets/images/ui/contentpage-header--background--green.svg");
+    background-image: url('./../../assets/images/ui/contentpage-header--background--green.svg');
     background-repeat: no-repeat;
     background-position: right top;
   }
 
   .hero__title {
-    color: darken(color("primary"), 10%);
-    word-break: break-all;
+    color: darken(color('primary'), 10%);
+    // word-break: break-all;
   }
 
   .hero__title--front-page {
@@ -286,14 +320,14 @@
       transform: translateY(-40px);
       display: none;
 
-      @include mq("tablet", "min") {
+      @include mq('tablet', 'min') {
         display: flex;
       }
 
       li {
         a {
           display: block;
-          @include flex-center("center");
+          @include flex-center('center');
           @include innerspace(0.8rem, 1rem);
           font-family: $heading-font-face;
           text-decoration: none;
@@ -321,7 +355,7 @@
     transform: translateY(-40px);
     display: none;
 
-    @include mq("tablet", "min") {
+    @include mq('tablet', 'min') {
       display: flex;
     }
   }

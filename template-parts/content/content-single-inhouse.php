@@ -78,7 +78,7 @@
       <?php if (get_field('production_partners')) : ?>
         <div class="creation">
           <div class="type">Partners</div>
-          <div class="creator"><?= get_field('production_partners') ?>"></div>
+          <div class="creator"><?= get_field('production_partners') ?></div>
         </div>
       <?php endif; ?>
     </div>

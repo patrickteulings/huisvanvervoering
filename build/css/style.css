@@ -780,8 +780,8 @@ p {
   top: 0px;
   right: auto;
   bottom: auto;
-  width: 234px;
-  height: 234px;
+  width: 181px;
+  height: 181px;
   background-image: url("../../assets/images/ui/menu-background-2.svg");
   background-repeat: no-repeat;
   z-index: 999;
@@ -854,6 +854,9 @@ p {
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.2s ease-out 0s; }
+    @media (max-width: 900px) {
+      .primary-menu-container .primary-menu {
+        padding-top: 8rem; } }
   .primary-menu-container.is-open {
     display: flex;
     height: 100vh; }
@@ -934,7 +937,8 @@ p {
     font-weight: 400; }
 
 .post-navigation {
-  margin: 0; }
+  margin: 0;
+  max-width: none !important; }
   .single-team .post-navigation {
     margin: 0 !important;
     max-width: none !important; }
@@ -1329,6 +1333,7 @@ section.join {
 
 .wp-block-group.hvv.latest-posts {
   background: white;
+  max-width: 100vw;
   max-width: none !important; }
   .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts {
     position: relative;
@@ -1528,6 +1533,10 @@ section.join {
     background-size: cover; }
   .hero__title {
     font-weight: 900; }
+    @media (max-width: 600px) {
+      .hero__title {
+        font-size: 2em;
+        font-size: 36px; } }
   .hero__title--front-page {
     font-weight: 900;
     font-size: 3.44444em;
@@ -1625,7 +1634,7 @@ section.join {
       bottom: auto;
       font-size: 1.33333em;
       font-size: 24px;
-      font-family: "Helvetica Neue", "Helvetica", sans-serif;
+      font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
       font-weight: 300;
       color: #9a00b4;
       text-align: center;
@@ -1643,7 +1652,7 @@ section.join {
       background: #f6def9; }
 
 /* ----------------------------------------
-  VARIANTIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
+  VARIATIONS FOR PILLAR PAGE (ZOMERSCHOOL / LAB)
 ---------------------------------------- */
 .hero.hero--pillar {
   max-height: 640px;
@@ -1661,42 +1670,50 @@ section.join {
     z-index: 3;
     left: auto;
     top: 300px;
-    right: -150px;
+    right: 0px;
     bottom: auto;
-    width: 300px !important;
+    width: 150px !important;
     height: 300px !important; }
+    .hero.hero--pillar .post-thumbnail .wp-post-image {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 10;
+      clip-path: polygon(100% 0%, 100% 100%, 0% 50%); }
     @media (min-width: 900px) {
       .hero.hero--pillar .post-thumbnail {
         top: -320px;
         right: -560px;
         width: 1000px !important;
-        height: 1000px !important; } }
+        height: 1000px !important; }
+        .hero.hero--pillar .post-thumbnail .wp-post-image {
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); } }
   .hero.hero--pillar .image-background {
     background: #fff;
     width: 64%;
-    height: 64%;
+    height: 36%;
     position: absolute;
     left: 18%;
-    top: 18%;
+    top: 30%;
     z-index: 1;
     right: auto;
     bottom: auto;
     transform-origin: center center;
     box-shadow: 0 6px 80px black;
     transform: rotate(45deg); }
-  .hero.hero--pillar .post-thumbnail .wp-post-image {
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 10;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+    @media (min-width: 900px) {
+      .hero.hero--pillar .image-background {
+        width: 64%;
+        height: 64%;
+        top: 17%; } }
   .hero.hero--pillar .post-thumbnail {
     clip-path: none; }
   .hero.hero--pillar .post-thumbnail:after {
-    content: "";
+    display: none;
+    content: '';
     width: 64%;
-    height: 64%;
+    height: 32%;
     position: absolute;
     left: 38%;
     top: 38%;
@@ -1706,11 +1723,16 @@ section.join {
     bottom: auto;
     transform-origin: center center;
     transform: rotate(45deg); }
+    @media (min-width: 900px) {
+      .hero.hero--pillar .post-thumbnail:after {
+        display: inline-block;
+        width: 64%;
+        height: 64%; } }
   .hero.hero--pillar .post-thumbnail:before {
-    content: "";
+    content: '';
     border: 0px solid;
     width: 64%;
-    height: 64%;
+    height: 32%;
     background: #b955c1;
     position: absolute;
     z-index: 0;
@@ -1720,6 +1742,10 @@ section.join {
     bottom: auto;
     transform-origin: center center;
     transform: rotate(45deg); }
+    @media (min-width: 900px) {
+      .hero.hero--pillar .post-thumbnail:before {
+        width: 64%;
+        height: 64%; } }
 
 .hero__background--pillar-corner {
   background-repeat: no-repeat;
@@ -1739,8 +1765,7 @@ section.join {
   background-position: right top; }
 
 .hero .hero__title {
-  color: #70aca6;
-  word-break: break-all; }
+  color: #70aca6; }
 
 .hero .hero__title--front-page {
   color: #fff; }
@@ -2517,9 +2542,9 @@ section.section.share {
       .summerschool-programs h5 a:hover:after {
         width: 30%; }
 
-.wp-block-group__inner-container ul {
+.wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) {
   margin-left: 0 !important; }
-  .wp-block-group__inner-container ul li {
+  .wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) li {
     position: relative;
     left: 0;
     top: 0;
@@ -2531,7 +2556,7 @@ section.section.share {
     line-height: 28px;
     margin-bottom: 1rem;
     padding-left: 2rem; }
-    .wp-block-group__inner-container ul li:before {
+    .wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) li:before {
       content: '';
       position: absolute;
       left: 0px;
@@ -2585,6 +2610,7 @@ section.section.share {
           line-height: 160%; }
 
 body {
+  width: 100vw;
   position: absolute; }
   body.body-is-locked {
     overflow: hidden; }

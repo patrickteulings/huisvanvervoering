@@ -8,7 +8,7 @@
 // Trigger Button
 .navigation-trigger-wrapper {
   @include position(fixed, 0px, 0px);
-  @include size(234px, 234px);
+  @include size(181px, 181px);
   background-image: url('../../assets/images/ui/menu-background-2.svg');
   background-repeat: no-repeat;
   z-index: 999;
@@ -89,6 +89,10 @@
     opacity: 0;
     transform: translateY(10px);
     @include transition(all, 0.2s, ease-out, 0s);
+
+    @include mq('tablet-wide', 'max') {
+      padding-top: 8rem;
+    }
   }
 
   &.is-open {
