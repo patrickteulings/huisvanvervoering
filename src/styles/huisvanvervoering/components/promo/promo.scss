@@ -1,0 +1,70 @@
+.hvv.promo {
+  &.alignfull {
+    .wp-block-group__inner-container {
+      @include containerWidth;
+
+      h2 {
+        @include font-size(32px);
+      }
+
+      .wp-block-media-text {
+        @include mq('tablet', 'min') {
+          max-width: 850px;
+          margin-left: -50px;
+          grid-template-columns: 200px auto;
+          grid-template-rows: auto;
+          align-items: start;
+        }
+
+        img {
+          clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        h2 {
+          @include font-size(24px);
+        }
+
+        a {
+          @include position;
+          color: color('secondary');
+          text-decoration: none;
+
+          &:after {
+            content: '';
+            height: 2px;
+            width: 10px;
+            background: color('secondary');
+            @include position(absolute, 0, auto, auto, 0px);
+            @include transition;
+          }
+
+          &:hover {
+            text-decoration: none;
+            &:after {
+              width: 30%;
+            }
+          }
+        }
+
+        figure {
+          display: inline-block;
+          @include position;
+          &:after {
+            content: '';
+            @include position(absolute, 15%, 15%);
+            z-index: 0;
+            @include size(140px);
+            background: #ff9900;
+            @include card-shadow(5);
+            transform: rotate(-45deg);
+          }
+
+          img {
+            @include position;
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
