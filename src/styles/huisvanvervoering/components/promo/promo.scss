@@ -49,19 +49,33 @@
         figure {
           display: inline-block;
           @include position;
+          @include size(200px);
+
           &:after {
             content: '';
-            @include position(absolute, 15%, 15%);
             z-index: 0;
-            @include size(140px);
             background: #ff9900;
             @include card-shadow(5);
             transform: rotate(-45deg);
+
+            @include mq('tablet', 'min') {
+              @include position(absolute, 15%, 15%);
+              @include size(140px);
+            }
           }
 
           img {
             @include position;
+            left: 50%;
             z-index: 2;
+            margin-top: 1rem;
+            transform: translateX(-50px);
+
+            @include mq('tablet', 'min') {
+              left: 0;
+              margin-top: 0;
+              transform: translateX(0);
+            }
           }
         }
       }

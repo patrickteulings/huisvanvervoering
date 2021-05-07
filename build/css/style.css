@@ -2604,27 +2604,39 @@ section.section.share {
   left: 0;
   top: 0;
   right: auto;
-  bottom: auto; }
+  bottom: auto;
+  width: 200px;
+  height: 200px; }
   .hvv.promo.alignfull .wp-block-group__inner-container .wp-block-media-text figure:after {
     content: '';
-    position: absolute;
-    left: 15%;
-    top: 15%;
-    right: auto;
-    bottom: auto;
     z-index: 0;
-    width: 140px;
-    height: 140px;
     background: #ff9900;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     transform: rotate(-45deg); }
+    @media (min-width: 600px) {
+      .hvv.promo.alignfull .wp-block-group__inner-container .wp-block-media-text figure:after {
+        position: absolute;
+        left: 15%;
+        top: 15%;
+        right: auto;
+        bottom: auto;
+        width: 140px;
+        height: 140px; } }
   .hvv.promo.alignfull .wp-block-group__inner-container .wp-block-media-text figure img {
     position: relative;
     left: 0;
     top: 0;
     right: auto;
     bottom: auto;
-    z-index: 2; }
+    left: 50%;
+    z-index: 2;
+    margin-top: 1rem;
+    transform: translateX(-50px); }
+    @media (min-width: 600px) {
+      .hvv.promo.alignfull .wp-block-group__inner-container .wp-block-media-text figure img {
+        left: 0;
+        margin-top: 0;
+        transform: translateX(0); } }
 
 .wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) {
   margin-left: 0 !important; }
