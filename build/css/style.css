@@ -2804,11 +2804,18 @@ div.latest-posts ul li {
 
 body {
   width: 100vw;
-  position: absolute; }
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll; }
   body.body-is-locked {
     overflow: hidden; }
     body.body-is-locked #page {
       overflow: hidden; }
+
+#page {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto; }
 
 .wp-block-group.alignfull.hvv .wp-block-group__inner-container {
   padding: 0 2rem;
@@ -2985,6 +2992,10 @@ p.hvv.intro {
       line-height: 160%;
       max-width: 450px !important;
       margin: -3rem 0 2rem 0 !important; }
+  @media (max-width: 600px) {
+    .single-team .wp-block-group.hvv.intro.alignfull,
+    .page-template-team-overview .wp-block-group.hvv.intro.alignfull {
+      padding-top: 140px; } }
 
 .page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p {
   max-width: 650px !important; }
@@ -3022,8 +3033,22 @@ section.section.team {
 
 .page-template-team-overview .post-thumbnail img {
   max-width: 160%;
-  height: auto;
+  height: 100%;
   object-fit: cover; }
+
+@media (max-width: 600px) {
+  .page-template-team-overview .post-thumbnail {
+    right: -100px;
+    top: -0px;
+    width: 224px !important;
+    height: 224px !important; } }
+
+@media (max-width: 600px) {
+  .page-template-team-overview .post-thumbnail-diamond-shadow {
+    width: 160px;
+    height: 160px;
+    right: -60px;
+    top: 62px; } }
 
 /* ----------------------------------------
   BOARD MEMBERS

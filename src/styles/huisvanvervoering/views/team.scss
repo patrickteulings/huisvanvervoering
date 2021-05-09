@@ -1,6 +1,6 @@
 .entry-header {
   h1 {
-    color: color("primary");
+    color: color('primary');
   }
 }
 
@@ -17,12 +17,15 @@
         font-family: $heading-font-face;
         font-weight: 300;
         @include font-size(24px);
-        color: color("grey");
+        color: color('grey');
         line-height: 160%;
         max-width: 450px !important;
         margin: -3rem 0 2rem 0 !important;
         // margin-top: -4rem;
       }
+    }
+    @include mq('tablet', 'max') {
+      padding-top: 140px;
     }
   }
 }
@@ -60,7 +63,7 @@ section.section.team {
   margin-top: 64px;
 }
 
-section > [class*="__inner"] {
+section > [class*='__inner'] {
   @include containerWidth;
 }
 
@@ -68,8 +71,22 @@ section > [class*="__inner"] {
   .post-thumbnail {
     img {
       max-width: 160%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
+    }
+
+    @include mq('tablet', 'max') {
+      right: -100px;
+      top: -0px;
+      width: 224px !important;
+      height: 224px !important;
+    }
+  }
+  .post-thumbnail-diamond-shadow {
+    @include mq('tablet', 'max') {
+      @include size(160px);
+      right: -60px;
+      top: 62px;
     }
   }
 }
@@ -89,7 +106,7 @@ section > [class*="__inner"] {
     .section__inner {
       .textcontent {
         h3 {
-          color: color("primary");
+          color: color('primary');
           font-weight: 900;
         }
         max-width: 816px;

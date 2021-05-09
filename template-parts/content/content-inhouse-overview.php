@@ -24,8 +24,8 @@ $globalPostID = $post->ID;
     </div>
   </header>
   <div class="entry-content">
-    <div role="presentation" class="main-content-diamond-parallax rellax" data-rellax-speed="4"><img width="200" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
-    <div role="presentation" class="main-content-diamond-parallax light rellax" data-rellax-speed="-6" style="right: auto; left: -40px; top: 700px;"><img width="140" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+    <!-- <div role="presentation" class="main-content-diamond-parallax rellax" data-rellax-speed="4"><img width="200" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+    <div role="presentation" class="main-content-diamond-parallax light rellax" data-rellax-speed="-6" style="right: auto; left: -40px; top: 700px;"><img width="140" height="auto" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div> -->
 
     <!-- START SUBNAV FOR MOBILE -->
     <?php
@@ -98,74 +98,74 @@ $globalPostID = $post->ID;
 
 
 <?php
-  $args = array(
-    'post_type' => 'inhouse',
-    'post_status' => 'publish',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'inhouse_category',
-        'field' => 'slug',
-        'terms' => 'pinned'
-      )
-    ),
-  );
+$args = array(
+  'post_type' => 'inhouse',
+  'post_status' => 'publish',
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'inhouse_category',
+      'field' => 'slug',
+      'terms' => 'pinned'
+    )
+  ),
+);
 
-  $loop = new WP_Query($args);
-  ?>
+$loop = new WP_Query($args);
+?>
 
 <?php if ($loop->have_posts()) : ?>
 
-<section class="section lab-excerpt__pinned">
-  <div class="section__inner">
+  <section class="section lab-excerpt__pinned">
+    <div class="section__inner">
 
 
-    <!-- -----------------------  -->
-    <!-- CURRENT PRODUCTIONS title-->
-    <!-- -----------------------  -->
+      <!-- -----------------------  -->
+      <!-- CURRENT PRODUCTIONS title-->
+      <!-- -----------------------  -->
 
-    <section class="section">
-      <div class="section__inner">
-        <h3><?= get_field('current_production_title'); ?></h3>
-        <p><?= get_field('current_production_intro'); ?></p>
-      </div>
-    </section>
-
-
-    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-
-      <?php
-      $thumbnail_id = get_post_thumbnail_id($post->ID);
-      $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-      $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
-      $term_list = get_the_term_list($post->ID, 'inhouse_category');
-      ?>
-
-      <!-- <h2><?php the_title(); ?></h2> -->
-      <div class="lab-excerpt">
-        <div class="lab-excerpt__image">
-          <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
-          <div class="image-background" role="presentation"></div>
+      <section class="section">
+        <div class="section__inner">
+          <h3><?= get_field('current_production_title'); ?></h3>
+          <p><?= get_field('current_production_intro'); ?></p>
         </div>
-        <div class="lab-excerpt__content">
-          <a href="<?php the_permalink(); ?>">
-            <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
-          </a>
-          <?php if ($term_list) : ?>
-            <span class="lab-excerpt__category"><?= $term_list; ?></span>
-          <?php endif; ?>
+      </section>
 
-          <p>
-            <?= $trimmed ?>
-          </p>
+
+      <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+
+        <?php
+        $thumbnail_id = get_post_thumbnail_id($post->ID);
+        $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+        $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+        $term_list = get_the_term_list($post->ID, 'inhouse_category');
+        ?>
+
+        <!-- <h2><?php the_title(); ?></h2> -->
+        <div class="lab-excerpt">
+          <div class="lab-excerpt__image">
+            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
+            <div class="image-background" role="presentation"></div>
+          </div>
+          <div class="lab-excerpt__content">
+            <a href="<?php the_permalink(); ?>">
+              <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
+            </a>
+            <?php if ($term_list) : ?>
+              <span class="lab-excerpt__category"><?= $term_list; ?></span>
+            <?php endif; ?>
+
+            <p>
+              <?= $trimmed ?>
+            </p>
+          </div>
         </div>
-      </div>
-    <?php endwhile; ?>
+      <?php endwhile; ?>
 
-    <?php wp_reset_postdata(); ?>
+      <?php wp_reset_postdata(); ?>
 
 
-  </div>
-</section>
+    </div>
+  </section>
 
 <? endif; ?>
 
@@ -226,4 +226,4 @@ $globalPostID = $post->ID;
 
     <?php wp_reset_postdata(); ?>
   </div>
-            </section>
+</section>

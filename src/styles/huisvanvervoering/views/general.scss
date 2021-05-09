@@ -1,6 +1,8 @@
 body {
   width: 100vw;
   position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   &.body-is-locked {
     overflow: hidden;
@@ -9,6 +11,12 @@ body {
       overflow: hidden;
     }
   }
+}
+
+#page {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 // .entry-content {
