@@ -1,11 +1,11 @@
-import { breakpoints } from "./../config/breakpoints";
+import { breakpoints } from './../config/breakpoints';
 
 export default class LatestPosts {
   // Constructor always gets called, pass initial params here
   constructor(_elem) {
     this.elem = _elem;
-    this.firstListItem = this.elem.getElementsByTagName("li")[0];
-    this.blockTitle = this.elem.querySelector(".block-title");
+    this.firstListItem = this.elem.getElementsByTagName('li')[0];
+    this.blockTitle = this.elem.querySelector('.block-title');
     this.initialize();
   }
 
@@ -15,6 +15,8 @@ export default class LatestPosts {
   }
 
   onResize() {
+    console.log(this.firstListItem);
+    if (!this.firstListItem) return;
     this.firstListItem.style.marginLeft = 0;
     let marginLeft = (window.innerWidth - 900) / 2;
 
@@ -30,10 +32,10 @@ export default class LatestPosts {
 
     marginLeft = marginLeft <= 32 ? 32 : marginLeft;
     this.firstListItem.style.marginLeft = `${marginLeft}px`;
-    this.blockTitle.style.marginLeft = `${marginLeft}px`;
+    // this.blockTitle.style.marginLeft = `${marginLeft}px`;
   }
 
   addEvents() {
-    window.addEventListener("resize", () => this.onResize());
+    window.addEventListener('resize', () => this.onResize());
   }
 }

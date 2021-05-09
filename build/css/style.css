@@ -1426,7 +1426,7 @@ section.join {
       width: 0 !important;
       display: none; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts li:first-child {
-      margin-left: 0% !important; }
+      margin-left: 0%; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts li:not(:last-child) {
       margin-right: 32px; }
   .wp-block-group.hvv.latest-posts .wp-block-latest-posts li {
@@ -3045,8 +3045,8 @@ section.section.team {
 
 @media (max-width: 600px) {
   .page-template-team-overview .post-thumbnail-diamond-shadow {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     right: -60px;
     top: 62px; } }
 

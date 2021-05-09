@@ -84,7 +84,7 @@ section > [class*='__inner'] {
   }
   .post-thumbnail-diamond-shadow {
     @include mq('tablet', 'max') {
-      @include size(160px);
+      @include size(140px);
       right: -60px;
       top: 62px;
     }
