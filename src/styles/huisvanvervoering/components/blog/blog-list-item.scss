@@ -5,12 +5,12 @@
 .blog-list-item {
   // max-width: 50%; // none !important; // 200px;
   margin: 0 auto;
-  background: color("white");
+  background: color('white');
   @include position;
 
   &:after {
-    content: "";
-    background: color("white");
+    content: '';
+    background: color('white');
     width: 90%;
     height: 90%;
     @include position(absolute, 10%, 10%);
@@ -26,7 +26,7 @@
   &__meta {
     font-style: italic;
     padding: 1rem 0;
-    color: color("primary");
+    color: color('primary');
     @include font-size(12px);
     .date {
       @include font-size(11px);
@@ -34,7 +34,7 @@
   }
 
   &__content {
-    @include innerspace(0 1rem);
+    padding: 0 1rem 2rem;
   }
 
   .wp-block-group.hvv.intro.alignwide,
@@ -62,7 +62,7 @@
 
 .blog-overview {
   max-width: none !important;
-  @include flex-center("horizontal");
+  @include flex-center('horizontal');
 
   &__list-wrapper {
     @include containerWidth;
@@ -74,7 +74,7 @@
     grid-gap: 1rem;
     grid-row-gap: 2rem;
 
-    @include mq("tablet", "min") {
+    @include mq('tablet', 'min') {
       grid-template-columns: 50% 50%;
     }
   }
@@ -104,10 +104,10 @@
         display: block;
         @include position;
         text-decoration: none;
-        color: color("secondary");
+        color: color('secondary');
 
         &:before {
-          content: "";
+          content: '';
           height: 2px;
           width: 14px;
           background: #b9b9b9;
@@ -118,8 +118,8 @@
         &:hover {
           &:before {
             width: 20%;
-            color: color("secondary");
-            background: color("secondary");
+            color: color('secondary');
+            background: color('secondary');
           }
         }
       }
@@ -132,7 +132,7 @@
 }
 
 .blog-overview-navigation {
-  @include flex-center("horizontal");
+  @include flex-center('horizontal');
 
   &__inner {
     @include containerWidth;
@@ -151,12 +151,12 @@
   }
 
   .pagination {
-    border-top: 1px solid color("grey");
+    border-top: 1px solid color('grey');
 
     .nav-links {
       .page-numbers:hover {
         text-decoration: none;
-        color: color("secondary");
+        color: color('secondary');
       }
     }
   }

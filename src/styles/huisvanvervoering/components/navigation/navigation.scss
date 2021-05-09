@@ -8,11 +8,29 @@
 // Trigger Button
 .navigation-trigger-wrapper {
   @include position(fixed, 0px, 0px);
-  @include size(181px, 181px);
-  background-image: url('../../assets/images/ui/menu-background-2.svg');
+  @include size(190px, 190px);
   background-repeat: no-repeat;
+  overflow: hidden;
   z-index: 999;
   -webkit-backface-visibility: hidden;
+
+  &:before {
+    content: '';
+    // width: 0;
+    // height: 0;
+    // border-style: solid;
+    // border-width: 185px 185px 0 0;
+    // border-color: #007bff transparent transparent transparent;
+    // @include position(absolute);
+    // text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    @include size(240px);
+    transform: rotate(-45deg);
+    @include card-shadow(5);
+    @include position(absolute, -122px, -122px);
+    background-color: #ffffff;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.23);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.123);
+  }
 
   .hamburger {
     @include size(40px);

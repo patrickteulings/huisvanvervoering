@@ -3,6 +3,10 @@
   max-width: 100vw;
   max-width: none !important;
 
+  h3 {
+    color: color('secondary');
+  }
+
   .wp-block-latest-posts__list.wp-block-latest-posts {
     @include position;
     z-index: 2;
@@ -21,7 +25,7 @@
 
     li {
       &:first-child {
-        margin-left: 10%;
+        margin-left: 0% !important;
       }
 
       &:not(:last-child) {
@@ -42,6 +46,23 @@
       & > a {
         margin: 2rem 1rem 1rem 1rem;
         padding: 0;
+        @include position();
+
+        &:after {
+          content: '';
+          height: 2px;
+          width: 10px;
+          background: lighten(color('grey'), 40%);
+          @include transition;
+          @include position(absolute, 0, auto, auto, 0);
+        }
+
+        &:hover {
+          &:after {
+            width: 50%;
+            background: color('secondary');
+          }
+        }
       }
 
       // Image

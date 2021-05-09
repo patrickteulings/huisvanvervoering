@@ -780,12 +780,26 @@ p {
   top: 0px;
   right: auto;
   bottom: auto;
-  width: 181px;
-  height: 181px;
-  background-image: url("../../assets/images/ui/menu-background-2.svg");
+  width: 190px;
+  height: 190px;
   background-repeat: no-repeat;
+  overflow: hidden;
   z-index: 999;
   -webkit-backface-visibility: hidden; }
+  .navigation-trigger-wrapper:before {
+    content: '';
+    width: 240px;
+    height: 240px;
+    transform: rotate(-45deg);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: absolute;
+    left: -122px;
+    top: -122px;
+    right: auto;
+    bottom: auto;
+    background-color: #ffffff;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.23);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.123); }
   .navigation-trigger-wrapper .hamburger {
     width: 40px;
     height: 40px;
@@ -1130,6 +1144,63 @@ p {
   width: 30px;
   height: 30px; }
 
+.blocks-gallery-item:nth-child(7) {
+  margin-right: 0 !important; }
+
+.thumb-residual-images {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif; }
+
+.thumb-plus-icon {
+  margin-right: 0.5rem; }
+  .thumb-plus-icon svg {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    top: 6px;
+    stroke-width: 1px; }
+    @media (min-width: 600px) {
+      .thumb-plus-icon svg {
+        top: 9px;
+        width: 48px;
+        height: 48px; } }
+
+@media (min-width: 600px) {
+  .thumb-number {
+    font-size: 2.66667em;
+    font-size: 48px; } }
+
+.thumb-text {
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.66667em;
+  font-size: 12px; }
+  @media (min-width: 600px) {
+    .thumb-text {
+      font-size: 0.88889em;
+      font-size: 16px; } }
+
+.blocks-gallery-item {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto; }
+
 .footer {
   background-color: #f6def9;
   background-image: url("./../../assets/images/ui/img/diamonds-footer.png");
@@ -1336,6 +1407,8 @@ section.join {
   background: white;
   max-width: 100vw;
   max-width: none !important; }
+  .wp-block-group.hvv.latest-posts h3 {
+    color: #9a00b4; }
   .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts {
     position: relative;
     left: 0;
@@ -1353,7 +1426,7 @@ section.join {
       width: 0 !important;
       display: none; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts li:first-child {
-      margin-left: 10%; }
+      margin-left: 0% !important; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts__list.wp-block-latest-posts li:not(:last-child) {
       margin-right: 32px; }
   .wp-block-group.hvv.latest-posts .wp-block-latest-posts li {
@@ -1364,7 +1437,26 @@ section.join {
     padding: 1rem; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts li > a {
       margin: 2rem 1rem 1rem 1rem;
-      padding: 0; }
+      padding: 0;
+      position: relative;
+      left: 0;
+      top: 0;
+      right: auto;
+      bottom: auto; }
+      .wp-block-group.hvv.latest-posts .wp-block-latest-posts li > a:after {
+        content: '';
+        height: 2px;
+        width: 10px;
+        background: silver;
+        transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+        position: absolute;
+        left: 0;
+        top: auto;
+        right: auto;
+        bottom: 0; }
+      .wp-block-group.hvv.latest-posts .wp-block-latest-posts li > a:hover:after {
+        width: 50%;
+        background: #9a00b4; }
     .wp-block-group.hvv.latest-posts .wp-block-latest-posts li .wp-block-latest-posts__featured-image {
       height: 200px;
       width: 240px;
@@ -2216,7 +2308,7 @@ section.section.share {
   right: auto;
   bottom: auto; }
   .blog-list-item:after {
-    content: "";
+    content: '';
     background: #ffffff;
     width: 90%;
     height: 90%;
@@ -2239,7 +2331,7 @@ section.section.share {
       font-size: 0.61111em;
       font-size: 11px; }
   .blog-list-item__content {
-    padding: 0 1rem; }
+    padding: 0 1rem 2rem; }
   .blog-list-item .wp-block-group.hvv.intro.alignwide p,
   .blog-list-item .wp-block-group.hvv.intro.alignfull p,
   .blog-list-item .wp-block-group.hvv.alignfull p {
@@ -2301,7 +2393,7 @@ section.section.share {
         text-decoration: none;
         color: #9a00b4; }
         .blog-overview article .blog-list-item__title a:before {
-          content: "";
+          content: '';
           height: 2px;
           width: 14px;
           background: #b9b9b9;
@@ -2638,9 +2730,9 @@ section.section.share {
         margin-top: 0;
         transform: translateX(0); } }
 
-.wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) {
+div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid) {
   margin-left: 0 !important; }
-  .wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) li {
+  div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid) li {
     position: relative;
     left: 0;
     top: 0;
@@ -2652,7 +2744,7 @@ section.section.share {
     line-height: 28px;
     margin-bottom: 1rem;
     padding-left: 2rem; }
-    .wp-block-group__inner-container div:not(.latest-posts) ul:not(.blocks-gallery-grid) li:before {
+    div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid) li:before {
       content: '';
       position: absolute;
       left: 0px;
@@ -2668,6 +2760,11 @@ section.section.share {
       background: #90bfba;
       border: 2px solid #fff;
       display: block; }
+
+div.latest-posts ul li {
+  padding-left: 0; }
+  div.latest-posts ul li:before {
+    display: none !important; }
 
 .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
   padding-right: 0;
@@ -3240,6 +3337,26 @@ section.section.team {
 
 .page-template-page-pillar-lab .entry-content .wp-block-group.alignfull.hvv .wp-block-group__inner-container .wp-block-group__inner-container {
   padding: 0; }
+
+.category-nieuws .page-header {
+  border-bottom: 0; }
+  @media (min-width: 0px) {
+    .category-nieuws .page-header__inner {
+      width: 100%; } }
+  @media (min-width: 600px) {
+    .category-nieuws .page-header__inner {
+      width: 100%; } }
+  @media (min-width: 1200px) {
+    .category-nieuws .page-header__inner {
+      width: 1024px; } }
+
+.category-nieuws .post-thumbnail img {
+  width: 100%; }
+
+.category-nieuws .page-title {
+  font-size: 3.11111em;
+  font-size: 56px;
+  color: #9a00b4; }
 
 .single-inhouse .entry-content .wp-block-group.alignfull.hvv.intro p, .single-inhouse .entry-content .wp-block-group.alignfull.hvv p {
   max-width: 650px !important;

@@ -42,3 +42,49 @@
   @include position(absolute, auto, 2rem, 2rem, auto);
   @include size(30px);
 }
+
+.blocks-gallery-item:nth-child(7) {
+  margin-right: 0 !important;
+}
+
+.thumb-residual-images {
+  @include position(absolute, 0, 0);
+  background: rgba(0, 0, 0, 0.8);
+  color: color('white');
+  @include size(100%);
+  @include flex-center('both');
+  font-family: $paragraph-font-face;
+}
+
+.thumb-plus-icon {
+  margin-right: 0.5rem;
+  svg {
+    @include position();
+    top: 6px;
+    stroke-width: 1px;
+
+    @include mq('tablet', 'min') {
+      top: 9px;
+      @include size(48px);
+    }
+  }
+}
+.thumb-number {
+  @include mq('tablet', 'min') {
+    @include font-size(48px);
+  }
+}
+.thumb-text {
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1rem;
+  @include font-size(12px);
+
+  @include mq('tablet', 'min') {
+    @include font-size(16px);
+  }
+}
+
+.blocks-gallery-item {
+  @include position();
+}

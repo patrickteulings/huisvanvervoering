@@ -1,0 +1,18 @@
+.category-nieuws {
+  .page-header {
+    border-bottom: 0;
+
+    &__inner {
+      @include containerWidth;
+    }
+  }
+  .post-thumbnail {
+    img {
+      width: 100%;
+    }
+  }
+  .page-title {
+    @include font-size(56px);
+    color: color('secondary');
+  }
+}

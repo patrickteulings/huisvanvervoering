@@ -1,5 +1,5 @@
-.wp-block-group__inner-container {
-  div:not(.latest-posts) {
+div:not(.latest-posts) {
+  .wp-block-group__inner-container {
     ul:not(.blocks-gallery-grid) {
       margin-left: 0 !important;
 
@@ -23,6 +23,17 @@
           border: 2px solid #fff;
           display: block;
         }
+      }
+    }
+  }
+}
+
+div.latest-posts {
+  ul {
+    li {
+      padding-left: 0;
+      &:before {
+        display: none !important;
       }
     }
   }
