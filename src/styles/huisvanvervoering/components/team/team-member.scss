@@ -6,7 +6,7 @@
     margin-bottom: 0;
   }
 
-  @include mq("tablet", "min") {
+  @include mq('tablet', 'min') {
     display: flex;
   }
 
@@ -18,7 +18,7 @@
       order: 1;
       margin: 0 auto 2rem;
 
-      @include mq("tablet", "min") {
+      @include mq('tablet', 'min') {
         margin-left: 4rem;
         margin-right: 0;
       }
@@ -38,17 +38,57 @@
   &__content {
     a {
       text-decoration: none;
+      color: color('secondary');
+      margin-left: 8px;
+      @include position();
+
+      .icon {
+        @include position();
+        @include transition(all, 0.2s);
+        top: 3px;
+        svg {
+          @include size(16px);
+        }
+      }
 
       &:hover {
         text-decoration: none;
+
+        .icon {
+          left: 4px;
+        }
       }
     }
     h2 {
       font-family: $heading-font-face;
       @include font-size(24px);
       font-weight: 600;
-      color: color("secondary");
+      color: color('secondary');
       margin-bottom: 2rem;
+    }
+
+    .team-member__title-link {
+      margin-left: 0;
+
+      h2 {
+        @include position;
+        display: inline-block;
+        &:after {
+          content: '';
+          height: 2px;
+          width: 10px;
+          background: lighten(color('grey'), 40%);
+          @include position(absolute, 0, auto, auto, -6px);
+          @include transition;
+        }
+      }
+
+      &:hover {
+        h2:after {
+          width: 30%;
+          background: color('secondary');
+        }
+      }
     }
   }
 
@@ -57,7 +97,7 @@
     width: 150px;
     margin: 0 auto 2rem;
 
-    @include mq("tablet", "min") {
+    @include mq('tablet', 'min') {
       margin-right: 4rem;
       margin-bottom: 0;
     }
@@ -65,7 +105,7 @@
     .image-background {
       @include diamond(100px);
       @include position(absolute, 25px, 25px);
-      background-color: color("white");
+      background-color: color('white');
       box-shadow: 3px 4px 30px 6px rgba(0, 0, 0, 0.47);
       z-index: 0;
     }
@@ -77,14 +117,14 @@
     &:before {
       @include diamond(60px);
       @include position(absolute, 100px, 30px);
-      background-color: color("secondary-light");
+      background-color: color('secondary-light');
     }
 
     &:after {
       @include diamond(100px);
       @include position(absolute, 25px, 25px);
       background-color: transparent;
-      border: 1px solid color("white");
+      border: 1px solid color('white');
       z-index: 5;
     }
   }
@@ -98,18 +138,18 @@
   display: grid;
   grid-template-columns: 1fr;
 
-  @include mq("tablet", "min") {
+  @include mq('tablet', 'min') {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
   }
 }
 
 .team-board-member {
-  background: color("white");
+  background: color('white');
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 2rem;
 
-  @include mq("tablet", "min") {
+  @include mq('tablet', 'min') {
     margin-bottom: 0;
   }
 
@@ -133,7 +173,7 @@
       h2 {
         @include font-size(18px);
         margin: 2rem 0 0 1rem;
-        color: color("secondary");
+        color: color('secondary');
         font-weight: 600;
       }
     }

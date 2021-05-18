@@ -2,6 +2,25 @@
   @include font-size(64px);
 }
 
+.wp-block-group.hvv.intro.blogintro {
+  max-width: none;
+  background-color: color('white');
+
+  p {
+    font-family: $heading-font-face;
+    @include font-size(24px);
+    line-height: 38px;
+    color: color('grey');
+    max-width: 650px !important;
+    margin-left: 0 !important;
+  }
+
+  .wp-block-group__inner-container {
+    @include containerWidth();
+    padding: 0 2rem;
+  }
+}
+
 .blog-list-item {
   // max-width: 50%; // none !important; // 200px;
   margin: 0 auto;

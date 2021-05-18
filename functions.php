@@ -1017,3 +1017,12 @@ add_action('init', 'create_taxonomies_lab', 0);
 add_filter('wpseo_metabox_prio', function () {
   return 'low';
 });
+
+// function exclude_category_home( $query ) {
+//   if ( $query->is_home ) {
+//   $query->set( 'cat', '-5' );
+//   }
+//   return $query;
+//   }
+
+//   add_filter( 'pre_get_posts', 'exclude_category_home' );

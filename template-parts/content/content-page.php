@@ -104,7 +104,9 @@
     endif;
     wp_reset_postdata();
     ?>
+
     <?php the_content(); ?>
+
     <?php
     wp_link_pages(
       array(

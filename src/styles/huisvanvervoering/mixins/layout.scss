@@ -1,11 +1,11 @@
 @mixin containerWidth() {
-  @include mq("phone", "min") {
+  @include mq('phone', 'min') {
     width: 100%;
   }
-  @include mq("tablet", "min") {
+  @include mq('tablet', 'min') {
     width: 100%;
   }
-  @include mq("desktop", "min") {
+  @include mq('desktop', 'min') {
     width: 1024px;
   }
 }
@@ -22,12 +22,12 @@
   a {
     @include transition;
     text-underline-offset: 1px;
-    color: color("secondary");
+    color: color('secondary');
 
     &:hover {
       text-decoration-style: solid;
       text-decoration-skip-ink: inherit;
-      color: color("primary");
+      color: color('primary');
     }
   }
 }
@@ -46,6 +46,7 @@
   @include position(absolute, auto, -140px, -100px, auto);
   width: 347px !important;
   height: 347px !important;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 
   .wp-post-image {
@@ -53,7 +54,7 @@
   }
 
   &:before {
-    content: "";
+    content: '';
     width: 64%;
     height: 64%;
     border: 1px solid #fff;
@@ -81,7 +82,14 @@
 
 article {
   .main-content-diamond-parallax {
-    @include position(absolute, auto, 1000px, -100px, auto);
+    @include position(absolute, auto, 1000px, 0px, auto);
+    @include size(100px, 200px);
+    overflow: hidden;
+
+    img {
+      width: 200px;
+      max-width: 200px;
+    }
 
     &.light {
       opacity: 0.6;

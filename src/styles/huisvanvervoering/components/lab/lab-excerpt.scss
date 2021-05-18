@@ -1,3 +1,11 @@
+section.section.lab-excerpt__pinned {
+  margin-top: 0;
+
+  .section__inner {
+    padding-top: 0;
+  }
+}
+
 .lab-excerpt {
   // display: flex;
   max-width: 750px;
@@ -5,9 +13,10 @@
 
   &__pinned {
     margin-bottom: 0;
+    margin-top: 0;
   }
 
-  @include mq("tablet", "min") {
+  @include mq('tablet', 'min') {
     display: flex;
   }
 
@@ -19,7 +28,7 @@
       order: 1;
       margin: 0 auto 2rem;
 
-      @include mq("tablet", "min") {
+      @include mq('tablet', 'min') {
         margin-left: 4rem;
         margin-right: 0;
       }
@@ -40,20 +49,37 @@
     flex-grow: 2;
     a {
       text-decoration: none;
+      color: color('secondary');
+      margin-left: 8px;
+      @include position();
+      word-break: keep-all;
+
+      .icon {
+        @include position();
+        @include transition(all, 0.2s);
+        top: 3px;
+        svg {
+          @include size(16px);
+        }
+      }
 
       &:hover {
         text-decoration: none;
+
+        .icon {
+          left: 8px;
+        }
       }
     }
     h2 {
       font-family: $heading-font-face;
       @include font-size(24px);
       font-weight: 600;
-      color: color("secondary");
+      color: color('secondary');
       margin-bottom: 2rem;
 
       .lab-excerpt__date {
-        color: darken(color("secondary-light"), 10%);
+        color: darken(color('secondary-light'), 10%);
         font-size: 0.9em;
       }
     }
@@ -64,7 +90,7 @@
     width: 150px;
     margin: 0 auto 2rem;
 
-    @include mq("tablet", "min") {
+    @include mq('tablet', 'min') {
       margin-right: 4rem;
       margin-bottom: 0;
     }
@@ -72,7 +98,7 @@
     .image-background {
       @include diamond(100px);
       @include position(absolute, 25px, 25px);
-      background-color: color("white");
+      background-color: color('white');
       box-shadow: 3px 4px 30px 6px rgba(0, 0, 0, 0.47);
       z-index: 0;
     }
@@ -84,20 +110,48 @@
     &:before {
       @include diamond(60px);
       @include position(absolute, 100px, 30px);
-      background-color: color("secondary-light");
+      background-color: color('secondary-light');
     }
 
     &:after {
       @include diamond(100px);
       @include position(absolute, 25px, 25px);
       background-color: transparent;
-      border: 1px solid color("white");
+      border: 1px solid color('white');
       z-index: 5;
     }
   }
 
   &__category {
     display: none;
+  }
+
+  &__title-link {
+    margin-left: 0;
+
+    h2 {
+      @include position;
+      display: inline-block;
+      &:after {
+        content: '';
+        height: 2px;
+        width: 10px;
+        background: lighten(color('grey'), 40%);
+        @include position(absolute, 0, auto, auto, -4px);
+        @include transition;
+      }
+    }
+
+    &:hover {
+      h2:after {
+        width: 30%;
+        background: color('secondary');
+
+        .lab-excerpt__archive & {
+          background: lighten(color('grey'), 40%);
+        }
+      }
+    }
   }
 }
 
@@ -107,7 +161,7 @@
       flex-grow: 2;
 
       h2 {
-        color: lighten(color("grey"), 30%);
+        color: lighten(color('grey'), 30%);
       }
     }
     &:nth-child(odd) {
@@ -115,7 +169,7 @@
         order: 2;
 
         &:before {
-          background-color: color("primary-light");
+          background-color: color('primary-light');
           @include position(absolute, 70px, 70px);
         }
       }

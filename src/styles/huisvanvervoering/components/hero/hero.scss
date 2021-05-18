@@ -21,22 +21,28 @@
   }
   &__title--front-page {
     font-weight: 900;
-    @include font-size(62px);
+    @include font-size(48px);
+
+    @include mq('tablet', 'min') {
+      @include font-size(62px);
+    }
   }
 
   &__subtitle {
     color: color('grey');
     font-family: $paragraph-font-face;
     padding-left: 32px;
-    // font-style: italic;
   }
 
   &__subtitle--front-page {
     color: color('white');
     font-family: $paragraph-font-face;
-    @include font-size(32px);
+    @include font-size(24px);
     padding-left: 0;
     // font-style: italic;
+    @include mq('tablet', 'min') {
+      @include font-size(32px);
+    }
   }
 
   &__content-wrapper {
@@ -168,6 +174,7 @@
         height: 1000px !important;
 
         .wp-post-image {
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
           clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
       }

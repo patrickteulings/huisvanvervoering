@@ -22,7 +22,7 @@
     <header class="entry-header hvv">
       <div class="entry-header__inner">
         <?php get_template_part('template-parts/header/entry-header'); ?>
-        <div class="post-thumbnail-diamond post-thumbnail-diamond--team-overview rellax"><img width="180" height="auto" role="presentation" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
+        <div class="post-thumbnail-diamond post-thumbnail--team-overview rellax"><img width="180" height="auto" role="presentation" src="<?= get_stylesheet_directory_uri(); ?>/assets/images/ui/img/diamond-large.svg"></div>
         <div class="post-thumbnail-diamond-shadow"></div>
         <?php huis_van_vervoering_post_thumbnail(); ?>
       </div>
@@ -59,7 +59,7 @@
         <?php
         $thumbnail_id = get_post_thumbnail_id($post->ID);
         $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-        $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+        $trimmed = wp_trim_words(get_the_content(), $num_words = 55);
         ?>
 
         <!-- <h2><?php the_title(); ?></h2> -->
@@ -69,11 +69,15 @@
             <div class="image-background" role="presentation"></div>
           </div>
           <div class="team-member__content">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" class="team-member__title-link">
               <h2><?php the_title() ?></h2>
             </a>
             <p>
-              <?= $trimmed ?>
+              <?= $trimmed ?>&nbsp;
+              <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span></a>
             </p>
           </div>
         </div>

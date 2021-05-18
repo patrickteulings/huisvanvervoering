@@ -1,5 +1,5 @@
 .entry-content > .wp-block-group.alignfull.quote.hvv {
-  background-color: color("secondary");
+  background-color: color('secondary');
   max-width: none;
 
   .wp-block-group__inner-container {
@@ -17,7 +17,7 @@
       font-family: $heading-font-face;
       font-style: italic;
       font-size: 48px;
-      color: color("white");
+      color: color('white');
       top: -10px;
     }
 
@@ -29,7 +29,7 @@
       line-height: 160%;
       font-weight: 300;
       text-align: center;
-      color: color("white");
+      color: color('white');
 
       &:first-letter {
         margin-left: 32px;
@@ -39,25 +39,31 @@
     cite {
       font-family: $paragraph-font-face;
       font-weight: 900;
-      color: color("white");
-      @include position(relative, 32px);
+      color: color('white');
+      @include position(relative, 8px);
       @include font-size(12px);
       font-style: italic;
-      padding-left: 64px;
+      padding-left: 32px;
 
-      @include mq("tablet", "min") {
+      @include mq('tablet', 'min') {
         left: 148px;
+        padding-left: 64px;
+        @include position(relative, 32px);
       }
 
       // Cite lines before/after
       &:before,
       &:after {
-        content: "";
+        content: '';
         height: 1px;
-        width: 48px;
-        background-color: color("white");
+        width: 16px;
+        background-color: color('white');
         z-index: 4;
         @include position(absolute, 0px, 50%);
+
+        @include mq('tablet', 'min') {
+          width: 48px;
+        }
       }
 
       &:after {
@@ -80,18 +86,18 @@
     BLACK AND WHITE VERSION OF THE QUOTE
   ---------------------------------------- */
   &.blackwhite {
-    background-color: color("white");
+    background-color: color('white');
 
     .wp-block-quote {
       p,
       cite {
-        color: color("black");
+        color: color('black');
       }
 
       cite {
         &:before,
         &:after {
-          background-color: color("black");
+          background-color: color('black');
         }
       }
     }

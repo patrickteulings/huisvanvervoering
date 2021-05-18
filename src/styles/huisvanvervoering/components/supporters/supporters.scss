@@ -1,5 +1,5 @@
 .supporters {
-  background: color("white");
+  background: color('white');
 
   &.section {
     margin-top: 0;
@@ -9,6 +9,8 @@
     justify-content: space-around;
   }
   .supporter {
+    @include flex-center('both');
+
     &:not(:last-child) {
       margin-right: 32px;
     }

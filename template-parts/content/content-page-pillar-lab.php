@@ -130,7 +130,7 @@ $globalPostID = $post->ID;
           <div class="image-background" role="presentation"></div>
         </div>
         <div class="lab-excerpt__content">
-          <a href="<?php the_permalink(); ?>">
+          <a href="<?php the_permalink(); ?>" class="lab-excerpt__title-link">
             <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
           </a>
           <?php if ($term_list) : ?>
@@ -138,7 +138,11 @@ $globalPostID = $post->ID;
           <?php endif; ?>
 
           <p>
-            <?= $trimmed ?>
+            <?= $trimmed ?>&nbsp;
+            <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span></a>
           </p>
         </div>
       </div>
@@ -191,14 +195,18 @@ $globalPostID = $post->ID;
           <div class="image-background" role="presentation"></div>
         </div>
         <div class="lab-excerpt__content">
-          <a href="<?php the_permalink(); ?>">
+          <a href="<?php the_permalink(); ?>" class="lab-excerpt__title-link">
             <h2><?php the_title() ?> &nbsp; <span class="lab-excerpt__date"><?= get_field("date"); ?></span></h2>
             <?php if ($terms_list) : ?>
               <?= $terms_list ?>
             <?php endif; ?>
           </a>
           <p>
-            <?= $trimmed ?>
+            <?= $trimmed ?>&nbsp;
+            <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span></a>
           </p>
         </div>
       </div>

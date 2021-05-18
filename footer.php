@@ -35,6 +35,7 @@
     $args = array(
       'post_type' => 'supporters',
       'post_status' => 'publish',
+      'posts_per_page' => '-1',
     );
 
     $loop = new WP_Query($args);
@@ -46,9 +47,8 @@
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
       ?>
 
-      <!-- <h2><?php the_title(); ?></h2> -->
       <div class="supporter">
-        <a href="<?= get_post_meta($post->ID, 'URL', true); ?>" title="Bezoek de website: <?= $alt ?>" target="_blank">
+        <a href="<?= get_field('supporter_link'); ?>" title="Bezoek de website: <?= $alt ?>" target="_blank">
           <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
         </a>
       </div>
@@ -96,9 +96,10 @@
       </div>
       <div class="column__content">
         <p>
+          Postadres:<br>
           Huis van Vervoering<br>
-          Postbus 3456<br>
-          2572 BZ Den Haag<br>
+          Beeklaan 171 <sup>a</sup><br>
+          2562 AD Den Haag<br>
         </p>
         <a href="mailto:info@huisvanvervoering.nl">info@huisvanvervoering.nl</a>
 
@@ -134,8 +135,16 @@
             </a>
           </div>
         </div>
+        <div class="made-by">
+          Design & Development <a href="https://www.patrickteulings.nl" target="_blank">PatrickTeulings.nl</a>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="footer-inner footer-inner--disclaimer">
+    <a href="<?= get_permalink('1126'); ?>" class="disclaimer-link">Algemene voorwaarden</a>
+    <a href="<?= get_permalink('1051'); ?>" class="disclaimer-link">Disclaimer</a>
+    <a href="<?= get_permalink('3'); ?>" class="disclaimer-link">Privacy</a>
   </div>
 </footer><!-- #colophon -->
 
