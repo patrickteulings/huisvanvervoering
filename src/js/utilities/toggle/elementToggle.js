@@ -16,6 +16,13 @@ export default class ElementToggle {
     this.trigger = this.elem.querySelector(this.config.toggleTrigger);
     this.target = this.elem.querySelector(this.config.toggleTarget);
 
+    if (
+      !localStorage.getItem('menuClicked') ||
+      Number(localStorage.getItem('menuClicked') < 3)
+    ) {
+      document.querySelector('.menu-description').style.display = 'block';
+    }
+
     this.addEvents();
   }
 
@@ -34,13 +41,18 @@ export default class ElementToggle {
   openElement() {
     this.trigger.classList.add('is-open');
     this.target.classList.add('is-open');
+    this.elem.classList.add('is-open');
     this.isOpen = true;
     document.body.classList.add('body-is-locked');
+
+    const count = Number(localStorage.getItem('menuClicked')) || 0;
+    localStorage.setItem('menuClicked', count + 1);
   }
 
   closeElement() {
     this.trigger.classList.remove('is-open');
     this.target.classList.remove('is-open');
+    this.elem.classList.remove('is-open');
     document.body.classList.remove('body-is-locked');
     this.isOpen = false;
   }

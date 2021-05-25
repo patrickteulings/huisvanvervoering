@@ -119,7 +119,7 @@ $globalPostID = $post->ID;
       <?php
       $thumbnail_id = get_post_thumbnail_id($post->ID);
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-      $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+      $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55, $more = null);
       $term_list = get_the_term_list($post->ID, 'lab_category');
       ?>
 
@@ -181,7 +181,7 @@ $globalPostID = $post->ID;
       <?php
       $thumbnail_id = get_post_thumbnail_id($post->ID);
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-      $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+      $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55, $more = null);
       $cats = get_the_category();
       $cat_name = $cats[0]->name;
       $taxonomies = get_object_taxonomies('lab_category');

@@ -18,6 +18,7 @@
         <span></span>
         <span></span>
       </button><!-- #primary-mobile-menu -->
+      <div class="menu-description">MENU</div>
     </div><!-- .menu-button-container -->
     <div class="primary-menu-container">
       <div class="container__inner">

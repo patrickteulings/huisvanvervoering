@@ -33,7 +33,6 @@ export default class Gallery {
     });
 
     for (const [index, item] of this.imageObjects.entries()) {
-      console.log(index, item);
       if (index >= 7) {
         item.trigger.style.display = 'none';
       }

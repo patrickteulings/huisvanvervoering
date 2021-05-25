@@ -41,11 +41,12 @@
       font-weight: 900;
       color: color('white');
       @include position(relative, 8px);
-      @include font-size(12px);
+      @include font-size(10px);
       font-style: italic;
       padding-left: 32px;
 
       @include mq('tablet', 'min') {
+        @include font-size(12px);
         left: 148px;
         padding-left: 64px;
         @include position(relative, 32px);

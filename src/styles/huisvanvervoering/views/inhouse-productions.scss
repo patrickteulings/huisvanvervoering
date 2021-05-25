@@ -94,3 +94,16 @@
     }
   }
 }
+
+.page-template-page-pillar {
+  .wp-block-group.hvv.alignfull.image {
+    .wp-block-group__inner-container {
+      figure {
+        img {
+          max-width: 120%;
+          // margin-left: -10%;
+        }
+      }
+    }
+  }
+}

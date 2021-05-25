@@ -882,7 +882,7 @@ function create_posttype()
         'singular_name' => __('team')
       ),
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'rewrite' => array('slug' => 'team'),
       'menu_position' => 5,
       'menu_icon' => 'dashicons-groups',

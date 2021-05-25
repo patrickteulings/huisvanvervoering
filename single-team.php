@@ -40,12 +40,12 @@ while (have_posts()) :
   $huisvanvervoering_next_label     = esc_html__('Next post', 'huisvanvervoering');
   $huisvanvervoering_previous_label = esc_html__('Previous post', 'huisvanvervoering');
 
-  the_post_navigation(
-    array(
-      'next_text' => '<p class="meta-nav">' . $huisvanvervoering_next_label . $huisvanvervoering_next . '</p><p class="post-title">%title</p>',
-      'prev_text' => '<p class="meta-nav">' . $huisvanvervoering_prev . $huisvanvervoering_previous_label . '</p><p class="post-title">%title</p>',
-    )
-  );
+// the_post_navigation(
+//   array(
+//     'next_text' => '<p class="meta-nav">' . $huisvanvervoering_next_label . $huisvanvervoering_next . '</p><p class="post-title">%title</p>',
+//     'prev_text' => '<p class="meta-nav">' . $huisvanvervoering_prev . $huisvanvervoering_previous_label . '</p><p class="post-title">%title</p>',
+//   )
+// );
 endwhile; // End of the loop.
 
 get_footer();

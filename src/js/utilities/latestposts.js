@@ -15,7 +15,6 @@ export default class LatestPosts {
   }
 
   onResize() {
-    console.log(this.firstListItem);
     if (!this.firstListItem) return;
     this.firstListItem.style.marginLeft = 0;
     let marginLeft = (window.innerWidth - 900) / 2;

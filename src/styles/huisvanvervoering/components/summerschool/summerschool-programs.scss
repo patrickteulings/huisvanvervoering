@@ -1,13 +1,13 @@
 .summerschool-programs {
   .wp-block-column {
-    background: color("white");
+    background: color('white');
     @include position;
     //@include card-shadow(3);
     @include innerspace(4rem);
 
     &:after {
-      content: "";
-      background: color("white");
+      content: '';
+      background: color('white');
       width: 75%;
       height: 70%;
       @include position(absolute, 15%, 28%);
@@ -32,8 +32,8 @@
       }
 
       &:after {
-        content: "";
-        background: color("white");
+        content: '';
+        background: color('white');
         @include position(absolute, auto, auto, 43px, 30px);
         @include size(80px);
         transform: rotate(45deg);
@@ -44,7 +44,7 @@
   }
 
   h5 {
-    color: color("secondary");
+    color: color('secondary');
     font-weight: 600;
 
     a {
@@ -52,10 +52,10 @@
       @include position;
 
       &:after {
-        content: "";
+        content: '';
         height: 2px;
-        width: 0%;
-        background: color("secondary");
+        width: 10px;
+        background: lighten(color('grey'), 40%);
         @include position(absolute, 0, auto, auto, -5px);
         @include transition;
       }
@@ -64,7 +64,8 @@
         text-decoration: none;
 
         &:after {
-          width: 30%;
+          width: 50%;
+          background: color('secondary');
         }
       }
     }

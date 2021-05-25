@@ -1,6 +1,6 @@
 div:not(.latest-posts) {
   .wp-block-group__inner-container {
-    ul:not(.blocks-gallery-grid):not[class^='wpforms'] {
+    ul:not(.blocks-gallery-grid):not([class^='wpforms']) {
       margin-left: 0 !important;
 
       li {

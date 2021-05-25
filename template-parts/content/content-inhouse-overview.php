@@ -136,7 +136,7 @@ $loop = new WP_Query($args);
         <?php
         $thumbnail_id = get_post_thumbnail_id($post->ID);
         $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-        $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+        $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55, $more = null);
         $term_list = get_the_term_list($post->ID, 'inhouse_category');
         ?>
 
@@ -155,7 +155,7 @@ $loop = new WP_Query($args);
             <?php endif; ?>
 
             <p>
-              <?= $trimmed ?>&nbsp;
+              <?= $trimmed ?>
               <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
@@ -200,7 +200,7 @@ $loop = new WP_Query($args);
       <?php
       $thumbnail_id = get_post_thumbnail_id($post->ID);
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-      $trimmed = wp_trim_words(get_the_content(), $num_words = 55, $more = null);
+      $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55, $more = null);
       $cats = get_the_category();
       $cat_name = $cats[0]->name;
       $taxonomies = get_object_taxonomies('lab_category');
@@ -221,7 +221,7 @@ $loop = new WP_Query($args);
             <?php endif; ?>
           </a>
           <p>
-            <?= $trimmed ?>&nbsp;
+            <?= $trimmed ?>
             <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
