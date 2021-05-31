@@ -2989,6 +2989,27 @@ div.latest-posts ul li {
 ul[class^='wpforms'] li {
   position: relative !important; }
 
+.entry-content .wp-audio-shortcode {
+  margin-left: 0 !important; }
+
+.entry-content .lsb-success {
+  margin-left: 0 !important; }
+
+.entry-content .lsb-form {
+  margin-left: 0 !important; }
+  .entry-content .lsb-form .lsb-form-input {
+    padding: 4px 8px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #90bfba; }
+  .entry-content .lsb-form .lsb-form-button {
+    padding: 0.8rem 1rem;
+    border-radius: 2px;
+    color: #fff;
+    background: #9a00b4;
+    border: 0px;
+    margin-top: 1rem; }
+
 .hvv.mediatext.wp-block-group.alignfull .wp-block-group__inner-container {
   padding-right: 0;
   padding-left: 0; }
