@@ -92,6 +92,32 @@
     }
   }
 
+  &.core-volunteer {
+    a {
+      color: color('grey');
+    }
+
+    .team-member__title-link {
+      h2 {
+        color: lighten(color('grey'), 20%);
+      }
+    }
+
+    &:hover {
+      h2 {
+        &:after {
+          background: lighten(color('grey'), 20%);
+        }
+      }
+    }
+
+    .team-member__image {
+      &:before {
+        background-color: lighten(color('grey'), 50%);
+      }
+    }
+  }
+
   &__image {
     @include position;
     width: 150px;

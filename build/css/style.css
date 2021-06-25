@@ -2207,6 +2207,14 @@ section.join {
     .team-member__content .team-member__title-link:hover h2:after {
       width: 30%;
       background: #9a00b4; }
+  .team-member.core-volunteer a {
+    color: #5a5a5a; }
+  .team-member.core-volunteer .team-member__title-link h2 {
+    color: #8d8d8d; }
+  .team-member.core-volunteer:hover h2:after {
+    background: #8d8d8d; }
+  .team-member.core-volunteer .team-member__image:before {
+    background-color: #dadada; }
   .team-member__image {
     position: relative;
     left: 0;
@@ -2950,9 +2958,9 @@ section.section.lab-excerpt__pinned {
             margin-top: 0;
             transform: translateX(0); } }
 
-div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class^='wpforms']) {
+div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class*='wpforms']) {
   margin-left: 0 !important; }
-  div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class^='wpforms']) li {
+  div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class*='wpforms']) li {
     position: relative;
     left: 0;
     top: 0;
@@ -2964,7 +2972,7 @@ div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-g
     line-height: 28px;
     margin-bottom: 1rem;
     padding-left: 2rem; }
-    div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class^='wpforms']) li:before {
+    div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class*='wpforms']) li:before {
       content: '';
       position: absolute;
       left: 0px;
@@ -2980,6 +2988,11 @@ div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-g
       background: #90bfba;
       border: 2px solid #fff;
       display: block; }
+    div:not(.latest-posts) .wp-block-group__inner-container ul:not(.blocks-gallery-grid):not([class*='wpforms']) li[class*='choice']:before {
+      display: none; }
+
+div:not(.latest-posts) [class*='choice'] li:before {
+  display: none; }
 
 div.latest-posts ul li {
   padding-left: 0; }
@@ -3235,8 +3248,8 @@ p.hvv.intro {
       .single-team .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container,
       .page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container {
         width: 1024px; } }
-    .single-team .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p,
-    .page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p {
+    .single-team .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p:first-child,
+    .page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p:first-child {
       font-family: "Merriweather", serif;
       font-weight: 300;
       font-size: 1.33333em;
@@ -3245,6 +3258,9 @@ p.hvv.intro {
       line-height: 160%;
       max-width: 450px !important;
       margin: -3rem 0 2rem 0 !important; }
+      .single-team .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p:first-child:not(:first-child),
+      .page-template-team-overview .wp-block-group.hvv.intro.alignfull .wp-block-group__inner-container p:first-child:not(:first-child) {
+        margin-top: 0; }
   @media (max-width: 600px) {
     .single-team .wp-block-group.hvv.intro.alignfull,
     .page-template-team-overview .wp-block-group.hvv.intro.alignfull {
@@ -3302,6 +3318,64 @@ section.section.team {
     height: 140px;
     right: -60px;
     top: 62px; } }
+
+/* ----------------------------------------
+  BOARD MEMBERS & Ambassador CTA
+---------------------------------------- */
+@media (min-width: 600px) {
+  .page-template-team-overview .section.board-ambassadors-cta .column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem; } }
+
+.page-template-team-overview .section.board-ambassadors-cta .column:last-child {
+  margin-top: 4rem; }
+  @media (min-width: 600px) {
+    .page-template-team-overview .section.board-ambassadors-cta .column:last-child {
+      margin-top: 0; } }
+
+.page-template-team-overview .section.board-ambassadors-cta .column .column__inner {
+  padding: 2rem;
+  box-shadow: 6px 10px 20px 2px rgba(0, 0, 0, 0.14); }
+  .page-template-team-overview .section.board-ambassadors-cta .column .column__inner figure {
+    height: 240px;
+    margin-left: -3rem;
+    margin-top: -1rem; }
+  .page-template-team-overview .section.board-ambassadors-cta .column .column__inner img {
+    box-shadow: 6px 10px 20px 2px rgba(0, 0, 0, 0.14);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.page-template-team-overview .section.board-ambassadors-cta .column h3 {
+  font-size: 1.33333em;
+  font-size: 24px;
+  line-height: 160%;
+  color: #9a00b4;
+  margin-bottom: 2rem; }
+  .page-template-team-overview .section.board-ambassadors-cta .column h3 a {
+    font-family: "Merriweather", serif;
+    color: #5a5a5a;
+    text-decoration: none; }
+    .page-template-team-overview .section.board-ambassadors-cta .column h3 a:hover {
+      color: #9a00b4; }
+
+.page-template-team-overview .section.board-ambassadors-cta .column p,
+.page-template-team-overview .section.board-ambassadors-cta .column a {
+  margin-top: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300; }
+
+.page-template-team-overview .section.board-ambassadors-cta .column a.readmore {
+  color: #9a00b4;
+  text-decoration: none;
+  position: relative; }
+  .page-template-team-overview .section.board-ambassadors-cta .column a.readmore .icon {
+    position: relative;
+    top: 7px;
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
+  .page-template-team-overview .section.board-ambassadors-cta .column a.readmore:hover .icon {
+    margin-left: 4px; }
 
 /* ----------------------------------------
   BOARD MEMBERS & Ambassador INTRODUCTIONS

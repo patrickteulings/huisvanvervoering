@@ -13,7 +13,7 @@
       @include containerWidth;
       padding: 0 2rem;
 
-      p {
+      p:first-child {
         font-family: $heading-font-face;
         font-weight: 300;
         @include font-size(24px);
@@ -22,6 +22,10 @@
         max-width: 450px !important;
         margin: -3rem 0 2rem 0 !important;
         // margin-top: -4rem;
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
       }
     }
     @include mq('tablet', 'max') {
@@ -87,6 +91,90 @@ section > [class*='__inner'] {
       @include size(140px);
       right: -60px;
       top: 62px;
+    }
+  }
+}
+
+/* ----------------------------------------
+  BOARD MEMBERS & Ambassador CTA
+---------------------------------------- */
+.page-template-team-overview {
+  .section.board-ambassadors-cta {
+    .column-wrapper {
+      @include mq('tablet', 'min') {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+      }
+    }
+
+    .column {
+      &:last-child {
+        margin-top: 4rem;
+
+        @include mq('tablet', 'min') {
+          margin-top: 0;
+        }
+      }
+
+      .column__inner {
+        padding: 2rem;
+        box-shadow: 6px 10px 20px 2px rgba(0, 0, 0, 0.14);
+        figure {
+          // width: calc(100% + 4rem);
+          height: 240px;
+
+          margin-left: -3rem;
+          margin-top: -1rem;
+        }
+        img {
+          box-shadow: 6px 10px 20px 2px rgba(0, 0, 0, 0.14);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      h3 {
+        @include font-size(24px);
+        line-height: 160%;
+        color: color('secondary');
+        margin-bottom: 2rem;
+
+        a {
+          font-family: $heading-font-face;
+          color: color('grey');
+          text-decoration: none;
+
+          &:hover {
+            color: color('secondary');
+          }
+        }
+      }
+
+      p,
+      a {
+        margin-top: 2rem;
+        font-family: $primary-font-face;
+        font-weight: 300;
+      }
+
+      a.readmore {
+        color: color('secondary');
+        text-decoration: none;
+        position: relative;
+
+        .icon {
+          position: relative;
+          top: 7px;
+          @include transition;
+        }
+
+        &:hover {
+          .icon {
+            margin-left: 4px;
+          }
+        }
+      }
     }
   }
 }

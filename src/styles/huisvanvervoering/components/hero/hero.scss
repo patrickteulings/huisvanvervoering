@@ -39,7 +39,7 @@
     font-family: $paragraph-font-face;
     @include font-size(24px);
     padding-left: 0;
-    // font-style: italic;
+    
     @include mq('tablet', 'min') {
       @include font-size(32px);
     }

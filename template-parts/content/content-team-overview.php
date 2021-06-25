@@ -43,6 +43,7 @@
       $args = array(
         'post_type' => 'team',
         'post_status' => 'publish',
+        'posts_per_page' => 8,
         'tax_query' => array(
           array(
             'taxonomy' => 'team_category',
@@ -60,10 +61,12 @@
         $thumbnail_id = get_post_thumbnail_id($post->ID);
         $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
         $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55);
+        $isCoreVolunteer = (has_term('core-volunteer', 'team_category', $post->ID)) ? 'core-volunteer' : '';
         ?>
 
         <!-- <h2><?php the_title(); ?></h2> -->
-        <div class="team-member">
+        <div class="team-member <?= $isCoreVolunteer ?>">
+
           <div class="team-member__image">
             <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
             <div class="image-background" role="presentation"></div>
@@ -87,6 +90,54 @@
     </div>
   </section>
 
+  <!-- --------------------------------------------- -->
+  <!-- TEAM - BLOCK LINKING TO BOARD AND AMBASSADORS -->
+  <!-- --------------------------------------------- -->
+
+  <section class="section board-ambassadors-cta">
+    <div class="section__inner">
+      <div class="column-wrapper">
+        <?php $post_id = 1469 ?>
+        <?php if ('publish' == get_post_status($post_id)) : ?>
+          <div class="column">
+            <h3><a href="<?= get_permalink($post_id); ?>">Ons bestuur</a></h3>
+            <div class="column__inner">
+
+              <figure>
+                <img src="<?= get_the_post_thumbnail_url($post_id, 'medium') ?>">
+              </figure>
+              <p><?= get_the_excerpt($post_id) ?></p>
+              <a class="readmore" href="<?= get_permalink($post_id); ?>">
+                ontmoet ons bestuur
+                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span></a>
+            </div>
+          </div>
+        <?php endif; ?>
+        <?php $post_id = 1415 ?>
+        <?php if ('publish' == get_post_status($post_id)) : ?>
+          <div class="column">
+            <h3><a href="<?= get_permalink($post_id); ?>">Onze ambassadeurs</a></h3>
+            <div class="column__inner">
+
+              <figure>
+                <img src="<?= get_the_post_thumbnail_url($post_id, 'medium') ?>">
+              </figure>
+              <p><?= get_the_excerpt($post_id) ?></p>
+              <a class="readmore" href="<?= get_permalink($post_id); ?>">
+                ontmoet onze ambassadeurs
+                <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span></a>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+  </section>
 
   <!-- -------------------- -->
   <!-- TEAM - BOARD MEMBERS -->
