@@ -102,13 +102,15 @@ section > [class*='__inner'] {
   .section.board-ambassadors-cta {
     .column-wrapper {
       @include mq('tablet', 'min') {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        max-width: 1024px;
+        //grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
       }
     }
 
     .column {
+      flex: 1;
       &:last-child {
         margin-top: 4rem;
 
@@ -118,6 +120,7 @@ section > [class*='__inner'] {
       }
 
       .column__inner {
+        height: 100%;
         padding: 2rem;
         box-shadow: 6px 10px 20px 2px rgba(0, 0, 0, 0.14);
         figure {

@@ -26,6 +26,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,900;1,400&family=Yantramanav:wght@400;900&display=swap" rel="stylesheet">
   <!-- / FONTS -->
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "@additionalType": "https://en.wikipedia.org/wiki/Theatre",
+      "url": "https://www.huisvanvervoering.nl/",
+      "logo": "https://www.huisvanvervoering.nl/wp-content/uploads/2021/05/cropped-favicon-180x180.png",
+      "description": "Huis van Vervoering is dé broedplaats voor podiumkunst voor 55+ers van Den Haag en omstreken. Voor mensen die staan te popelen om in beweging te komen en nieuwsgierig zijn naar onontdekte nieuwe werelden in theater, dans, beweging en muziek.",
+      "email" : "info@huisvanvervoering.nl",
+      "address" : {
+        "@type" : "PostalAddress",
+        "streetAddress" : "Beeklaan 171a",
+        "addressLocality" : "Den Haag",
+        "addressCountry" : "The Netherlands",
+        "postalCode" : "2562 AD"
+      },
+      "sameAs" : [
+        "https://www.instagram.com/huis_van_vervoering/",
+        "https://www.facebook.com/HuisvanVervoering/"
+      ]
+    }
+  </script>
+
   <?php wp_head(); ?>
 </head>
 

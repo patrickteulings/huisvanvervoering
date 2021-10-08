@@ -61,6 +61,59 @@
         $thumbnail_id = get_post_thumbnail_id($post->ID);
         $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
         $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55);
+        $isCoreVolunteer = (has_term('core', 'team_category', $post->ID)) ? 'core' : '';
+        ?>
+
+        <!-- <h2><?php the_title(); ?></h2> -->
+        <div class="team-member <?= $isCoreVolunteer ?>">
+
+          <div class="team-member__image">
+            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" alt="<?= $alt ?>" />
+            <div class="image-background" role="presentation"></div>
+          </div>
+          <div class="team-member__content">
+            <a href="<?php the_permalink(); ?>" class="team-member__title-link">
+              <h2><?php the_title() ?></h2>
+            </a>
+            <p>
+              <?= $trimmed ?>&nbsp;
+              <a href="<?= the_permalink(); ?>">lees verder <span class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="#9A00B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span></a>
+            </p>
+          </div>
+        </div>
+      <?php endwhile; ?>
+
+      <?php wp_reset_postdata(); ?>
+    </div>
+  </section>
+
+  <section class="section team">
+    <div class="section__inner">
+      <?php
+      $args = array(
+        'post_type' => 'team',
+        'post_status' => 'publish',
+        'posts_per_page' => 8,
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'team_category',
+            'field' => 'slug',
+            'terms' => 'core-volunteer'
+          )
+        ),
+      );
+
+      $loop = new WP_Query($args);
+      ?>
+      <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+
+        <?php
+        $thumbnail_id = get_post_thumbnail_id($post->ID);
+        $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+        $trimmed = wp_trim_words(get_the_excerpt(), $num_words = 55);
         $isCoreVolunteer = (has_term('core-volunteer', 'team_category', $post->ID)) ? 'core-volunteer' : '';
         ?>
 

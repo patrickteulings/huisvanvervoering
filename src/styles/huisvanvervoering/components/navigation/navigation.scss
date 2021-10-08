@@ -23,7 +23,7 @@
     // border-width: 185px 185px 0 0;
     // border-color: #007bff transparent transparent transparent;
     // @include position(absolute);
-    // text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    // text-shadow: 4px 4px 2px rgba(150, 150, 150, 1)
     @include size(240px);
     transform: rotate(-45deg);
     @include card-shadow(5);

@@ -399,6 +399,10 @@ add_action('after_setup_theme', 'huis_van_vervoering_content_width', 0);
  */
 function huis_van_vervoering_scripts()
 {
+
+    // Our main stylesheet.
+    wp_enqueue_style('huis-van-vervoering-main-style', get_template_directory_uri() . '/build/css/style.css', array(), wp_get_theme()->get('Version'));
+
   // Note, the is_IE global variable is defined by WordPress and is used
   // to detect if the current browser is internet explorer.
   global $is_IE, $wp_scripts;
@@ -408,9 +412,6 @@ function huis_van_vervoering_scripts()
   } else {
     // If not IE, use the standard stylesheet.
     wp_enqueue_style('huis-van-vervoering-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
-
-    // Our main stylesheet.
-    wp_enqueue_style('huis-van-vervoering-main-style', get_template_directory_uri() . '/build/css/style.css', array(), wp_get_theme()->get('Version'));
   }
 
   // RTL styles.
@@ -488,6 +489,10 @@ function huis_van_vervoering_scripts()
     wp_get_theme()->get('Version'),
     true
   );
+
+    // Our main stylesheet.
+    wp_enqueue_style('huis-van-vervoering-main-stylesheet', get_template_directory_uri() . '/build/css/style.css', array(), wp_get_theme()->get('Version'));
+
 }
 add_action('wp_enqueue_scripts', 'huis_van_vervoering_scripts');
 
