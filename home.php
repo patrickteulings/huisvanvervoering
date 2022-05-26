@@ -18,7 +18,7 @@ if (is_home()) {
     <div class="blog-overview__list-wrapper">
       <?php
       /* Start the Loop */
-      query_posts('post_type=post&paged=' . $paged . '&cat=-12,-14');
+      // query_posts('post_type=post&paged=' . $paged . '&cat=-12,-14');
       while (have_posts()) :
         the_post();
         get_template_part('template-parts/content/content-page-blog');
